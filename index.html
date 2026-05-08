@@ -9,17 +9,17 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
         :root {
-            --dark-bg: #111827; /* Dark theme keeps standard dark bg, or can be adapted */
-            --light-bg: #eaf2e3; /* Very very light pista green */
-            --card-bg-dark: #1F2937;
-            --card-bg-light: #ffffff; /* White cards pop nicely on pista */
+            --dark-bg: #111827;
+            --light-bg: #eaf2e3;
+            --card-bg-dark: #1f2937;
+            --card-bg-light: #ffffff;
             --border-dark: rgba(255, 255, 255, 0.1);
             --border-light: rgba(0, 0, 0, 0.1);
-            --text-dark: #F9FAFB;
-            --text-light: #006A4E; /* Bottle Green text for light theme */
-            --text-secondary-dark: #9CA3AF;
-            --text-secondary-light: #004d38; /* Slightly darker bottle green for secondary text */
-            --accent: #800000; /* Maroon color for highlights */
+            --text-dark: #f9fafb;
+            --text-light: #006a4e;
+            --text-secondary-dark: #9ca3af;
+            --text-secondary-light: #004d38;
+            --accent: #800000;
         }
 
         [data-theme="light"] {
@@ -45,7 +45,7 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: "Inter", sans-serif;
             background-color: var(--bg);
             color: var(--text);
             min-height: 100vh;
@@ -68,7 +68,7 @@
             padding: 4rem 0;
             position: relative;
             display: flex;
-            flex-direction: row; /* Two-column layout */
+            flex-direction: row;
             align-items: center;
             justify-content: space-between;
             gap: 4rem;
@@ -76,99 +76,23 @@
 
         .hero-header {
             text-align: left;
-            margin-bottom: 0;
-            width: 40%; /* Left column width */
+            width: 40%;
             position: relative;
             z-index: 2;
         }
 
         .hero-icon {
-            margin-bottom: 1.5rem;
-            display: inline-block;
+            position: absolute;
+            z-index: 10;
+            transition: left 0.3s ease-out, top 0.3s ease-out;
         }
-        
+
         .hero-icon img {
-            height: 64px;
-            width: 64px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-
-        h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 700;
-            margin-bottom: 1rem;
-            text-align: left; /* Explicitly align to left */
-        }
-
-        .tagline {
-            font-size: 1.25rem;
-            color: var(--text-secondary);
-            margin: 0;
-            text-align: left;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .tree-container {
-            width: 60%; /* Right column width */
-            max-width: 600px; 
-            margin: 0 auto; 
-            padding-left: 0; 
-            position: relative;
-            z-index: 1;
-        }
-        
-        .tree-svg-canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        main {
-            width: 100%;
-            padding: 4rem 0;
-            text-align: center;
-            position: relative;
-        }
-
-        .tree-svg-canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        .tree-svg-canvas path {
-            stroke: var(--text-secondary); /* Match tree lines to text color */
-            stroke-width: 2;
-            fill: none;
-            transition: stroke-dashoffset 0.5s ease-in-out, d 0.3s;
-            stroke-dasharray: 1000;
-            stroke-dashoffset: 1000;
-        }
-
-        .hero-icon {
-            margin-bottom: 0; /* Remove margin as it will be absolutely positioned */
-            position: absolute;
-            z-index: 10; /* Ensure it stays above the SVG lines */
-            transition: left 0.3s ease-out, top 0.3s ease-out; /* Smooth repositioning */
-        }
-        
-        .hero-icon img {
-            height: 48px; /* Slightly smaller to fit the node intersection better */
+            height: 48px;
             width: 48px;
             border-radius: 12px;
-            background-color: var(--bg); /* Use theme variable so it matches dark or light mode */
-            transition: background-color 0.3s ease; /* Smooth transition when toggling themes */
-            box-shadow: none; /* Explicitly ensure no shadow is applied */
+            background-color: var(--bg);
+            transition: background-color 0.3s ease;
         }
 
         h1 {
@@ -182,15 +106,38 @@
         .tagline {
             font-size: 1.125rem;
             color: var(--text-secondary);
+            text-align: left;
             max-width: 600px;
-            margin: 0 auto 3rem;
             position: relative;
             z-index: 2;
         }
-        
+
         .tree-container {
-            width: 100%;
+            width: 60%;
             max-width: 600px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .tree-svg-canvas {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .tree-svg-canvas path {
+            stroke: var(--text-secondary);
+            stroke-width: 2;
+            fill: none;
+            transition: stroke-dashoffset 0.5s ease-in-out, d 0.3s;
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+        }
+
+        .tree {
             position: relative;
             z-index: 1;
         }
@@ -200,70 +147,161 @@
             list-style: none;
             position: relative;
         }
-        
+
         .tree li {
             margin: 0.5rem 0;
             position: relative;
         }
 
-        .branch > button, .leaf a {
+        .node-button {
             display: inline-block;
+            width: 100%;
             padding: 0.75rem 1.25rem;
-            background-color: var(--card-bg);
-            border: 1px solid var(--border);
             border-radius: 8px;
+            border: 1px solid var(--border);
+            background-color: var(--card-bg);
             color: var(--text);
-            text-decoration: none;
-            transition: all 0.2s ease;
-            width: 100%; /* Parent buttons remain full width of their container */
             text-align: left;
             font-family: inherit;
             font-size: 1rem;
+            line-height: 1.35;
             position: relative;
             z-index: 1;
-            box-sizing: border-box; /* Ensure padding doesn't affect total width */
+            transition: border-color 0.2s ease, transform 0.2s ease;
         }
-        
-        .branch > button {
+
+        .branch-button,
+        .app-toggle {
             cursor: pointer;
+        }
+
+        .branch-button {
             font-weight: 600;
         }
 
-        .branch > button:hover, .leaf a:hover {
-            border-color: var(--accent);
-            /* Removed background color change on hover as per request "highlights should be only in the button borders" */
+        .branch-button::after,
+        .app-toggle::after {
+            content: "\25BE";
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            font-weight: 700;
+            transition: transform 0.2s ease;
         }
 
-        .leaf a {
-            font-size: 0.9rem;
-            /* Sub-items usually have a slightly offset background or just match card bg */
-            background-color: var(--card-bg);
-            /* To ensure they look distinct, we can rely on their size and position */
-            width: 83.333%; /* Make it exactly 5/6ths of the parent container */
-            max-width: none; /* Remove previous absolute constraint */
-            white-space: normal; 
-            text-align: left; 
-            line-height: 1.3; 
-            margin-left: auto; /* Push the element to the right */
-            display: block; /* Required for margin-left: auto to work */
+        .branch.is-open > .branch-button::after,
+        .app-item.is-open > .app-toggle::after {
+            transform: translateY(-50%) rotate(180deg);
         }
-        
+
+        .branch-button:hover,
+        .app-toggle:hover,
+        .app-link:hover {
+            border-color: var(--accent);
+        }
+
         .branch > ul {
-            padding-left: 0; /* Remove extreme padding, rely on right alignment */
+            padding-left: 0;
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.5s ease-in-out;
-            display: flex; 
+            transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+            display: flex;
             flex-direction: column;
-            gap: 0.5rem; 
+            gap: 0.5rem;
         }
-        
+
         .branch.is-open > ul {
-            max-height: 300px; /* Increased slightly to accommodate taller, multi-line buttons */
-            padding-top: 0.5rem; /* Add a little space above the first leaf */
+            max-height: 1200px;
+            padding-top: 0.5rem;
             padding-bottom: 0.5rem;
         }
-        
+
+        .branch > ul > li {
+            width: 83.333%;
+            margin-left: auto;
+            display: block;
+        }
+
+        .app-item {
+            width: 83.333%;
+            margin-left: auto;
+            display: block;
+        }
+
+        .app-toggle {
+            display: block;
+            font-size: 0.95rem;
+        }
+
+        .app-panel {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(-4px);
+            margin-top: 0;
+            padding: 0 1rem;
+            border: 1px solid transparent;
+            border-radius: 8px;
+            background-color: var(--card-bg);
+            transition:
+                max-height 0.4s ease,
+                opacity 0.25s ease,
+                transform 0.25s ease,
+                margin-top 0.25s ease,
+                padding 0.25s ease,
+                border-color 0.25s ease;
+        }
+
+        .app-item.is-open > .app-panel {
+            max-height: 220px;
+            opacity: 1;
+            transform: translateY(0);
+            margin-top: 0.5rem;
+            padding: 1rem;
+            border-color: var(--border);
+        }
+
+        .app-description {
+            color: var(--text-secondary);
+            font-size: 0.82rem;
+            line-height: 1.5;
+            margin-bottom: 0.85rem;
+        }
+
+        .app-link,
+        .app-link-disabled {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 0.55rem 0.9rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background-color: var(--card-bg);
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 600;
+            transition: border-color 0.2s ease, opacity 0.2s ease;
+        }
+
+        .app-link-disabled {
+            opacity: 0.65;
+            cursor: not-allowed;
+        }
+
+        .tree-status {
+            border: 1px solid var(--border);
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 1rem 1.25rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
         .theme-toggle {
             position: fixed;
             top: 1.5rem;
@@ -277,32 +315,39 @@
             z-index: 10;
         }
 
-        /* Mobile Responsiveness */
         @media (max-width: 900px) {
             .container {
                 align-items: flex-start;
                 padding-top: 2rem;
             }
+
             main {
                 flex-direction: column;
                 align-items: flex-start;
-                gap: 0; /* Remove gap, rely on margin */
+                gap: 0;
             }
-            .hero-header {
+
+            .hero-header,
+            .tree-container {
                 width: 100%;
+            }
+
+            .hero-header {
                 margin-bottom: 2rem;
                 padding-right: 1rem;
             }
-            .tree-container {
-                width: 100%;
-                padding-left: 0; /* Remove specific padding for tree container on mobile */
-            }
+
             .tree ul {
-                padding-left: 2.5rem; /* Ensure enough space for lines */
+                padding-left: 2.5rem;
             }
-            /* Override branch padding for mobile to align with new ul padding */
+
             .branch > ul {
-                padding-left: 0; /* Keep 0 to rely on right alignment */
+                padding-left: 0;
+            }
+
+            .branch > ul > li,
+            .app-item {
+                width: 100%;
             }
         }
     </style>
@@ -315,72 +360,51 @@
     <div class="container">
         <main>
             <svg class="tree-svg-canvas"></svg>
-            
-            <!-- Icon moved outside hero-header so it can be absolutely positioned relative to main -->
+
             <div class="hero-icon"><img src="assets/scicopilot-logo.png" alt="SciCopilot Logo"></div>
-            
+
             <div class="hero-header">
                 <h1>SciCopilot</h1>
                 <p class="tagline" id="tagline-anchor">An interactive suite of AI-powered tools for scientists and academics.</p>
             </div>
-            
+
             <div class="tree-container">
-                <div class="tree">
-                    <ul>
-                        <li class="branch">
-                            <button class="branch-button">✍️ SciCoauthor</button>
-                            <ul>
-                                <li class="leaf"><a href="#">Write Literature Survey reports</a></li>
-                                <li class="leaf"><a href="#">Write Thesis</a></li>
-                            </ul>
-                        </li>
-                        <li class="branch">
-                            <button class="branch-button">🔍 SciCo-search</button>
-                            <ul>
-                                <li class="leaf"><a href="#">Literature search</a></li>
-                                <li class="leaf"><a href="#">Lab search</a></li>
-                            </ul>
-                        </li>
-                        <li class="branch">
-                            <button class="branch-button">🧪 SciColab</button>
-                            <ul>
-                                <li class="leaf"><a href="#">Target journal search</a></li>
-                            </ul>
-                        </li>
-                    </ul>
+                <div class="tree" id="tools-tree">
+                    <div class="tree-status">Loading tools from Markdown...</div>
                 </div>
             </div>
         </main>
     </div>
     <script>
-        const themeToggle = document.getElementById('theme-toggle');
-        const sunIcon = document.getElementById('theme-icon-sun');
-        const moonIcon = document.getElementById('theme-icon-moon');
+        const themeToggle = document.getElementById("theme-toggle");
+        const sunIcon = document.getElementById("theme-icon-sun");
+        const moonIcon = document.getElementById("theme-icon-moon");
         const body = document.body;
+        const svgCanvas = document.querySelector(".tree-svg-canvas");
+        const taglineAnchor = document.getElementById("tagline-anchor");
+        const heroIcon = document.querySelector(".hero-icon");
+        const toolsTree = document.getElementById("tools-tree");
+        let animationFrameId;
 
         function setTheme(theme) {
             body.dataset.theme = theme;
-            localStorage.setItem('theme', theme);
-            sunIcon.style.display = theme === 'light' ? 'block' : 'none';
-            moonIcon.style.display = theme === 'dark' ? 'block' : 'none';
+            localStorage.setItem("theme", theme);
+            sunIcon.style.display = theme === "light" ? "block" : "none";
+            moonIcon.style.display = theme === "dark" ? "block" : "none";
         }
 
-        themeToggle.addEventListener('click', () => {
-            const newTheme = body.dataset.theme === 'dark' ? 'light' : 'dark';
-            setTheme(newTheme);
-        });
-
-        const savedTheme = localStorage.getItem('theme') || 'light';
-        setTheme(savedTheme);
-
-        const branchButtons = document.querySelectorAll('.branch-button');
-        const svgCanvas = document.querySelector('.tree-svg-canvas');
-        const taglineAnchor = document.getElementById('tagline-anchor');
-        const heroIcon = document.querySelector('.hero-icon'); // Select the icon container
+        function setTreeStatus(message) {
+            toolsTree.innerHTML = "";
+            const status = document.createElement("div");
+            status.className = "tree-status";
+            status.textContent = message;
+            toolsTree.appendChild(status);
+        }
 
         function getCoords(elem) {
             const box = elem.getBoundingClientRect();
             const ref = svgCanvas.getBoundingClientRect();
+
             return {
                 left: box.left - ref.left,
                 top: box.top - ref.top,
@@ -393,134 +417,376 @@
             };
         }
 
-        let animationFrameId;
+        function createPath(startX, startY, endX, endY, isRoot, isMobile) {
+            const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+            const cornerRadius = 15;
+            let curve = "";
+            const targetX = endX;
+
+            if (isRoot && !isMobile) {
+                const midX = startX + (targetX - startX) / 2;
+
+                if (Math.abs(endY - startY) < cornerRadius) {
+                    curve = "M " + startX + " " + startY + " L " + targetX + " " + endY;
+                } else {
+                    curve = "M " + startX + " " + startY + " C " + midX + " " + startY + ", " + midX + " " + endY + ", " + targetX + " " + endY;
+                }
+            } else {
+                const availableHorizontalSpace = Math.abs(targetX - startX);
+
+                if (Math.abs(endY - startY) < cornerRadius) {
+                    curve = "M " + startX + " " + startY + " L " + targetX + " " + endY;
+                } else if (availableHorizontalSpace < cornerRadius) {
+                    curve = "M " + startX + " " + startY + " L " + startX + " " + endY + " L " + targetX + " " + endY;
+                } else {
+                    const dirX = targetX > startX ? 1 : -1;
+                    curve = "M " + startX + " " + startY
+                        + " L " + startX + " " + (endY - cornerRadius)
+                        + " Q " + startX + " " + endY + " " + (startX + (cornerRadius * dirX)) + " " + endY
+                        + " L " + targetX + " " + endY;
+                }
+            }
+
+            path.setAttribute("d", curve);
+            svgCanvas.appendChild(path);
+
+            setTimeout(() => {
+                path.style.strokeDashoffset = "0";
+            }, 10);
+        }
+
+        function getNodeTrigger(nodeElement) {
+            return nodeElement.querySelector(":scope > .branch-button, :scope > .app-toggle");
+        }
+
+        function getChildOrigin(triggerElement) {
+            const coords = getCoords(triggerElement);
+            return {
+                x: coords.left + (coords.width / 12),
+                y: coords.bottom
+            };
+        }
+
+        function getRootOrigin() {
+            const rootCoords = getCoords(taglineAnchor);
+            const isMobile = window.innerWidth <= 900;
+            let rootStartX;
+            let rootStartY;
+
+            if (isMobile) {
+                rootStartX = rootCoords.left + 24;
+                rootStartY = rootCoords.bottom + 30;
+            } else {
+                rootStartX = rootCoords.right + 30;
+                rootStartY = rootCoords.cy;
+            }
+
+            heroIcon.style.left = (rootStartX - 24) + "px";
+            heroIcon.style.top = (rootStartY - 24) + "px";
+
+            return {
+                isMobile,
+                x: rootStartX,
+                y: rootStartY
+            };
+        }
+
+        function drawVisibleChildren(origin, listElement, isRoot) {
+            if (!listElement) {
+                return;
+            }
+
+            const children = Array.from(listElement.children);
+
+            children.forEach((nodeElement) => {
+                const trigger = getNodeTrigger(nodeElement);
+
+                if (!trigger) {
+                    return;
+                }
+
+                const triggerCoords = getCoords(trigger);
+                createPath(origin.x, origin.y, triggerCoords.left, triggerCoords.cy, isRoot, origin.isMobile);
+
+                if (nodeElement.classList.contains("branch") && nodeElement.classList.contains("is-open")) {
+                    const childList = nodeElement.querySelector(":scope > ul");
+
+                    if (childList) {
+                        const childOrigin = getChildOrigin(trigger);
+                        childOrigin.isMobile = origin.isMobile;
+                        drawVisibleChildren(childOrigin, childList, false);
+                    }
+                }
+            });
+        }
 
         function drawTree() {
-            svgCanvas.innerHTML = '';
-            
+            svgCanvas.innerHTML = "";
+
             if (animationFrameId) {
                 cancelAnimationFrame(animationFrameId);
             }
 
             animationFrameId = requestAnimationFrame(() => {
-                const rootCoords = getCoords(taglineAnchor);
-                
-                const isMobile = window.innerWidth <= 900;
-                let rootStartX, rootStartY;
+                const rootList = toolsTree.querySelector(":scope > ul");
 
-                if (isMobile) {
-                    // Mobile: Indent from left, start below text. Give extra space for the icon.
-                    rootStartX = rootCoords.left + 24; 
-                    rootStartY = rootCoords.bottom + 30; // Push down to make room for icon
-                } else {
-                    // Desktop: Start to the right of the tagline text
-                    rootStartX = rootCoords.right + 30; // Push right to make room for icon
-                    rootStartY = rootCoords.cy;
+                if (!rootList) {
+                    return;
                 }
-                
-                // Position the Icon over the calculated root start point
-                // Offset by half the icon's dimensions to center it exactly on the coordinate
-                // The icon is 48x48
-                heroIcon.style.left = (rootStartX - 24) + 'px';
-                heroIcon.style.top = (rootStartY - 24) + 'px';
-                
-                branchButtons.forEach(button => {
-                    const branch = button.parentElement;
-                    const branchCoords = getCoords(button);
 
-                    // Level 1: Root to Main Tools
-                    createPath(rootStartX, rootStartY, branchCoords.left, branchCoords.cy, true, isMobile);
+                const rootOrigin = getRootOrigin();
+                drawVisibleChildren(rootOrigin, rootList, true);
+            });
+        }
 
-                    if (branch.classList.contains('is-open')) {
-                        const leaves = branch.querySelectorAll('.leaf a');
-                        leaves.forEach(leaf => {
-                            const leafCoords = getCoords(leaf);
-                            // Level 2: Main Tools to Sub Tools
-                            // Anchor sub-branches at the center of the first 1/6th of the parent button.
-                            // The parent width is branchCoords.width (or right - left).
-                            // 1/6th of the width is (branchCoords.right - branchCoords.left) / 6.
-                            // The center of that 1/6th is half of that value.
-                            const branchWidth = branchCoords.right - branchCoords.left;
-                            const oneSixth = branchWidth / 6;
-                            const branchStartX = branchCoords.left + (oneSixth / 2); 
-                            
-                            createPath(branchStartX, branchCoords.bottom, leafCoords.left, leafCoords.cy, false, isMobile);
-                        });
+        function animateTreeRedraw(duration) {
+            const startTime = performance.now();
+
+            function animate(currentTime) {
+                drawTree();
+
+                if (currentTime - startTime < duration) {
+                    requestAnimationFrame(animate);
+                }
+            }
+
+            requestAnimationFrame(animate);
+        }
+
+        function parseToolsMarkdown(markdown) {
+            const root = { type: "root", children: [] };
+            const stack = [{ level: 0, node: root }];
+            const warnings = [];
+            let currentApp = null;
+
+            function warn(message) {
+                warnings.push(message);
+            }
+
+            function commitApp() {
+                if (!currentApp) {
+                    return;
+                }
+
+                if (stack.length === 1) {
+                    warn("Skipped app \"" + currentApp.title + "\" because it is not inside a heading.");
+                    currentApp = null;
+                    return;
+                }
+
+                const title = currentApp.title.trim();
+
+                if (!title) {
+                    warn("Skipped an app entry with an empty title.");
+                    currentApp = null;
+                    return;
+                }
+
+                stack[stack.length - 1].node.children.push({
+                    type: "app",
+                    title: title,
+                    description: currentApp.description.trim() || "Description coming soon.",
+                    link: currentApp.link.trim()
+                });
+
+                currentApp = null;
+            }
+
+            markdown.split(/\r?\n/).forEach((rawLine, index) => {
+                const line = rawLine.replace(/\t/g, "    ");
+                const trimmed = line.trim();
+
+                if (!trimmed) {
+                    return;
+                }
+
+                const headingMatch = trimmed.match(/^(#{2,6})\s+(.*)$/);
+
+                if (headingMatch) {
+                    commitApp();
+
+                    const level = headingMatch[1].length;
+                    const title = headingMatch[2].trim();
+
+                    while (stack.length > 1 && stack[stack.length - 1].level >= level) {
+                        stack.pop();
                     }
+
+                    const categoryNode = {
+                        type: "category",
+                        title: title,
+                        children: []
+                    };
+
+                    stack[stack.length - 1].node.children.push(categoryNode);
+                    stack.push({ level: level, node: categoryNode });
+                    return;
+                }
+
+                const bulletMatch = trimmed.match(/^-\s+(.*)$/);
+
+                if (bulletMatch) {
+                    commitApp();
+                    currentApp = {
+                        title: bulletMatch[1],
+                        description: "",
+                        link: ""
+                    };
+                    return;
+                }
+
+                if (currentApp) {
+                    const metaMatch = line.match(/^\s*(description|link)\s*:\s*(.+)\s*$/i);
+
+                    if (metaMatch) {
+                        const key = metaMatch[1].toLowerCase();
+                        currentApp[key] = metaMatch[2].trim();
+                        return;
+                    }
+                }
+
+                warn("Ignored line " + (index + 1) + ": " + trimmed);
+            });
+
+            commitApp();
+
+            if (warnings.length > 0) {
+                console.warn("SciCopilot tools Markdown warnings:", warnings);
+            }
+
+            return root;
+        }
+
+        function renderNodeList(nodes) {
+            const list = document.createElement("ul");
+
+            nodes.forEach((node) => {
+                const item = document.createElement("li");
+
+                if (node.type === "category") {
+                    item.className = "branch";
+
+                    const button = document.createElement("button");
+                    button.type = "button";
+                    button.className = "branch-button node-button";
+                    button.textContent = node.title;
+                    button.setAttribute("aria-expanded", "false");
+                    item.appendChild(button);
+
+                    if (node.children && node.children.length > 0) {
+                        item.appendChild(renderNodeList(node.children));
+                    }
+                } else if (node.type === "app") {
+                    item.className = "app-item";
+
+                    const toggle = document.createElement("button");
+                    toggle.type = "button";
+                    toggle.className = "app-toggle node-button";
+                    toggle.textContent = node.title;
+                    toggle.setAttribute("aria-expanded", "false");
+                    item.appendChild(toggle);
+
+                    const panel = document.createElement("div");
+                    panel.className = "app-panel";
+
+                    const description = document.createElement("p");
+                    description.className = "app-description";
+                    description.textContent = node.description || "Description coming soon.";
+                    panel.appendChild(description);
+
+                    if (node.link) {
+                        const link = document.createElement("a");
+                        link.className = "app-link";
+                        link.href = node.link;
+                        link.target = "_blank";
+                        link.textContent = "Open App";
+                        link.rel = "noreferrer noopener";
+                        panel.appendChild(link);
+                    } else {
+                        const disabledLink = document.createElement("span");
+                        disabledLink.className = "app-link-disabled";
+                        disabledLink.textContent = "Link coming soon";
+                        panel.appendChild(disabledLink);
+                    }
+
+                    item.appendChild(panel);
+                }
+
+                list.appendChild(item);
+            });
+
+            return list;
+        }
+
+        function bindTreeInteractions() {
+            const branchButtons = toolsTree.querySelectorAll(".branch > .branch-button");
+            const appToggles = toolsTree.querySelectorAll(".app-item > .app-toggle");
+
+            branchButtons.forEach((button) => {
+                button.addEventListener("click", () => {
+                    const branch = button.parentElement;
+                    const isOpen = branch.classList.toggle("is-open");
+                    button.setAttribute("aria-expanded", String(isOpen));
+                    animateTreeRedraw(500);
+                });
+            });
+
+            appToggles.forEach((button) => {
+                button.addEventListener("click", () => {
+                    const appItem = button.parentElement;
+                    const isOpen = appItem.classList.toggle("is-open");
+                    button.setAttribute("aria-expanded", String(isOpen));
+                    animateTreeRedraw(400);
                 });
             });
         }
 
-        // Unified path drawing function for all branch levels
-        function createPath(startX, startY, endX, endY, isRoot, isMobile) {
-            const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-            
-            const cornerRadius = 15;
-            let curve = '';
+        function renderToolsTree(data) {
+            toolsTree.innerHTML = "";
 
-            const targetX = endX; 
-
-            if (isRoot && !isMobile) {
-                const midX = startX + (targetX - startX) / 2;
-                
-                if (Math.abs(endY - startY) < cornerRadius) {
-                    curve = `M ${startX} ${startY} L ${targetX} ${endY}`;
-                } else {
-                    curve = `M ${startX} ${startY} C ${midX} ${startY}, ${midX} ${endY}, ${targetX} ${endY}`;
-                }
-            } else {
-                // Ensure there is enough horizontal space to draw a curve
-                const availableHorizontalSpace = Math.abs(targetX - startX);
-                
-                if (Math.abs(endY - startY) < cornerRadius) {
-                     curve = `M ${startX} ${startY} L ${targetX} ${endY}`;
-                } else if (availableHorizontalSpace < cornerRadius) {
-                     // If we are too close horizontally, draw a sharp L to avoid bulging inward
-                     curve = `M ${startX} ${startY} L ${startX} ${endY} L ${targetX} ${endY}`;
-                } else {
-                     // Determine direction to curve
-                     const dirX = targetX > startX ? 1 : -1;
-                     curve = `M ${startX} ${startY} 
-                                    L ${startX} ${endY - cornerRadius} 
-                                    Q ${startX} ${endY} ${startX + (cornerRadius * dirX)} ${endY} 
-                                    L ${targetX} ${endY}`;
-                }
+            if (!data.children.length) {
+                setTreeStatus("No tools were found in index.md yet.");
+                svgCanvas.innerHTML = "";
+                return;
             }
-            
-            path.setAttribute('d', curve);
-            svgCanvas.appendChild(path);
-            
-            setTimeout(() => {
-                path.style.strokeDashoffset = '0';
-            }, 10);
+
+            toolsTree.appendChild(renderNodeList(data.children));
+            bindTreeInteractions();
+            setTimeout(drawTree, 100);
         }
 
-        branchButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const branch = button.parentElement;
-                
-                // Toggle state
-                branch.classList.toggle('is-open');
-                
-                // Redraw tree continuously during the CSS transition (500ms)
-                // This makes the lines track perfectly as the boxes slide down
-                const startTime = performance.now();
-                const duration = 500; 
+        async function loadToolsTree() {
+            try {
+                const response = await fetch("index.md", { cache: "no-store" });
 
-                function animateRedraw(currentTime) {
-                    drawTree();
-                    if (currentTime - startTime < duration) {
-                        requestAnimationFrame(animateRedraw);
-                    }
+                if (!response.ok) {
+                    throw new Error("Could not load index.md (" + response.status + ").");
                 }
-                requestAnimationFrame(animateRedraw);
-            });
+
+                const markdown = await response.text();
+                const parsedTree = parseToolsMarkdown(markdown);
+                renderToolsTree(parsedTree);
+            } catch (error) {
+                console.error(error);
+                if (window.location.protocol === "file:") {
+                    setTreeStatus("This page was opened directly from disk, so the browser blocked loading index.md. Start a local server with start_hub.bat and open the localhost page instead.");
+                } else {
+                    setTreeStatus("The tools catalog could not be loaded. Please check index.md and refresh the page.");
+                }
+                svgCanvas.innerHTML = "";
+            }
+        }
+
+        themeToggle.addEventListener("click", () => {
+            const newTheme = body.dataset.theme === "dark" ? "light" : "dark";
+            setTheme(newTheme);
         });
 
-        window.addEventListener('resize', drawTree);
-        
-        // Initial draw
-        setTimeout(drawTree, 100);
+        window.addEventListener("resize", drawTree);
+
+        const savedTheme = localStorage.getItem("theme") || "light";
+        setTheme(savedTheme);
+        loadToolsTree();
     </script>
 </body>
 </html>
