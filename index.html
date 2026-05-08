@@ -6,7 +6,7 @@
     <link rel="icon" type="image/png" href="assets/scicopilot-logo.png">
     <title>SciCopilot | AI-Powered Research Assistance</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
 
         :root {
             --dark-bg: #111827;
@@ -45,10 +45,12 @@
         }
 
         body {
-            font-family: "Inter", sans-serif;
+            font-family: "Cutive Mono", monospace;
             background-color: var(--bg);
             color: var(--text);
             min-height: 100vh;
+            display: flex;
+            flex-direction: column;
             overflow-x: hidden;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
@@ -57,7 +59,8 @@
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 2rem;
-            min-height: 100vh;
+            width: 100%;
+            flex: 1;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -315,6 +318,20 @@
             z-index: 10;
         }
 
+        .site-footer {
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 0 2rem 1rem;
+            color: var(--text-secondary);
+            font-size: 0.88rem;
+            line-height: 1.5;
+        }
+
+        .site-footer p + p {
+            margin-top: 0.2rem;
+        }
+
         @media (max-width: 900px) {
             .container {
                 align-items: flex-start;
@@ -341,13 +358,29 @@
                 padding-left: 2.5rem;
             }
 
+            .tree > ul {
+                padding-top: 2rem;
+            }
+
             .branch > ul {
                 padding-left: 0;
             }
 
-            .branch > ul > li,
             .app-item {
-                width: 100%;
+                width: 83.333%;
+                margin-left: auto;
+            }
+
+            .branch > ul > li {
+                width: 83.333%;
+                margin-left: auto;
+                display: block;
+            }
+
+            .branch > ul > li > .branch-button,
+            .app-item > .app-toggle,
+            .app-item > .app-panel {
+                margin-left: auto;
             }
         }
     </style>
@@ -365,7 +398,10 @@
 
             <div class="hero-header">
                 <h1>SciCopilot</h1>
-                <p class="tagline" id="tagline-anchor">An interactive suite of AI-powered tools for scientists and academics.</p>
+		<p class="tagline" id="tagline-anchor">
+		    I automate your academic pain points.<br>
+		    So you can focus on REAL science. 
+		</p>
             </div>
 
             <div class="tree-container">
@@ -375,6 +411,10 @@
             </div>
         </main>
     </div>
+    <footer class="site-footer">
+        <p>&copy; Pallab Dutta, 2026</p>
+        <p>Built by one PhD student instead of finishing the thesis.</p>
+    </footer>
     <script>
         const themeToggle = document.getElementById("theme-toggle");
         const sunIcon = document.getElementById("theme-icon-sun");
