@@ -322,11 +322,18 @@
         window.addEventListener('DOMContentLoaded', prewarmStreamlit);
 
         var pollTimer = null;
+        var popup = null;
 
         // Listen for the login success message from the Google OAuth popup window
         window.addEventListener("message", function(event) {
             if (event.data === "login_success") {
                 if (pollTimer) clearInterval(pollTimer);
+                // Close the popup from the parent window side (permitted cross-origin)
+                try {
+                    if (popup && !popup.closed) {
+                        popup.close();
+                    }
+                } catch (e) {}
                 var redirectUri = (typeof window.CONFIG !== 'undefined' && window.CONFIG && window.CONFIG.redirectUri) ? window.CONFIG.redirectUri : "https://scico-search.streamlit.app/";
                 window.location.href = redirectUri;
             }
@@ -353,7 +360,7 @@
             var top = (screen.height / 2) - (height / 2);
             var popupFeatures = "width=" + width + ",height=" + height + ",top=" + top + ",left=" + left + ",status=yes,toolbar=no,menubar=no,location=yes";
             
-            var popup = window.open(authUrl, "Google Sign-In", popupFeatures);
+            popup = window.open(authUrl, "Google Sign-In", popupFeatures);
             
             // Poll the popup window. If it is closed (either by user or by itself on success),
             // redirect the main tab to the Streamlit app.
