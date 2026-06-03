@@ -321,6 +321,14 @@
         // Trigger prewarming on DOM load
         window.addEventListener('DOMContentLoaded', prewarmStreamlit);
 
+        // Listen for the login success message from the Google OAuth popup window
+        window.addEventListener("message", function(event) {
+            if (event.data === "login_success") {
+                var redirectUri = (typeof window.CONFIG !== 'undefined' && window.CONFIG && window.CONFIG.redirectUri) ? window.CONFIG.redirectUri : "https://scico-search.streamlit.app/";
+                window.location.href = redirectUri;
+            }
+        });
+
         function loginWithGoogle() {
             var clientId = (typeof window.CONFIG !== 'undefined' && window.CONFIG && window.CONFIG.clientId) ? window.CONFIG.clientId : "6789575941-b4nk3gck9gsoh9e5c8cfsnv6jbctd0r1.apps.googleusercontent.com";
             var redirectUri = (typeof window.CONFIG !== 'undefined' && window.CONFIG && window.CONFIG.redirectUri) ? window.CONFIG.redirectUri : "https://scico-search.streamlit.app/";
@@ -335,23 +343,14 @@
                 "&scope=" + encodeURIComponent(scope) +
                 "&state=" + encodeURIComponent(state);
                 
-            // If running inside a sandboxed iframe, open OAuth in a centered popup window
-            // to bypass Same-Origin and frame-busting sandbox restrictions.
+            // Open Google OAuth in a centered popup window
             var width = 500;
             var height = 600;
             var left = (screen.width / 2) - (width / 2);
             var top = (screen.height / 2) - (height / 2);
             var popupFeatures = "width=" + width + ",height=" + height + ",top=" + top + ",left=" + left + ",status=yes,toolbar=no,menubar=no,location=yes";
             
-            try {
-                if (window.self !== window.top) {
-                    window.open(authUrl, "Google Sign-In", popupFeatures);
-                } else {
-                    window.location.href = authUrl;
-                }
-            } catch (e) {
-                window.open(authUrl, "Google Sign-In", popupFeatures);
-            }
+            window.open(authUrl, "Google Sign-In", popupFeatures);
         }
     </script>
 </body>
