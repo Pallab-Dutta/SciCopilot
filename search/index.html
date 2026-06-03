@@ -307,9 +307,13 @@
 
         function prewarmStreamlit() {
             var redirectUri = (typeof window.CONFIG !== 'undefined' && window.CONFIG && window.CONFIG.redirectUri) ? window.CONFIG.redirectUri : "https://scico-search.streamlit.app/";
-            console.log("Pre-warming Streamlit App at:", redirectUri);
-            // Use redirect: 'manual' to prevent the browser from following Streamlit's login redirection loop
-            fetch(redirectUri, { mode: 'no-cors', redirect: 'manual' }).catch(err => {
+            var prewarmUrl = redirectUri;
+            if (prewarmUrl.charAt(prewarmUrl.length - 1) === '/') {
+                prewarmUrl = prewarmUrl.substring(0, prewarmUrl.length - 1);
+            }
+            prewarmUrl = prewarmUrl + "/robots.txt";
+            console.log("Pre-warming Streamlit App via:", prewarmUrl);
+            fetch(prewarmUrl, { mode: 'no-cors' }).catch(err => {
                 // Ignore errors
             });
         }
@@ -334,15 +338,16 @@
                 "&scope=" + encodeURIComponent(scope) +
                 "&state=" + encodeURIComponent(state);
                 
-            // Break out of cross-origin iframes (like Streamlit Cloud iframe)
+            // If running inside a sandboxed iframe, open OAuth in a new window/tab (_blank)
+            // to bypass Same-Origin and frame-busting sandbox restrictions.
             try {
-                if (window.top && window.top !== window) {
-                    window.top.location.href = authUrl;
+                if (window.self !== window.top) {
+                    window.open(authUrl, "_blank");
                 } else {
                     window.location.href = authUrl;
                 }
             } catch (e) {
-                window.open(authUrl, "_top");
+                window.open(authUrl, "_blank");
             }
         }
     </script>
