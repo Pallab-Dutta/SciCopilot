@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SciCo-Search | AI-Powered Academic Assistant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=JetBrains+Mono:wght@400;700&family=Cutive+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <script src="config.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Cutive Mono', monospace;
+            color: #1A1A1A;
+            background-color: #FAFAFA;
+            line-height: 1.6;
+        }
+        .landing-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        .landing-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .landing-logo {
+            font-family: 'Cutive Mono', monospace;
+            font-weight: 800;
+            font-size: 3.5rem;
+            color: #D32F2F;
+            margin-bottom: 15px;
+            letter-spacing: -0.03em;
+        }
+        .landing-logo span {
+            background: #28292B;
+            color: #FFFFFF;
+            padding: 2px 10px;
+            border-radius: 6px;
+            font-size: 2.25rem;
+            margin-left: 5px;
+            vertical-align: middle;
+        }
+        .landing-subtitle {
+            font-size: 1.35rem;
+            color: #555555;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 35px;
+            letter-spacing: -0.02em;
+        }
+        .scoring-rainbow {
+            background: linear-gradient(45deg, #FF2E93, #FF8A00, #D800FF, #00E4FF, #7B2EFE, #FF2E93);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            display: inline-block;
+            font-weight: 800;
+            animation: shine 4s linear infinite;
+        }
+        @keyframes shine {
+            to {
+                background-position: 200% center;
+            }
+        }
+        @keyframes oscillate {
+            from {
+                transform: translateY(var(--start-y));
+            }
+            to {
+                transform: translateY(var(--end-y));
+            }
+        }
+        .sampling-word {
+            display: inline-block;
+            font-family: 'Cutive Mono', monospace;
+            font-weight: 800;
+            color: #D32F2F;
+            margin-right: 2px;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        @media (max-width: 768px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            .bottom-section {
+                grid-template-columns: 1fr !important;
+            }
+        }
+        .feature-card {
+            background: #FFFFFF;
+            border: 1px solid #E5E7EB;
+            border-radius: 16px;
+            padding: 35px 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+        }
+        .feature-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #D32F2F;
+            font-size: 2.25rem;
+            margin-bottom: 15px;
+        }
+        .feature-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 10px;
+        }
+        .feature-desc {
+            font-size: 0.95rem;
+            color: #4B5563;
+        }
+        .bottom-section {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            background: #FFFFFF;
+            border: 1px solid #E5E7EB;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+        .info-box {
+            border-left: 5px solid #D32F2F;
+            padding-left: 25px;
+        }
+        .info-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #991B1B;
+            margin-bottom: 15px;
+        }
+        .info-text {
+            font-size: 0.95rem;
+            color: #4B5563;
+        }
+        .login-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .login-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 15px;
+        }
+        .login-text {
+            font-size: 0.95rem;
+            color: #6B7280;
+            margin-bottom: 25px;
+        }
+        .btn-google {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #FFFFFF;
+            color: #374151;
+            border: 1px solid #D1D5DB;
+            border-radius: 8px;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s ease, border-color 0.2s ease;
+            width: 100%;
+            text-decoration: none;
+        }
+        .btn-google:hover {
+            background-color: #F9FAFB;
+            border-color: #9CA3AF;
+        }
+        .btn-google img {
+            width: 20px;
+            height: 20px;
+            margin-right: 12px;
+        }
+        .landing-footer {
+            text-align: center;
+            margin-top: 80px;
+            font-size: 0.9rem;
+            color: #9CA3AF;
+            border-top: 1px solid #E5E7EB;
+            padding-top: 25px;
+        }
+        .landing-footer a {
+            color: #D32F2F;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .landing-footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="landing-container">
+        <div class="landing-header">
+            <div class="landing-logo">SciCo<span>Search</span></div>
+            <p class="landing-subtitle">
+                Discover literature, harvest publications semantically, and profile Principal Investigators to find your next academic workspace advisor.
+            </p>
+        </div>
+
+        <h2 class="section-title">
+            Enhanced 
+            <span class="sampling-word" id="sampling-word-container">Sampling</span> 
+            and Intelligent 
+            <span class="scoring-rainbow">Scoring</span> 
+            of
+        </h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon"><span class="material-symbols-outlined" style="font-size: 2.5rem;">library_books</span></div>
+                <h3 class="feature-title">Scientific Literatures</h3>
+                <p class="feature-desc">
+                    Explores global publications to retrieve research papers that align with your specific intellectual inquiries and scientific objectives.
+                </p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><span class="material-symbols-outlined" style="font-size: 2.5rem;">groups</span></div>
+                <h3 class="feature-title">Research Groups</h3>
+                <p class="feature-desc">
+                    Profiles leading investigators and research networks to help you discover candidate labs and potential advisors for your next career step.
+                </p>
+            </div>
+        </div>
+
+        <div class="bottom-section">
+            <div class="info-box">
+                <h3 class="info-title">🔒 Data Transparency & Usage Disclosures</h3>
+                <p class="info-text">
+                    SciCo-Search requests access to your Google account details (email, name, profile avatar URL) solely to secure your research history, manage session states, and monitor API quota limits.<br><br>
+                    We do not track keywords, sell user query logs, or share personal profile information with third-party networks.
+                </p>
+            </div>
+            <div class="login-box">
+                <h3 class="login-title">Access Workspace</h3>
+                <p class="login-text">Sign in using your Google account to authorize and launch your research dashboard.</p>
+                
+                <button onclick="loginWithGoogle()" onmouseover="prewarmStreamlit()" class="btn-google">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google Logo">
+                    Sign in with Google
+                </button>
+            </div>
+        </div>
+
+        <footer class="landing-footer">
+            SciCo-Search &copy; 2026 | Built by Researchers for Researchers. | <a href="privacy.html">Privacy Policy</a>
+        </footer>
+    </div>
+
+    <script>
+        function randomizeSamplingWord() {
+            const container = document.getElementById("sampling-word-container");
+            if (!container) return;
+            const word = "Sampling";
+            container.innerHTML = "";
+            for (let i = 0; i < word.length; i++) {
+                const span = document.createElement("span");
+                span.textContent = word[i];
+                span.style.display = "inline-block";
+                
+                // Set random start baseline shift (-4px to +4px)
+                const startShift = (Math.random() * 8 - 4).toFixed(1);
+                // Oscillation target is the opposite boundary to balance around baseline
+                const endShift = (-parseFloat(startShift)).toFixed(1);
+                
+                span.style.setProperty('--start-y', `${startShift}px`);
+                span.style.setProperty('--end-y', `${endShift}px`);
+                
+                // Randomize speed/durations (1.5s to 3s) so letters move independently
+                const duration = (1.5 + Math.random() * 1.5).toFixed(2);
+                span.style.animation = `oscillate ${duration}s ease-in-out infinite alternate`;
+                
+                container.appendChild(span);
+            }
+        }
+        
+        // Execute immediately and on DOM load to guarantee rendering
+        randomizeSamplingWord();
+        window.addEventListener('DOMContentLoaded', randomizeSamplingWord);
+
+        function prewarmStreamlit() {
+            const redirectUri = window.CONFIG?.redirectUri || "https://scico-search.streamlit.app/";
+            console.log("Pre-warming Streamlit App at:", redirectUri);
+            fetch(redirectUri, { mode: 'no-cors' }).catch(err => {
+                // Ignore CORS errors as request still reaches target and wakes it
+            });
+        }
+
+        // Trigger prewarming on DOM load
+        window.addEventListener('DOMContentLoaded', prewarmStreamlit);
+
+        function loginWithGoogle() {
+            // Wake it up again right as login is initiated
+            prewarmStreamlit();
+
+            const clientId = window.CONFIG?.clientId || "6789575941-b4nk3gck9gsoh9e5c8cfsnv6jbctd0r1.apps.googleusercontent.com";
+            const redirectUri = window.CONFIG?.redirectUri || "https://scico-search.streamlit.app/";
+            const scope = "openid email profile";
+            const state = Math.random().toString(36).substring(2);
+            
+            // Initiate the redirect to Google Authorization Server
+            const authUrl = `https://accounts.google.com/o/oauth2/v2/auth?` +
+                `response_type=code` +
+                `&client_id=${encodeURIComponent(clientId)}` +
+                `&redirect_uri=${encodeURIComponent(redirectUri)}` +
+                `&scope=${encodeURIComponent(scope)}` +
+                `&state=${encodeURIComponent(state)}`;
+                
+            window.location.href = authUrl;
+        }
+    </script>
+</body>
+</html>
