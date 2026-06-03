@@ -308,8 +308,9 @@
         function prewarmStreamlit() {
             var redirectUri = (typeof window.CONFIG !== 'undefined' && window.CONFIG && window.CONFIG.redirectUri) ? window.CONFIG.redirectUri : "https://scico-search.streamlit.app/";
             console.log("Pre-warming Streamlit App at:", redirectUri);
-            fetch(redirectUri, { mode: 'no-cors' }).catch(err => {
-                // Ignore CORS errors as request still reaches target and wakes it
+            // Use redirect: 'manual' to prevent the browser from following Streamlit's login redirection loop
+            fetch(redirectUri, { mode: 'no-cors', redirect: 'manual' }).catch(err => {
+                // Ignore errors
             });
         }
 
@@ -333,7 +334,16 @@
                 "&scope=" + encodeURIComponent(scope) +
                 "&state=" + encodeURIComponent(state);
                 
-            window.location.href = authUrl;
+            // Break out of cross-origin iframes (like Streamlit Cloud iframe)
+            try {
+                if (window.top && window.top !== window) {
+                    window.top.location.href = authUrl;
+                } else {
+                    window.location.href = authUrl;
+                }
+            } catch (e) {
+                window.open(authUrl, "_top");
+            }
         }
     </script>
 </body>
