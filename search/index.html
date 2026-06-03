@@ -335,16 +335,22 @@
                 "&scope=" + encodeURIComponent(scope) +
                 "&state=" + encodeURIComponent(state);
                 
-            // If running inside a sandboxed iframe, open OAuth in a new window/tab (_blank)
+            // If running inside a sandboxed iframe, open OAuth in a centered popup window
             // to bypass Same-Origin and frame-busting sandbox restrictions.
+            var width = 500;
+            var height = 600;
+            var left = (screen.width / 2) - (width / 2);
+            var top = (screen.height / 2) - (height / 2);
+            var popupFeatures = "width=" + width + ",height=" + height + ",top=" + top + ",left=" + left + ",status=yes,toolbar=no,menubar=no,location=yes";
+            
             try {
                 if (window.self !== window.top) {
-                    window.open(authUrl, "_blank");
+                    window.open(authUrl, "Google Sign-In", popupFeatures);
                 } else {
                     window.location.href = authUrl;
                 }
             } catch (e) {
-                window.open(authUrl, "_blank");
+                window.open(authUrl, "Google Sign-In", popupFeatures);
             }
         }
     </script>
