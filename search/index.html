@@ -322,9 +322,6 @@
         window.addEventListener('DOMContentLoaded', prewarmStreamlit);
 
         function loginWithGoogle() {
-            // Wake it up again right as login is initiated
-            prewarmStreamlit();
-
             var clientId = (typeof window.CONFIG !== 'undefined' && window.CONFIG && window.CONFIG.clientId) ? window.CONFIG.clientId : "6789575941-b4nk3gck9gsoh9e5c8cfsnv6jbctd0r1.apps.googleusercontent.com";
             var redirectUri = (typeof window.CONFIG !== 'undefined' && window.CONFIG && window.CONFIG.redirectUri) ? window.CONFIG.redirectUri : "https://scico-search.streamlit.app/";
             var scope = "openid email profile";
