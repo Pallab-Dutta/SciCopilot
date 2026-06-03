@@ -306,7 +306,7 @@
         window.addEventListener('DOMContentLoaded', randomizeSamplingWord);
 
         function prewarmStreamlit() {
-            const redirectUri = window.CONFIG?.redirectUri || "https://scico-search.streamlit.app/";
+            var redirectUri = (typeof window.CONFIG !== 'undefined' && window.CONFIG && window.CONFIG.redirectUri) ? window.CONFIG.redirectUri : "https://scico-search.streamlit.app/";
             console.log("Pre-warming Streamlit App at:", redirectUri);
             fetch(redirectUri, { mode: 'no-cors' }).catch(err => {
                 // Ignore CORS errors as request still reaches target and wakes it
@@ -320,18 +320,18 @@
             // Wake it up again right as login is initiated
             prewarmStreamlit();
 
-            const clientId = window.CONFIG?.clientId || "6789575941-b4nk3gck9gsoh9e5c8cfsnv6jbctd0r1.apps.googleusercontent.com";
-            const redirectUri = window.CONFIG?.redirectUri || "https://scico-search.streamlit.app/";
-            const scope = "openid email profile";
-            const state = Math.random().toString(36).substring(2);
+            var clientId = (typeof window.CONFIG !== 'undefined' && window.CONFIG && window.CONFIG.clientId) ? window.CONFIG.clientId : "6789575941-b4nk3gck9gsoh9e5c8cfsnv6jbctd0r1.apps.googleusercontent.com";
+            var redirectUri = (typeof window.CONFIG !== 'undefined' && window.CONFIG && window.CONFIG.redirectUri) ? window.CONFIG.redirectUri : "https://scico-search.streamlit.app/";
+            var scope = "openid email profile";
+            var state = Math.random().toString(36).substring(2);
             
             // Initiate the redirect to Google Authorization Server
-            const authUrl = `https://accounts.google.com/o/oauth2/v2/auth?` +
-                `response_type=code` +
-                `&client_id=${encodeURIComponent(clientId)}` +
-                `&redirect_uri=${encodeURIComponent(redirectUri)}` +
-                `&scope=${encodeURIComponent(scope)}` +
-                `&state=${encodeURIComponent(state)}`;
+            var authUrl = "https://accounts.google.com/o/oauth2/v2/auth?" +
+                "response_type=code" +
+                "&client_id=" + encodeURIComponent(clientId) +
+                "&redirect_uri=" + encodeURIComponent(redirectUri) +
+                "&scope=" + encodeURIComponent(scope) +
+                "&state=" + encodeURIComponent(state);
                 
             window.location.href = authUrl;
         }
