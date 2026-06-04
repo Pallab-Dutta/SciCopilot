@@ -347,11 +347,8 @@
                 
                 var finalUrl = redirectUri;
                 if (authPayload) {
-                    if (finalUrl.indexOf("?") === -1) {
-                        finalUrl += "?session_token=" + encodeURIComponent(authPayload);
-                    } else {
-                        finalUrl += "&session_token=" + encodeURIComponent(authPayload);
-                    }
+                    var connector = finalUrl.indexOf("?") === -1 ? "?" : "&";
+                    finalUrl += connector + "session_token=" + encodeURIComponent(authPayload) + "&t=" + Date.now();
                 }
                 window.location.href = finalUrl;
             }
