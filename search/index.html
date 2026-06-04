@@ -321,24 +321,6 @@
         // Trigger prewarming on DOM load
         window.addEventListener('DOMContentLoaded', prewarmStreamlit);
 
-        var pollTimer = null;
-        var popup = null;
-
-        // Listen for the login success message from the Google OAuth popup window
-        window.addEventListener("message", function(event) {
-            if (event.data === "login_success") {
-                if (pollTimer) clearInterval(pollTimer);
-                // Close the popup from the parent window side (permitted cross-origin)
-                try {
-                    if (popup && !popup.closed) {
-                        popup.close();
-                    }
-                } catch (e) {}
-                var redirectUri = (typeof window.CONFIG !== 'undefined' && window.CONFIG && window.CONFIG.redirectUri) ? window.CONFIG.redirectUri : "https://scico-search.streamlit.app/";
-                window.location.href = redirectUri;
-            }
-        });
-
         function loginWithGoogle() {
             var clientId = (typeof window.CONFIG !== 'undefined' && window.CONFIG && window.CONFIG.clientId) ? window.CONFIG.clientId : "6789575941-b4nk3gck9gsoh9e5c8cfsnv6jbctd0r1.apps.googleusercontent.com";
             var redirectUri = (typeof window.CONFIG !== 'undefined' && window.CONFIG && window.CONFIG.redirectUri) ? window.CONFIG.redirectUri : "https://scico-search.streamlit.app/";
@@ -353,30 +335,8 @@
                 "&scope=" + encodeURIComponent(scope) +
                 "&state=" + encodeURIComponent(state);
                 
-            // Open Google OAuth in a centered popup window
-            var width = 500;
-            var height = 600;
-            var left = (screen.width / 2) - (width / 2);
-            var top = (screen.height / 2) - (height / 2);
-            var popupFeatures = "width=" + width + ",height=" + height + ",top=" + top + ",left=" + left + ",status=yes,toolbar=no,menubar=no,location=yes";
-            
-            popup = window.open(authUrl, "Google Sign-In", popupFeatures);
-            
-            // Poll the popup window. If it is closed (either by user or by itself on success),
-            // redirect the main tab to the Streamlit app.
-            if (pollTimer) clearInterval(pollTimer);
-            pollTimer = setInterval(function() {
-                try {
-                    if (!popup || popup.closed) {
-                        clearInterval(pollTimer);
-                        // Redirect parent page to Streamlit app after a small delay
-                        setTimeout(function() {
-                            var redirectUri = (typeof window.CONFIG !== 'undefined' && window.CONFIG && window.CONFIG.redirectUri) ? window.CONFIG.redirectUri : "https://scico-search.streamlit.app/";
-                            window.location.href = redirectUri;
-                        }, 200);
-                    }
-                } catch (e) {}
-            }, 500);
+            // Break out of the Streamlit iframe and redirect the top window directly to Google OAuth
+            window.top.location.href = authUrl;
         }
     </script>
 </body>
