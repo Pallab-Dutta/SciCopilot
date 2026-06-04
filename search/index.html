@@ -326,7 +326,16 @@
 
         // Listen for the login success message from the Google OAuth popup window
         window.addEventListener("message", function(event) {
+            var isLoginSuccess = false;
+            var authPayload = "";
             if (event.data === "login_success") {
+                isLoginSuccess = true;
+            } else if (event.data && event.data.type === "login_success") {
+                isLoginSuccess = true;
+                authPayload = event.data.auth;
+            }
+
+            if (isLoginSuccess) {
                 if (pollTimer) clearInterval(pollTimer);
                 // Close the popup from the parent window side (permitted cross-origin)
                 try {
@@ -335,7 +344,16 @@
                     }
                 } catch (e) {}
                 var redirectUri = (typeof window.CONFIG !== 'undefined' && window.CONFIG && window.CONFIG.redirectUri) ? window.CONFIG.redirectUri : "https://scico-search.streamlit.app/";
-                window.location.href = redirectUri;
+                
+                var finalUrl = redirectUri;
+                if (authPayload) {
+                    if (finalUrl.indexOf("?") === -1) {
+                        finalUrl += "?session_token=" + encodeURIComponent(authPayload);
+                    } else {
+                        finalUrl += "&session_token=" + encodeURIComponent(authPayload);
+                    }
+                }
+                window.location.href = finalUrl;
             }
         });
 
