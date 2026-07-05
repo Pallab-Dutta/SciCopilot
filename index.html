@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="assets/scicopilot-logo.png">
-    <title>SciCoagent | AI-Powered Research Assistance</title>
+    <title>SciCoagent | AI Scientist Coagents for research</title>
+    <meta name="description" content="SciCoagent builds AI Scientist Coagents that automate your academic pain points — literature search, proofreading, thesis writing, journal conversion — so you can focus more on real research.">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
 
@@ -38,11 +39,7 @@
             --border: var(--border-dark);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: "Cutive Mono", monospace;
@@ -55,376 +52,294 @@
             transition: background-color 0.3s ease, color 0.3s ease;
         }
 
+        /* ── Shared nav (identical to agents.html) ───────────────────────── */
+        .site-nav {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            padding: 1rem 2rem;
+            background-color: var(--bg);
+            border-bottom: 1px solid var(--border);
+            transition: background-color 0.3s ease;
+        }
+        .site-nav__brand {
+            display: flex;
+            align-items: center;
+            gap: 0.55rem;
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.05rem;
+        }
+        .site-nav__brand img { height: 28px; width: 28px; border-radius: 7px; }
+        .site-nav__links { display: flex; align-items: center; gap: 1.5rem; }
+        .site-nav__links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+        .site-nav__links a:hover,
+        .site-nav__links a[aria-current="page"] { color: var(--accent); }
+        .theme-toggle {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 0.4rem;
+            border-radius: 99px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            line-height: 0;
+        }
+
+        /* ── Layout ──────────────────────────────────────────────────────── */
         .container {
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 2rem;
             width: 100%;
             flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
-        main {
-            width: 100%;
-            padding: 4rem 0;
-            position: relative;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-            gap: 4rem;
-        }
-
-        .hero-header {
-            text-align: left;
-            width: 40%;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-icon {
-            position: absolute;
-            z-index: 10;
-            transition: left 0.3s ease-out, top 0.3s ease-out;
-        }
-
-        .hero-icon img {
-            height: 48px;
-            width: 48px;
-            border-radius: 12px;
-            background-color: var(--bg);
-            transition: background-color 0.3s ease;
-        }
-
-        h1 {
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
-            font-weight: 700;
-            margin-bottom: 1rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        .tagline {
-            font-size: 1.125rem;
-            color: var(--text-secondary);
-            text-align: left;
-            max-width: 600px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .tree-container {
-            width: 60%;
-            max-width: 600px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .tree-svg-canvas {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        .tree-svg-canvas path {
-            stroke: var(--text-secondary);
-            stroke-width: 2;
-            fill: none;
-            transition: stroke-dashoffset 0.5s ease-in-out, d 0.3s;
-            stroke-dasharray: 1000;
-            stroke-dashoffset: 1000;
-        }
-
-        .tree {
-            position: relative;
-            z-index: 1;
-        }
-
-        .tree ul {
-            padding: 0;
-            list-style: none;
-            position: relative;
-        }
-
-        .tree li {
-            margin: 0.5rem 0;
-            position: relative;
-        }
-
-        .node-button {
-            display: inline-block;
-            width: 100%;
-            padding: 0.75rem 1.25rem;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-            background-color: var(--card-bg);
-            color: var(--text);
-            text-align: left;
-            font-family: inherit;
-            font-size: 1rem;
-            line-height: 1.35;
-            position: relative;
-            z-index: 1;
-            transition: border-color 0.2s ease, transform 0.2s ease;
-        }
-
-        .branch-button,
-        .app-toggle {
-            cursor: pointer;
-        }
-
-        .branch-button {
-            font-weight: 600;
-        }
-
-        .branch-button::after,
-        .app-toggle::after {
-            content: "\25BE";
-            position: absolute;
-            right: 1rem;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            font-weight: 700;
-            transition: transform 0.2s ease;
-        }
-
-        .branch.is-open > .branch-button::after,
-        .app-item.is-open > .app-toggle::after {
-            transform: translateY(-50%) rotate(180deg);
-        }
-
-        .branch-button:hover,
-        .app-toggle:hover,
-        .app-link:hover {
-            border-color: var(--accent);
-        }
-
-        .branch > ul {
-            padding-left: 0;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+        /* ── Hero ────────────────────────────────────────────────────────── */
+        .hero {
             display: flex;
             flex-direction: column;
-            gap: 0.5rem;
+            align-items: center;
+            text-align: center;
+            gap: 1.25rem;
+            padding: 5rem 0 3.5rem;
         }
-
-        .branch.is-open > ul {
-            max-height: 1200px;
-            padding-top: 0.5rem;
-            padding-bottom: 0.5rem;
-        }
-
-        .branch > ul > li {
-            width: 83.333%;
-            margin-left: auto;
-            display: block;
-        }
-
-        .app-item {
-            width: 83.333%;
-            margin-left: auto;
-            display: block;
-        }
-
-        .app-toggle {
-            display: block;
-            font-size: 0.95rem;
-        }
-
-        .app-panel {
-            max-height: 0;
-            overflow: hidden;
-            opacity: 0;
-            transform: translateY(-4px);
-            margin-top: 0;
-            padding: 0 1rem;
-            border: 1px solid transparent;
-            border-radius: 8px;
+        .hero__logo {
+            height: 72px;
+            width: 72px;
+            border-radius: 18px;
             background-color: var(--card-bg);
-            transition:
-                max-height 0.4s ease,
-                opacity 0.25s ease,
-                transform 0.25s ease,
-                margin-top 0.25s ease,
-                padding 0.25s ease,
-                border-color 0.25s ease;
+            border: 1px solid var(--border);
+            padding: 10px;
         }
-
-        .app-item.is-open > .app-panel {
-            max-height: 220px;
-            opacity: 1;
-            transform: translateY(0);
-            margin-top: 0.5rem;
-            padding: 1rem;
+        .hero h1 {
+            font-size: clamp(2.75rem, 6vw, 4rem);
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+        .hero__sub {
+            font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+            color: var(--accent);
+            font-weight: 700;
+            max-width: 42rem;
+        }
+        .hero__lead {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            max-width: 44rem;
+        }
+        .hero__cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 0.75rem;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.8rem 1.6rem;
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            border: 1px solid transparent;
+            cursor: pointer;
+            transition: transform 0.15s ease, border-color 0.2s ease, background-color 0.2s ease, opacity 0.2s ease;
+        }
+        .btn--primary { background-color: var(--accent); color: #fff; }
+        .btn--primary:hover { transform: translateY(-2px); opacity: 0.92; }
+        .btn--ghost {
+            background-color: var(--card-bg);
+            color: var(--text);
             border-color: var(--border);
         }
+        .btn--ghost:hover { transform: translateY(-2px); border-color: var(--accent); }
 
-        .app-description {
-            color: var(--text-secondary);
-            font-size: 0.82rem;
-            line-height: 1.5;
-            margin-bottom: 0.85rem;
+        /* ── Coagents section ────────────────────────────────────────────── */
+        .section {
+            padding: 1rem 0 4rem;
         }
-
-        .app-link,
-        .app-link-disabled {
+        .section__head {
+            text-align: center;
+            margin-bottom: 2.25rem;
+        }
+        .section__head h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .section__head p { color: var(--text-secondary); }
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+        }
+        .card {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            padding: 0.55rem 0.9rem;
-            border-radius: 8px;
+            flex-direction: column;
+            gap: 0.6rem;
+            padding: 1.6rem;
+            border-radius: 14px;
             border: 1px solid var(--border);
             background-color: var(--card-bg);
-            color: var(--text);
             text-decoration: none;
-            font-size: 0.88rem;
-            font-weight: 600;
-            transition: border-color 0.2s ease, opacity 0.2s ease;
+            color: inherit;
+            transition: transform 0.18s ease, border-color 0.2s ease;
         }
-
-        .app-link-disabled {
-            opacity: 0.65;
-            cursor: not-allowed;
-        }
-
-        .tree-status {
-            border: 1px solid var(--border);
-            background-color: var(--card-bg);
-            border-radius: 12px;
-            padding: 1rem 1.25rem;
+        .card:hover { transform: translateY(-3px); border-color: var(--accent); }
+        .card h3 { font-size: 1.2rem; font-weight: 700; }
+        .card p {
             color: var(--text-secondary);
-            line-height: 1.5;
+            font-size: 0.9rem;
+            line-height: 1.55;
+            flex: 1;
         }
-
-        .theme-toggle {
-            position: fixed;
-            top: 1.5rem;
-            right: 1.5rem;
-            background-color: var(--card-bg);
+        .card__more { color: var(--accent); font-weight: 700; font-size: 0.88rem; }
+        .card__wip {
+            display: inline-block;
+            font-size: 0.72rem;
+            color: var(--text-secondary);
             border: 1px solid var(--border);
-            color: var(--text);
-            padding: 0.5rem;
             border-radius: 99px;
-            cursor: pointer;
-            z-index: 10;
+            padding: 0.05rem 0.55rem;
+            margin-left: 0.4rem;
         }
 
+        /* ── Blog strip ──────────────────────────────────────────────────── */
+        .blogstrip {
+            margin: 0 0 4rem;
+            padding: 1.75rem 2rem;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            background-color: var(--card-bg);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+        .blogstrip p { color: var(--text-secondary); line-height: 1.5; max-width: 40rem; }
+        .blogstrip strong { color: var(--text); }
+
+        /* ── Footer ──────────────────────────────────────────────────────── */
         .site-footer {
             max-width: 1400px;
             margin: 0 auto;
             width: 100%;
-            padding: 0 2rem 1rem;
+            padding: 0 2rem 1.5rem;
             color: var(--text-secondary);
             font-size: 0.88rem;
             line-height: 1.5;
         }
-
-        .site-footer p + p {
-            margin-top: 0.2rem;
-        }
+        .site-footer p + p { margin-top: 0.2rem; }
 
         @media (max-width: 900px) {
-            .container {
-                align-items: flex-start;
-                padding-top: 2rem;
-            }
-
-            main {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0;
-            }
-
-            .hero-header,
-            .tree-container {
-                width: 100%;
-            }
-
-            .hero-header {
-                margin-bottom: 2rem;
-                padding-right: 1rem;
-            }
-
-            .tree ul {
-                padding-left: 2.5rem;
-            }
-
-            .tree > ul {
-                padding-top: 2rem;
-            }
-
-            .branch > ul {
-                padding-left: 0;
-            }
-
-            .app-item {
-                width: 83.333%;
-                margin-left: auto;
-            }
-
-            .branch > ul > li {
-                width: 83.333%;
-                margin-left: auto;
-                display: block;
-            }
-
-            .branch > ul > li > .branch-button,
-            .app-item > .app-toggle,
-            .app-item > .app-panel {
-                margin-left: auto;
-            }
+            .cards { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 600px) {
+            .site-nav { padding: 0.75rem 1.25rem; gap: 1rem; }
+            .site-nav__brand span { display: none; }
+            .site-nav__links { gap: 1.1rem; }
+            .hero { padding: 3rem 0 2.5rem; }
+            .container { padding: 0 1.25rem; }
         }
     </style>
 </head>
 <body data-theme="light">
-    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-        <svg id="theme-icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-        <svg id="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-    </button>
+    <header class="site-nav">
+        <a class="site-nav__brand" href="/">
+            <img src="assets/scicopilot-logo.png" alt="">
+            <span>SciCoagent</span>
+        </a>
+        <nav class="site-nav__links">
+            <a href="/" aria-current="page">Home</a>
+            <a href="/agents.html">Agents</a>
+            <a href="/blog/">Blog</a>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                <svg id="theme-icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <svg id="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+        </nav>
+    </header>
+
     <div class="container">
-        <main>
-            <svg class="tree-svg-canvas"></svg>
-
-            <div class="hero-icon"><img src="assets/scicopilot-logo.png" alt="SciCopilot Logo"></div>
-
-            <div class="hero-header">
-                <h1>SciCoagent</h1>
-		<p class="tagline" id="tagline-anchor">
-		    I automate your academic pain points.<br>
-		    So you can focus on REAL science. 
-		</p>
+        <section class="hero">
+            <img class="hero__logo" src="assets/scicopilot-logo.png" alt="SciCoagent logo">
+            <h1>SciCoagent</h1>
+            <p class="hero__sub">AI Scientist Coagents to help you focus more on real research.</p>
+            <p class="hero__lead">
+                SciCoagent automates your academic pain points &mdash; searching the literature,
+                proofreading with scientific context, drafting your thesis, reshaping manuscripts for
+                a target journal &mdash; so your time goes to the science that actually matters.
+            </p>
+            <div class="hero__cta">
+                <a class="btn btn--primary" href="/agents.html">Explore the Agents &rarr;</a>
+                <a class="btn btn--ghost" href="/blog/">Read the Blog</a>
             </div>
+        </section>
 
-            <div class="tree-container">
-                <div class="tree" id="tools-tree">
-                    <div class="tree-status">Loading tools from Markdown...</div>
-                </div>
+        <section class="section">
+            <div class="section__head">
+                <h2>Meet the coagents</h2>
+                <p>Grouped by where they lift the load. Open any one on the Agents page.</p>
             </div>
-        </main>
+            <div class="cards">
+                <a class="card" href="/agents.html">
+                    <h3>SciCo&#8209;search</h3>
+                    <p>Find the right literature fast, and surface labs and PIs aligned with your
+                       research area and discovery goals.</p>
+                    <span class="card__more">Open in Agents &rarr;</span>
+                </a>
+                <a class="card" href="/agents.html">
+                    <h3>SciCoauthor</h3>
+                    <p>Context-aware proofreading that goes beyond spell-check, plus an aRAG assistant
+                       that turns your papers into thesis-ready chapters.</p>
+                    <span class="card__more">Open in Agents &rarr;</span>
+                </a>
+                <a class="card" href="/agents.html">
+                    <h3>SciColab <span class="card__wip">work in progress</span></h3>
+                    <p>Reformat a manuscript for any target journal, find the journal that fits, and
+                       generate literature-review reports from your sources.</p>
+                    <span class="card__more">Open in Agents &rarr;</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="blogstrip">
+            <p><strong>From the blog.</strong> Field notes on scientific writing, proofreading, and the
+               SciTypos that hide in plain sight &mdash; the everyday errors ordinary tools wave through.</p>
+            <a class="btn btn--ghost" href="/blog/">Read the Blog</a>
+        </section>
     </div>
+
     <footer class="site-footer">
         <p>&copy; Pallab Dutta, 2026</p>
         <p>Built by one PhD student instead of finishing the thesis.</p>
     </footer>
+
     <script>
+        const body = document.body;
         const themeToggle = document.getElementById("theme-toggle");
         const sunIcon = document.getElementById("theme-icon-sun");
         const moonIcon = document.getElementById("theme-icon-moon");
-        const body = document.body;
-        const svgCanvas = document.querySelector(".tree-svg-canvas");
-        const taglineAnchor = document.getElementById("tagline-anchor");
-        const heroIcon = document.querySelector(".hero-icon");
-        const toolsTree = document.getElementById("tools-tree");
-        let animationFrameId;
 
         function setTheme(theme) {
             body.dataset.theme = theme;
@@ -433,400 +348,11 @@
             moonIcon.style.display = theme === "dark" ? "block" : "none";
         }
 
-        function setTreeStatus(message) {
-            toolsTree.innerHTML = "";
-            const status = document.createElement("div");
-            status.className = "tree-status";
-            status.textContent = message;
-            toolsTree.appendChild(status);
-        }
-
-        function getCoords(elem) {
-            const box = elem.getBoundingClientRect();
-            const ref = svgCanvas.getBoundingClientRect();
-
-            return {
-                left: box.left - ref.left,
-                top: box.top - ref.top,
-                right: box.right - ref.left,
-                bottom: box.bottom - ref.top,
-                width: box.width,
-                height: box.height,
-                cx: box.left - ref.left + box.width / 2,
-                cy: box.top - ref.top + box.height / 2
-            };
-        }
-
-        function createPath(startX, startY, endX, endY, isRoot, isMobile) {
-            const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-            const cornerRadius = 15;
-            let curve = "";
-            const targetX = endX;
-
-            if (isRoot && !isMobile) {
-                const midX = startX + (targetX - startX) / 2;
-
-                if (Math.abs(endY - startY) < cornerRadius) {
-                    curve = "M " + startX + " " + startY + " L " + targetX + " " + endY;
-                } else {
-                    curve = "M " + startX + " " + startY + " C " + midX + " " + startY + ", " + midX + " " + endY + ", " + targetX + " " + endY;
-                }
-            } else {
-                const availableHorizontalSpace = Math.abs(targetX - startX);
-
-                if (Math.abs(endY - startY) < cornerRadius) {
-                    curve = "M " + startX + " " + startY + " L " + targetX + " " + endY;
-                } else if (availableHorizontalSpace < cornerRadius) {
-                    curve = "M " + startX + " " + startY + " L " + startX + " " + endY + " L " + targetX + " " + endY;
-                } else {
-                    const dirX = targetX > startX ? 1 : -1;
-                    curve = "M " + startX + " " + startY
-                        + " L " + startX + " " + (endY - cornerRadius)
-                        + " Q " + startX + " " + endY + " " + (startX + (cornerRadius * dirX)) + " " + endY
-                        + " L " + targetX + " " + endY;
-                }
-            }
-
-            path.setAttribute("d", curve);
-            svgCanvas.appendChild(path);
-
-            setTimeout(() => {
-                path.style.strokeDashoffset = "0";
-            }, 10);
-        }
-
-        function getNodeTrigger(nodeElement) {
-            return nodeElement.querySelector(":scope > .branch-button, :scope > .app-toggle");
-        }
-
-        function getChildOrigin(triggerElement) {
-            const coords = getCoords(triggerElement);
-            return {
-                x: coords.left + (coords.width / 12),
-                y: coords.bottom
-            };
-        }
-
-        function getRootOrigin() {
-            const rootCoords = getCoords(taglineAnchor);
-            const isMobile = window.innerWidth <= 900;
-            let rootStartX;
-            let rootStartY;
-
-            if (isMobile) {
-                rootStartX = rootCoords.left + 24;
-                rootStartY = rootCoords.bottom + 30;
-            } else {
-                rootStartX = rootCoords.right + 30;
-                rootStartY = rootCoords.cy;
-            }
-
-            heroIcon.style.left = (rootStartX - 24) + "px";
-            heroIcon.style.top = (rootStartY - 24) + "px";
-
-            return {
-                isMobile,
-                x: rootStartX,
-                y: rootStartY
-            };
-        }
-
-        function drawVisibleChildren(origin, listElement, isRoot) {
-            if (!listElement) {
-                return;
-            }
-
-            const children = Array.from(listElement.children);
-
-            children.forEach((nodeElement) => {
-                const trigger = getNodeTrigger(nodeElement);
-
-                if (!trigger) {
-                    return;
-                }
-
-                const triggerCoords = getCoords(trigger);
-                createPath(origin.x, origin.y, triggerCoords.left, triggerCoords.cy, isRoot, origin.isMobile);
-
-                if (nodeElement.classList.contains("branch") && nodeElement.classList.contains("is-open")) {
-                    const childList = nodeElement.querySelector(":scope > ul");
-
-                    if (childList) {
-                        const childOrigin = getChildOrigin(trigger);
-                        childOrigin.isMobile = origin.isMobile;
-                        drawVisibleChildren(childOrigin, childList, false);
-                    }
-                }
-            });
-        }
-
-        function drawTree() {
-            svgCanvas.innerHTML = "";
-
-            if (animationFrameId) {
-                cancelAnimationFrame(animationFrameId);
-            }
-
-            animationFrameId = requestAnimationFrame(() => {
-                const rootList = toolsTree.querySelector(":scope > ul");
-
-                if (!rootList) {
-                    return;
-                }
-
-                const rootOrigin = getRootOrigin();
-                drawVisibleChildren(rootOrigin, rootList, true);
-            });
-        }
-
-        function animateTreeRedraw(duration) {
-            const startTime = performance.now();
-
-            function animate(currentTime) {
-                drawTree();
-
-                if (currentTime - startTime < duration) {
-                    requestAnimationFrame(animate);
-                }
-            }
-
-            requestAnimationFrame(animate);
-        }
-
-        function parseToolsMarkdown(markdown) {
-            const root = { type: "root", children: [] };
-            const stack = [{ level: 0, node: root }];
-            const warnings = [];
-            let currentApp = null;
-
-            function warn(message) {
-                warnings.push(message);
-            }
-
-            function commitApp() {
-                if (!currentApp) {
-                    return;
-                }
-
-                if (stack.length === 1) {
-                    warn("Skipped app \"" + currentApp.title + "\" because it is not inside a heading.");
-                    currentApp = null;
-                    return;
-                }
-
-                const title = currentApp.title.trim();
-
-                if (!title) {
-                    warn("Skipped an app entry with an empty title.");
-                    currentApp = null;
-                    return;
-                }
-
-                stack[stack.length - 1].node.children.push({
-                    type: "app",
-                    title: title,
-                    description: currentApp.description.trim() || "Description coming soon.",
-                    link: currentApp.link.trim()
-                });
-
-                currentApp = null;
-            }
-
-            markdown.split(/\r?\n/).forEach((rawLine, index) => {
-                const line = rawLine.replace(/\t/g, "    ");
-                const trimmed = line.trim();
-
-                if (!trimmed) {
-                    return;
-                }
-
-                const headingMatch = trimmed.match(/^(#{2,6})\s+(.*)$/);
-
-                if (headingMatch) {
-                    commitApp();
-
-                    const level = headingMatch[1].length;
-                    const title = headingMatch[2].trim();
-
-                    while (stack.length > 1 && stack[stack.length - 1].level >= level) {
-                        stack.pop();
-                    }
-
-                    const categoryNode = {
-                        type: "category",
-                        title: title,
-                        children: []
-                    };
-
-                    stack[stack.length - 1].node.children.push(categoryNode);
-                    stack.push({ level: level, node: categoryNode });
-                    return;
-                }
-
-                const bulletMatch = trimmed.match(/^-\s+(.*)$/);
-
-                if (bulletMatch) {
-                    commitApp();
-                    currentApp = {
-                        title: bulletMatch[1],
-                        description: "",
-                        link: ""
-                    };
-                    return;
-                }
-
-                if (currentApp) {
-                    const metaMatch = line.match(/^\s*(description|link)\s*:\s*(.+)\s*$/i);
-
-                    if (metaMatch) {
-                        const key = metaMatch[1].toLowerCase();
-                        currentApp[key] = metaMatch[2].trim();
-                        return;
-                    }
-                }
-
-                warn("Ignored line " + (index + 1) + ": " + trimmed);
-            });
-
-            commitApp();
-
-            if (warnings.length > 0) {
-                console.warn("SciCopilot tools Markdown warnings:", warnings);
-            }
-
-            return root;
-        }
-
-        function renderNodeList(nodes) {
-            const list = document.createElement("ul");
-
-            nodes.forEach((node) => {
-                const item = document.createElement("li");
-
-                if (node.type === "category") {
-                    item.className = "branch";
-
-                    const button = document.createElement("button");
-                    button.type = "button";
-                    button.className = "branch-button node-button";
-                    button.textContent = node.title;
-                    button.setAttribute("aria-expanded", "false");
-                    item.appendChild(button);
-
-                    if (node.children && node.children.length > 0) {
-                        item.appendChild(renderNodeList(node.children));
-                    }
-                } else if (node.type === "app") {
-                    item.className = "app-item";
-
-                    const toggle = document.createElement("button");
-                    toggle.type = "button";
-                    toggle.className = "app-toggle node-button";
-                    toggle.textContent = node.title;
-                    toggle.setAttribute("aria-expanded", "false");
-                    item.appendChild(toggle);
-
-                    const panel = document.createElement("div");
-                    panel.className = "app-panel";
-
-                    const description = document.createElement("p");
-                    description.className = "app-description";
-                    description.textContent = node.description || "Description coming soon.";
-                    panel.appendChild(description);
-
-                    if (node.link) {
-                        const link = document.createElement("a");
-                        link.className = "app-link";
-                        link.href = node.link;
-                        link.target = "_blank";
-                        link.textContent = "Open App";
-                        link.rel = "noreferrer noopener";
-                        panel.appendChild(link);
-                    } else {
-                        const disabledLink = document.createElement("span");
-                        disabledLink.className = "app-link-disabled";
-                        disabledLink.textContent = "Link coming soon";
-                        panel.appendChild(disabledLink);
-                    }
-
-                    item.appendChild(panel);
-                }
-
-                list.appendChild(item);
-            });
-
-            return list;
-        }
-
-        function bindTreeInteractions() {
-            const branchButtons = toolsTree.querySelectorAll(".branch > .branch-button");
-            const appToggles = toolsTree.querySelectorAll(".app-item > .app-toggle");
-
-            branchButtons.forEach((button) => {
-                button.addEventListener("click", () => {
-                    const branch = button.parentElement;
-                    const isOpen = branch.classList.toggle("is-open");
-                    button.setAttribute("aria-expanded", String(isOpen));
-                    animateTreeRedraw(500);
-                });
-            });
-
-            appToggles.forEach((button) => {
-                button.addEventListener("click", () => {
-                    const appItem = button.parentElement;
-                    const isOpen = appItem.classList.toggle("is-open");
-                    button.setAttribute("aria-expanded", String(isOpen));
-                    animateTreeRedraw(400);
-                });
-            });
-        }
-
-        function renderToolsTree(data) {
-            toolsTree.innerHTML = "";
-
-            if (!data.children.length) {
-                setTreeStatus("No tools were found in index.md yet.");
-                svgCanvas.innerHTML = "";
-                return;
-            }
-
-            toolsTree.appendChild(renderNodeList(data.children));
-            bindTreeInteractions();
-            setTimeout(drawTree, 100);
-        }
-
-        async function loadToolsTree() {
-            try {
-                const response = await fetch("index.md", { cache: "no-store" });
-
-                if (!response.ok) {
-                    throw new Error("Could not load index.md (" + response.status + ").");
-                }
-
-                const markdown = await response.text();
-                const parsedTree = parseToolsMarkdown(markdown);
-                renderToolsTree(parsedTree);
-            } catch (error) {
-                console.error(error);
-                if (window.location.protocol === "file:") {
-                    setTreeStatus("This page was opened directly from disk, so the browser blocked loading index.md. Start a local server with start_hub.bat and open the localhost page instead.");
-                } else {
-                    setTreeStatus("The tools catalog could not be loaded. Please check index.md and refresh the page.");
-                }
-                svgCanvas.innerHTML = "";
-            }
-        }
-
         themeToggle.addEventListener("click", () => {
-            const newTheme = body.dataset.theme === "dark" ? "light" : "dark";
-            setTheme(newTheme);
+            setTheme(body.dataset.theme === "dark" ? "light" : "dark");
         });
 
-        window.addEventListener("resize", drawTree);
-
-        const savedTheme = localStorage.getItem("theme") || "light";
-        setTheme(savedTheme);
-        loadToolsTree();
+        setTheme(localStorage.getItem("theme") || "light");
     </script>
 </body>
 </html>
