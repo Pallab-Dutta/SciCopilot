@@ -209,6 +209,16 @@
             flex: 1;
         }
         .card__more { color: var(--accent); font-weight: 700; font-size: 0.88rem; }
+        .cards__note {
+            margin: 1.25rem auto 0;
+            max-width: 44rem;
+            text-align: center;
+            font-size: 0.95rem;
+            line-height: 1.55;
+            color: var(--text-secondary);
+        }
+        .cards__note a { color: var(--accent); font-weight: 700; text-decoration: none; }
+        .cards__note a:hover { text-decoration: underline; }
         .card__wip {
             display: inline-block;
             font-size: 0.72rem;
@@ -234,6 +244,8 @@
         }
         .blogstrip p { color: var(--text-secondary); line-height: 1.5; max-width: 40rem; }
         .blogstrip strong { color: var(--text); }
+        .blogstrip p a { color: var(--accent); font-weight: 700; text-decoration: none; }
+        .blogstrip p a:hover { text-decoration: underline; }
 
         /* ── Footer ──────────────────────────────────────────────────────── */
         .site-footer {
@@ -311,17 +323,23 @@
                     <span class="card__more">Open in Agents &rarr;</span>
                 </a>
                 <a class="card" href="/agents.html">
-                    <h3>SciColab <span class="card__wip">work in progress</span></h3>
-                    <p>Reformat a manuscript for any target journal, find the journal that fits, and
-                       generate literature-review reports from your sources.</p>
+                    <h3>SciCo&#8209;work <span class="card__wip">ideation stage</span></h3>
+                    <p>An AI scientist coworker to think and build research alongside you &mdash;
+                       currently taking shape at the ideation stage.</p>
                     <span class="card__more">Open in Agents &rarr;</span>
                 </a>
             </div>
+            <p class="cards__note">
+                Inside SciCoauthor, meet
+                <a href="https://benjamin.scicoagent.com">Benjamin&nbsp;&mdash; AI scientific proofreading for LaTeX, Word, and plain-text manuscripts</a>
+                that catches the unit, notation, and sign errors ordinary spell-checkers miss.
+            </p>
         </section>
 
         <section class="blogstrip">
             <p><strong>From the blog.</strong> Field notes on scientific writing, proofreading, and the
-               SciTypos that hide in plain sight &mdash; the everyday errors ordinary tools wave through.</p>
+               SciTypos that hide in plain sight &mdash; straight from the desk of
+               <a href="https://benjamin.scicoagent.com">Benjamin, our scientist&#8209;proofreader</a>.</p>
             <a class="btn btn--ghost" href="/blog/">Read the Blog</a>
         </section>
     </div>

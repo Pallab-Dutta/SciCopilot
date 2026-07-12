@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 306" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" role="img" aria-label="The anisotropic network model potential as published, with the whole summation trapped under the fraction bar in the denominator, and the SciCoproof-corrected version with the sum lifted out and the index rewritten as i less than j.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 306" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" role="img" aria-label="The anisotropic network model potential as published, with the whole summation trapped under the fraction bar in the denominator, and the Benjamin-corrected version with the sum lifted out and the index rewritten as i less than j.">
   <defs>
     <marker id="dah" markerWidth="10" markerHeight="10" refX="7" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 z" fill="#9aa3b2"/></marker>
   </defs>
@@ -29,12 +29,12 @@
 
   <!-- arrow -->
   <line x1="410" y1="160" x2="410" y2="196" stroke="#9aa3b2" stroke-width="2" marker-end="url(#dah)"/>
-  <text x="424" y="182" font-size="12.5" fill="#6B7280" font-style="italic">SciCoproof lifts the sum out of the denominator&#8230;</text>
+  <text x="424" y="182" font-size="12.5" fill="#6B7280" font-style="italic">Benjamin lifts the sum out of the denominator&#8230;</text>
 
   <!-- CORRECTED: sum out of the denominator, index i&lt;j -->
   <rect x="40" y="200" width="740" height="72" rx="14" fill="#e9f5ee" stroke="#bfe3cd"/>
   <text x="66" y="248" font-size="29" font-family="Cambria Math,Cambria,Georgia,serif" font-style="italic" fill="#262730">
     V<tspan font-size="15" dy="8">ANM</tspan><tspan dy="-8" font-style="normal"> = ( </tspan>&#947;<tspan font-style="normal">/2 ) &#931;</tspan><tspan font-size="15" dy="8" fill="#1a7f4b" font-weight="700"> i&#60;j</tspan><tspan dy="-8" font-style="normal"> </tspan>&#915;<tspan font-size="15" dy="8">ij</tspan><tspan dy="-8" font-style="normal"> ( </tspan>R<tspan font-size="15" dy="8">ij</tspan><tspan dy="-8" font-style="normal"> &#8722; </tspan>R<tspan font-size="15" dy="-14">0</tspan><tspan font-size="15" dy="22">ij</tspan><tspan dy="-8" font-style="normal"> )</tspan><tspan font-size="19" dy="-14" font-style="normal" fill="#1a7f4b" font-weight="700">2</tspan>
   </text>
-  <text x="740" y="266" font-size="12" font-weight="700" fill="#1a7f4b" text-anchor="end">&#10003;&#160;SciCoproof &#183; sum out of the denominator, index i&#60;j</text>
+  <text x="740" y="266" font-size="12" font-weight="700" fill="#1a7f4b" text-anchor="end">&#10003;&#160;Benjamin &#183; sum out of the denominator, index i&#60;j</text>
 </svg>
