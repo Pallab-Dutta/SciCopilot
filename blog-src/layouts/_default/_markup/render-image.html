@@ -1,0 +1,9 @@
+{{- /* Wrap markdown images in a figure card. Resolves page-bundle resources
+       (and publishes them) so `![alt](my.svg)` just works. */ -}}
+{{- $src := .Destination -}}
+{{- with .Page.Resources.GetMatch .Destination -}}
+  {{- $src = .RelPermalink -}}
+{{- end -}}
+<figure class="figframe">
+  <img src="{{ $src }}" alt="{{ .Text }}"{{ with .Title }} title="{{ . }}"{{ end }} loading="lazy" decoding="async">
+</figure>

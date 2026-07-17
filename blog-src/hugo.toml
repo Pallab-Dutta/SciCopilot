@@ -1,0 +1,46 @@
+# SciCoagent blog — served under /blog/ alongside the landing page.
+# To publish a new post: drop a Markdown file (or a folder with index.md + images)
+# into content/posts/ and run `hugo`. Everything else is handled here.
+
+# Absolute URL ending in /blog/. Central blog for the whole SciCoagent suite.
+# A bare path like "/blog/" breaks `hugo server`, so keep it absolute.
+baseURL = "https://scicoagent.com/blog/"
+languageCode = "en-us"
+title = "SciCoagent Blog"
+enableRobotsTXT = true
+enableEmoji = true
+
+[params]
+  description = "Field notes on scientific writing, proofreading, and the SciTypos that hide in plain sight."
+  homeURL   = "/"                                 # SciCoagent landing (site root)
+  agentsURL = "/agents.html"                      # the Agents / tools hub
+  appURL    = "https://benjamin.scicoagent.com"   # Benjamin, the scientist-proofreader (post CTA)
+
+# Agents this blog can front. Add a [params.agents.<key>] block per agent, then set
+# `agent: "<key>"` in a post's front matter to show that agent in the nav — but only
+# on the individual post page (the list/home nav stays plain "SciCoagent").
+[params.agents.benjamin]
+  name = "Benjamin"
+  url  = "https://benjamin.scicoagent.com"
+  logo = "/assets/benjamin-name.svg"
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+  tool = "tools"                 # per-tool blog filtering, e.g. /blog/tools/proofread/
+
+[markup]
+  # Allow raw HTML in posts (inline SVG figures, the brand wordmark, etc.)
+  [markup.goldmark.renderer]
+    unsafe = true
+  # Native math: $...$ inline and $$...$$ / \[...\] block are handed to the
+  # render-passthrough hook, which renders them with KaTeX at build time.
+  [markup.goldmark.extensions.passthrough]
+    enable = true
+    [markup.goldmark.extensions.passthrough.delimiters]
+      block  = [['\[', '\]'], ['$$', '$$']]
+      inline = [['\(', '\)'], ['$', '$']]
+
+[markup.tableOfContents]
+  startLevel = 2
+  endLevel = 3

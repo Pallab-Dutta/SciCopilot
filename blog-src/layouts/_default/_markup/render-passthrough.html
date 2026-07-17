@@ -1,0 +1,4 @@
+{{- /* Native math: render $…$ / $$…$$ / \(…\) / \[…\] with KaTeX at build time.
+       Requires Hugo ≥ 0.132 (for transform.ToMath). */ -}}
+{{- $opts := dict "displayMode" (eq .Type "block") -}}
+{{ transform.ToMath .Inner $opts }}

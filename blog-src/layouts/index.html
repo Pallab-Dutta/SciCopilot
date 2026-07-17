@@ -1,0 +1,24 @@
+{{ define "main" }}
+<div class="wrap">
+  <header class="blog-head">
+    <p class="eyebrow">SciCoagent · Blog</p>
+    <h1>{{ .Title }}</h1>
+    <p class="lead">{{ site.Params.description }}</p>
+  </header>
+
+  <ul class="postlist">
+    {{ range (where site.RegularPages "Section" "posts").ByDate.Reverse }}
+    <li class="postcard">
+      <a href="{{ .RelPermalink }}">
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+        <h2>{{ .Title }}</h2>
+        <p>{{ with .Params.summary }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 200 }}{{ end }}</p>
+        <span class="readmore">Read the post →</span>
+      </a>
+    </li>
+    {{ else }}
+    <li class="postlist__empty">No posts yet — drop a Markdown file into <code>content/posts/</code>.</li>
+    {{ end }}
+  </ul>
+</div>
+{{ end }}

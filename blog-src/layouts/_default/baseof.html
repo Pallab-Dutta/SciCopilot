@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="{{ or site.Language.LanguageCode "en" }}">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body>
+  {{ partial "header.html" . }}
+  <main class="site-main">
+    {{ block "main" . }}{{ end }}
+  </main>
+  {{ partial "footer.html" . }}
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var toggle = document.getElementById("theme-toggle");
+      var sun = document.getElementById("theme-icon-sun");
+      var moon = document.getElementById("theme-icon-moon");
+      function apply(t) {
+        root.dataset.theme = t;
+        localStorage.setItem("theme", t);
+        if (sun) sun.style.display = t === "light" ? "block" : "none";
+        if (moon) moon.style.display = t === "dark" ? "block" : "none";
+      }
+      apply(root.dataset.theme || "light");
+      if (toggle) toggle.addEventListener("click", function () {
+        apply(root.dataset.theme === "dark" ? "light" : "dark");
+      });
+
+      // Copy-link share button
+      document.querySelectorAll("[data-copy-url]").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var url = btn.getAttribute("data-copy-url");
+          var done = function () {
+            btn.classList.add("is-copied");
+            var t = btn.getAttribute("title");
+            btn.setAttribute("title", "Copied!");
+            setTimeout(function () { btn.classList.remove("is-copied"); btn.setAttribute("title", t); }, 1500);
+          };
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(url).then(done, function () { window.prompt("Copy this link:", url); });
+          } else {
+            window.prompt("Copy this link:", url);
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

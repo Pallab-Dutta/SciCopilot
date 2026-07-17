@@ -1,11 +1,19 @@
 name: Deploy static site to Pages
 
-# The site (landing + agents + pre-built Hugo blog) is already static in the repo,
-# so this just uploads the repo as-is — no Jekyll, no build step.
+# The landing page and agents hub are hand-written static files, served as-is. The blog is
+# Hugo, and it is BUILT here rather than committed pre-built, so that:
+#   - the markdown in blog-src/ is the single source of truth (no built HTML in git), and
+#   - a post can be SCHEDULED: Hugo omits any post whose publishDate is still in the future,
+#     so the hourly run below is what releases it, with no laptop involved.
 on:
   push:
     branches: [main]
   workflow_dispatch:
+  # Hourly: a post scheduled for 09:00 goes live on the first run after 09:00. This is the
+  # ONLY reason a rebuild happens without a push. GitHub's cron is UTC and runs late, never
+  # early, so a scheduled post appears at its time or shortly after — never before it.
+  schedule:
+    - cron: "0 * * * *"
 
 permissions:
   contents: read
@@ -23,15 +31,65 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    env:
+      # Pinned: this exact version was verified to reproduce the live site byte-for-byte.
+      # Hugo changes its HTML output between releases, so a floating version would silently
+      # reformat the whole site one day.
+      HUGO_VERSION: 0.163.3
     steps:
       - name: Checkout
         uses: actions/checkout@v5
+
+      - name: Install Hugo
+        # Straight from the official release rather than a third-party action: this job can
+        # deploy the live site, so its trust list stays short.
+        run: |
+          set -euo pipefail
+          curl -sSLo /tmp/hugo.tar.gz \
+            "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_linux-amd64.tar.gz"
+          tar -xzf /tmp/hugo.tar.gz -C /tmp hugo
+          sudo install /tmp/hugo /usr/local/bin/hugo
+          hugo version
+
+      - name: Stage the static site
+        # Everything that is published, EXCEPT the blog source: blog-src/ holds the markdown
+        # and layouts, and uploading those would serve every post twice — once as HTML and
+        # once as raw .md. The repo is public, so this is tidiness, not secrecy.
+        run: |
+          set -euo pipefail
+          mkdir -p _site
+          rsync -a \
+            --exclude='.git/' \
+            --exclude='.github/' \
+            --exclude='_site/' \
+            --exclude='blog/' \
+            --exclude='blog-src/' \
+            ./ _site/
+
+      - name: Build the blog
+        # Into the staged tree at /blog/, matching baseURL in blog-src/hugo.toml.
+        run: hugo --minify --source blog-src --destination "$GITHUB_WORKSPACE/_site/blog"
+
+      - name: Verify the build produced a site
+        # Hugo exits non-zero on failure, but a misconfigured source can succeed and emit
+        # almost nothing. Deploying that would quietly replace the blog with an empty shell,
+        # and Pages has no undo — the bad deploy just becomes the site.
+        run: |
+          set -euo pipefail
+          test -f _site/index.html || { echo "landing page missing"; exit 1; }
+          test -f _site/blog/index.html || { echo "blog index missing"; exit 1; }
+          posts=$(find _site/blog/posts -mindepth 1 -maxdepth 1 -type d | wc -l)
+          echo "built $posts post(s)"
+          test "$posts" -ge 1 || { echo "no posts built"; exit 1; }
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "."
+          path: "_site"
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

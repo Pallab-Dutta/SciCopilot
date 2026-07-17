@@ -1,0 +1,17 @@
+# The blog is built by .github/workflows/deploy-pages.yml from blog-src/.
+# It used to be committed pre-built; keeping both would mean two sources of truth, and the
+# committed copy would be the one that quietly went stale.
+/blog/
+/_site/
+
+# Hugo build artifacts
+/blog-src/public/
+/blog-src/resources/
+/blog-src/.hugo_build.lock
+
+# Unpublished drafts stay out of this PUBLIC repo.
+# Hugo does not build a `draft: true` post, so it would never reach the site — but its
+# markdown would still be readable by anyone on GitHub. The old pre-built setup kept drafts
+# out as a side effect of only ever committing built HTML; now that the source lives here,
+# that has to be deliberate. Drop the line below when the post is ready to go live.
+/blog-src/content/posts/thesis-from-papers/
