@@ -1,9 +1,9 @@
 ---
-title: "Epigenetic Reprogramming: is aging a reversible software error?"
+title: "Epigenetic Reprogramming: why is a baby born new from old cells?"
 slug: "epigenetic-reprogramming"
 date: 2026-07-17
 draft: false
-summary: "Aging has been reframed from an inevitable decline into a correctable error: the hardware is fine, the software is corrupted, and we have found the reset button. Three billion dollars are riding on that metaphor. The experiments underneath it are real and genuinely startling, but they are narrower than the headlines, the one lifespan result comes from mice bred to age abnormally fast, and the same button that rejuvenates a cell can also turn it into a tumour. A five-minute read, no biology needed."
+summary: "Your child is built from cells that have been alive as long as you have. So where does the age go? Aging has been reframed from an inevitable decline into a correctable software error, and three billion dollars are riding on the metaphor. The experiments underneath it are real and genuinely startling, but narrower than the headlines: the one lifespan result comes from mice bred to age abnormally fast, and the same button that rejuvenates a cell can turn it into a tumour. Meanwhile the reset we are trying to invent has been running in every embryo for a billion years. A five-minute read, no biology needed."
 tags: ["epigenetics", "aging", "cellular-reprogramming", "yamanaka-factors", "longevity"]
 categories: ["Molecular Biology"]
 ---
@@ -17,6 +17,8 @@ Nothing was replaced. No stem cells were transplanted, no damaged tissue swapped
 That result launched a metaphor that has since raised billions of dollars: aging is not wear and tear, it is a software error. The hardware, your DNA, is fine. What degrades is the layer above it, the set of chemical annotations telling each cell which genes to read. Corrupt that, and a liver cell slowly forgets how to be a good liver cell. And software errors, unlike wear, can be undone.
 
 It is the most exciting idea in aging biology. It is also the one most in need of someone reading the fine print.
+
+So hold onto one fact on the way through, because we will come back to it at the end. You were built out of cells that were not young. Your parents' cells had been alive for decades by the time they made you. And you were born at zero. Somewhere in there, an age went missing, and nobody had to invent anything to make that happen.
 
 ## The clock that started it
 
@@ -76,15 +78,33 @@ It is one paper, and it is formally contested. In 2024, James Timmons and Charle
 
 Read both. It is four pages, it is the clearest window into how this field actually argues, and it is a useful antidote to the way the original paper gets cited as settled.
 
+## Your past is your future
+
+There is one more result, and it is the strangest of them all.
+
+In 2021, Csaba Kerepesi and Vadim Gladyshev's group ran the epigenetic clock through embryonic development, in mice and in humans, to see what it did. In the earliest days, it runs down. Biological age falls to a minimum, which they named ground zero, and only from there does it begin to climb.
+
+So a baby does not start at zero. It is reset to zero.
+
+Sit with what that means. The cells that made you were not new. They had been inside your parents for two, three, four decades, quietly accumulating whatever it is that accumulates. Then, in the first days after fertilisation, the counter was wound back to the floor and started again.
+
+The reset button is not something we are inventing. It is the oldest routine in biology, running in every generation of every sexually reproducing species for something like a billion years. There is an unbroken thread of living cells reaching from the very first one to you, and it has never grown old, because at every hand-off it is set back to the floor.
+
+That is the sense in which your past is your future. The oldest thing you carry, the line itself, is also the newest thing you will ever make. Nature solved aging a long time ago, and solved it completely. The solution was never repair. It was to start over.
+
+The catch, and it is the whole catch, is that the thing which starts over is never you. That was the deal: the line gets to stay young forever, and the body it builds is scaffolding, permitted to come down once it has done its work. Your child is your own cells at day zero. You are what the reset leaves behind.
+
+Reprogramming is the first serious attempt to break that deal. To take the trick nature will only perform between bodies, and run it inside one.
+
 ## So, is aging a reversible software error?
 
-The honest answer is that we have a spectacular measurement, a working reset button, one strong causal claim still under dispute, and a genuine mystery: nature reprograms cells perfectly well every time an egg is fertilised, resetting a clock that has been running in the parents for decades, and it does so without producing a tumour. Whatever safety mechanism the embryo uses, we do not have it.
+We have a spectacular measurement, a working reset button, one strong causal claim under formal dispute, and a proof of concept that has been running for a billion years somewhere we cannot reach.
 
-What we have instead is a dial we cannot yet read, in a room with the lights half on. Turn it a little and cells get younger. Turn it too far and they get cancerous. The whole enterprise rests on finding out exactly where that boundary sits, in a human, over decades, when the only two ways to know are to wait and to be wrong.
+What we have to work with is a dial nobody can read yet, in a room with the lights half on. Turn it a little and cells get younger. Turn it too far and they turn cancerous. The embryo turns it all the way to the floor and somehow does not. Whatever safety mechanism it uses, we do not have, and until we do, every trial is a search for a boundary whose only two ways of being found are to wait and to be wrong.
 
-Which is why the useful question is not whether aging is reversible. It is whether rejuvenation can be separated from uncontrolled growth cleanly enough to bet a healthy person's life on it. That is a narrower question, a slower one, and the one the three billion dollars is actually buying.
+So the useful question is not whether aging is reversible. Nature settles that one every time a child is born. It is whether rejuvenation can be pulled apart from uncontrolled growth cleanly enough to bet a healthy person's life on it, in one body, without starting over. That is a narrower question, a slower one, and it is what the three billion dollars is actually buying.
 
-Life is not obviously software. But it turns out to be more editable than anyone expected, and that is startling enough without the metaphor.
+Life is not software. But it does keep a backup of itself, it has always known how to restore from it, and it has never once done so for the benefit of the body you are standing in.
 
 ## Sources
 
@@ -97,4 +117,5 @@ Life is not obviously software. But it turns out to be more editable than anyone
 - Yang, J.-H. et al. (2023). [Loss of epigenetic information as a cause of mammalian aging](https://doi.org/10.1016/j.cell.2022.12.027). *Cell* 186, 305–326.
 - Timmons, J.A. and Brenner, C. (2024). [The information theory of aging has not been tested](https://doi.org/10.1016/j.cell.2024.01.013). *Cell* 187, 1101–1102.
 - Yang, J.-H. et al. (2024). [Response to: The information theory of aging has not been tested](https://doi.org/10.1016/j.cell.2024.01.014). *Cell* 187, 1103–1105.
+- Kerepesi, C. et al. (2021). [Epigenetic clocks reveal a rejuvenation event during embryogenesis followed by aging](https://doi.org/10.1126/sciadv.abg6082). *Science Advances* 7, eabg6082.
 - Altos Labs launched in January 2022 with $3 billion in committed funding: [Chemical & Engineering News](https://cen.acs.org/business/start-ups/Altos-Labs-launches-3-billion/100/i3).
