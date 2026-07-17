@@ -1,9 +1,9 @@
 ---
-title: "Epigenetic Reprogramming: why is a baby born new from old cells?"
+title: "Epigenetic Reprogramming: What if you could restore your age from a backup?"
 slug: "epigenetic-reprogramming"
 date: 2026-07-17
 draft: false
-summary: "Your child is built from cells that have been alive as long as you have. So where does the age go? Aging has been reframed from an inevitable decline into a correctable software error, and three billion dollars are riding on the metaphor. The experiments underneath it are real and genuinely startling, but narrower than the headlines: the one lifespan result comes from mice bred to age abnormally fast, and the same button that rejuvenates a cell can turn it into a tumour. Meanwhile the reset we are trying to invent has been running in every embryo for a billion years. A five-minute read, no biology needed."
+summary: "When your computer crawled, you restored it from a backup and it came back like new. Life has run that trick for a billion years: your child is built from cells as old as you are, and is born at zero. So aging gets reframed as a software error, and three billion dollars ride on the metaphor. The experiments underneath are real and startling, but narrower than the headlines: the one lifespan result comes from mice bred to age abnormally fast, and the same button that rejuvenates a cell can turn it into a tumour. A five-minute read, no biology needed."
 tags: ["epigenetics", "aging", "cellular-reprogramming", "yamanaka-factors", "longevity"]
 categories: ["Molecular Biology"]
 ---
@@ -115,6 +115,14 @@ What we have to work with is a dial nobody can read yet, in a room with the ligh
 So the useful question is not whether aging is reversible. Nature settles that one every time a child is born. It is whether rejuvenation can be pulled apart from uncontrolled growth cleanly enough to bet a healthy person's life on it, in one body, without starting over. That is a narrower question, a slower one, and it is what the three billion dollars is actually buying.
 
 Life is not software. But it does keep a backup of itself, it has always known how to restore from it, and it has never once done so for the benefit of the body you are standing in.
+
+So count yourself the way the line counts, from the first cell instead of from your birthday, and one last inversion falls out of it.
+
+You were born older than your parents were born. They were born older than your grandparents were. The chain that arrives at you is the longest one your family has ever held, because it is theirs plus everything that has happened since, and each generation is handed more of it than the last.
+
+And each generation is handed it at zero.
+
+Both of those are true at once. Everything in this field is an argument about the distance between them.
 
 ## Sources
 
