@@ -15,3 +15,12 @@
 # out as a side effect of only ever committing built HTML; now that the source lives here,
 # that has to be deliberate. Drop the line below when the post is ready to go live.
 /blog-src/content/posts/thesis-from-papers/
+
+# old index files
+
+
+# Old copies of the landing page, kept before this was a git repo. Git holds the full history
+# of index.html, so these are a backup of something already backed up — and being tracked, they
+# were served live at scicoagent.com/index.backupN.html under the previous SciCopilot branding.
+# Untracked, not deleted: the working copies are still on disk to review.
+/index.backup*.html

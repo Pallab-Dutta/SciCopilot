@@ -52,18 +52,32 @@ jobs:
           hugo version
 
       - name: Stage the static site
-        # Everything that is published, EXCEPT the blog source: blog-src/ holds the markdown
-        # and layouts, and uploading those would serve every post twice — once as HTML and
-        # once as raw .md. The repo is public, so this is tidiness, not secrecy.
+        # Everything that is published, minus two things that are in the repo but are not the
+        # website:
+        #   blog-src/  the markdown and layouts. Uploading them would serve every post twice,
+        #              once as HTML and once as raw .md. The repo is public, so this is
+        #              tidiness, not secrecy.
+        #   the local dev helpers. A static host cannot run them, so they were only ever
+        #              downloadable source sitting on the marketing domain.
+        #
+        # NOT excluded, deliberately: index.md. It looks like a stray note, but agents.html
+        # fetches it at runtime to build the tools tree — dropping it empties that page.
         run: |
           set -euo pipefail
           mkdir -p _site
+          # Every pattern is ANCHORED with a leading slash. Without it rsync matches the
+          # basename at any depth, so a bare 'app.py' would also delete scicolab/app.py and
+          # the three scicopilot/* apps — four live pages, silently.
           rsync -a \
-            --exclude='.git/' \
-            --exclude='.github/' \
-            --exclude='_site/' \
-            --exclude='blog/' \
-            --exclude='blog-src/' \
+            --exclude='/.git/' \
+            --exclude='/.github/' \
+            --exclude='/.gitignore' \
+            --exclude='/_site/' \
+            --exclude='/blog/' \
+            --exclude='/blog-src/' \
+            --exclude='/app.py' \
+            --exclude='/serve_hub.py' \
+            --exclude='/start_hub.bat' \
             ./ _site/
 
       - name: Build the blog
