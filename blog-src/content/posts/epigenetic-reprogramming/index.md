@@ -72,7 +72,9 @@ They engineered mice to accumulate DNA breaks that then got faithfully repaired.
 
 If that is right, aging is genuinely an information problem, and the metaphor is not a metaphor at all.
 
-It is one paper, and it is contested. Charles Brenner, among others, has argued the mice may simply be suffering from the engineering itself rather than from information loss. That argument is live and unresolved. What it deserves is neither dismissal nor the citation-as-settled-fact treatment it often gets.
+It is one paper, and it is formally contested. In 2024, James Timmons and Charles Brenner published a challenge in Cell itself, under the flat title "The information theory of aging has not been tested". Their argument is that the tool doing the cutting is known to be toxic in its own right, so the mice may be suffering from the engineering rather than from lost information, and that the paper showed no old tissue with function actually restored. Sinclair's group published a reply in the same issue, arguing the dose was kept low enough to avoid exactly that.
+
+Read both. It is four pages, it is the clearest window into how this field actually argues, and it is a useful antidote to the way the original paper gets cited as settled.
 
 ## So, is aging a reversible software error?
 
@@ -93,4 +95,6 @@ Life is not obviously software. But it turns out to be more editable than anyone
 - Lu, Y. et al. (2020). [Reprogramming to recover youthful epigenetic information and restore vision](https://doi.org/10.1038/s41586-020-2975-4). *Nature* 588, 124–129.
 - Browder, K.C. et al. (2022). [In vivo partial reprogramming alters age-associated molecular changes during physiological aging in mice](https://doi.org/10.1038/s43587-022-00183-2). *Nature Aging* 2, 243–253.
 - Yang, J.-H. et al. (2023). [Loss of epigenetic information as a cause of mammalian aging](https://doi.org/10.1016/j.cell.2022.12.027). *Cell* 186, 305–326.
+- Timmons, J.A. and Brenner, C. (2024). [The information theory of aging has not been tested](https://doi.org/10.1016/j.cell.2024.01.013). *Cell* 187, 1101–1102.
+- Yang, J.-H. et al. (2024). [Response to: The information theory of aging has not been tested](https://doi.org/10.1016/j.cell.2024.01.014). *Cell* 187, 1103–1105.
 - Altos Labs launched in January 2022 with $3 billion in committed funding: [Chemical & Engineering News](https://cen.acs.org/business/start-ups/Altos-Labs-launches-3-billion/100/i3).
