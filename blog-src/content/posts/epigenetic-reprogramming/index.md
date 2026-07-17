@@ -8,17 +8,29 @@ tags: ["epigenetics", "aging", "cellular-reprogramming", "yamanaka-factors", "lo
 categories: ["Molecular Biology"]
 ---
 
-In 2020, a team at Harvard made old mice see again.
+Think back to what you did when your computer started to crawl.
+
+You did not open it up and replace parts. You wiped it and restored it from a backup, and it came back like new. Same machine, same drive, same everything. The only thing that changed was the state it had been holding.
+
+Life has been doing exactly this for about a billion years.
+
+There is an unbroken chain of cell divisions running from the first living cell on this planet to the one reading this sentence. Not a single link in it ever died. In that sense the cells you are made of are not thirty or forty or seventy years old. They are billions. What stops that chain from creaking with age is that at every generation, it gets restored from a backup.
+
+Your parents' cells had been alive for decades by the time they made you. You were born at zero. Somewhere in there, an age went missing, and nobody had to invent anything for that to happen.
+
+You are a restore. Your child will be the next one.
+
+Which sets up the question now worth three billion dollars: if life already knows how to do this, why will it not do it for you?
+
+In 2020, a team at Harvard got closer to an answer than anyone expected. They made old mice see again.
 
 Not partially, not statistically. They took mice whose eyesight had faded with age, and mice whose optic nerves had been crushed, delivered three genes into the cells at the back of the eye, and the vision came back. The nerve fibres regrew, which adult nerve fibres are famously not supposed to do.
 
-Nothing was replaced. No stem cells were transplanted, no damaged tissue swapped out. The same old cells simply started behaving like young ones again.
+Nothing was replaced. No stem cells were transplanted, no damaged tissue swapped out. The same old cells simply started behaving like young ones again. A restore, on a machine that was still running.
 
-That result launched a metaphor that has since raised billions of dollars: aging is not wear and tear, it is a software error. The hardware, your DNA, is fine. What degrades is the layer above it, the set of chemical annotations telling each cell which genes to read. Corrupt that, and a liver cell slowly forgets how to be a good liver cell. And software errors, unlike wear, can be undone.
+That result launched a metaphor: aging is not wear and tear, it is a software error. The hardware, your DNA, is fine. What degrades is the layer above it, the set of chemical annotations telling each cell which genes to read. Corrupt that, and a liver cell slowly forgets how to be a good liver cell. And software errors, unlike wear, can be undone.
 
 It is the most exciting idea in aging biology. It is also the one most in need of someone reading the fine print.
-
-So hold onto one fact on the way through, because we will come back to it at the end. You were built out of cells that were not young. Your parents' cells had been alive for decades by the time they made you. And you were born at zero. Somewhere in there, an age went missing, and nobody had to invent anything to make that happen.
 
 ## The clock that started it
 
@@ -80,21 +92,19 @@ Read both. It is four pages, it is the clearest window into how this field actua
 
 ## Your past is your future
 
-There is one more result, and it is the strangest of them all.
+Now back to the restore, because it is stranger than I let on at the start.
 
-In 2021, Csaba Kerepesi and Vadim Gladyshev's group ran the epigenetic clock through embryonic development, in mice and in humans, to see what it did. In the earliest days, it runs down. Biological age falls to a minimum, which they named ground zero, and only from there does it begin to climb.
+In 2021, Csaba Kerepesi and Vadim Gladyshev's group ran the epigenetic clock through embryonic development, in mice and in humans, to watch what it actually did. In the earliest days, it runs down. Biological age falls to a minimum, which they named ground zero, and only from there does it begin to climb.
 
-So a baby does not start at zero. It is reset to zero.
+So a baby does not begin at zero. It is taken to zero. The clock runs backwards first.
 
-Sit with what that means. The cells that made you were not new. They had been inside your parents for two, three, four decades, quietly accumulating whatever it is that accumulates. Then, in the first days after fertilisation, the counter was wound back to the floor and started again.
+That is a restore, in the strict sense. Not a fresh machine, not new parts. The same billion-year-old chain of cells, wound back to a known good state, then allowed to run forward again. It has happened at every generation of every sexually reproducing species since there were two of anything, which makes it the most thoroughly tested procedure in all of biology, and we have never once been invited to watch it closely enough to copy it.
 
-The reset button is not something we are inventing. It is the oldest routine in biology, running in every generation of every sexually reproducing species for something like a billion years. There is an unbroken thread of living cells reaching from the very first one to you, and it has never grown old, because at every hand-off it is set back to the floor.
+That is the sense in which your past is your future. The oldest thing you carry, the line itself, is also the newest thing you will ever make. Nature solved aging a long time ago and solved it completely. The solution was never repair. It was to restore.
 
-That is the sense in which your past is your future. The oldest thing you carry, the line itself, is also the newest thing you will ever make. Nature solved aging a long time ago, and solved it completely. The solution was never repair. It was to start over.
+The catch, and it is the whole catch, is that the thing restored is never you. That was the deal: the line stays young forever, and the body it builds is scaffolding, permitted to come down once the work is done. Your child is your own cells at ground zero. You are the machine the backup was taken from.
 
-The catch, and it is the whole catch, is that the thing which starts over is never you. That was the deal: the line gets to stay young forever, and the body it builds is scaffolding, permitted to come down once it has done its work. Your child is your own cells at day zero. You are what the reset leaves behind.
-
-Reprogramming is the first serious attempt to break that deal. To take the trick nature will only perform between bodies, and run it inside one.
+Reprogramming is the first serious attempt to break that deal. To take the one procedure life will only run between bodies, and run it inside one, on a machine that cannot be switched off first.
 
 ## So, is aging a reversible software error?
 
