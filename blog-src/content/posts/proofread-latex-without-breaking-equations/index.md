@@ -43,6 +43,10 @@ The goal is to proofread all three layers of the manuscript, the prose, the nota
 3. **Review the changes, do not auto-apply them.** Insist on tracked changes: a clean copy plus a list of edits you accept or reject one line at a time. You want to see the reasoning on an equation edit, not have your source rewritten under you.
 4. **Round-trip back into Overleaf.** Paste the corrected source back, or apply the tracked changes, and recompile. Because the structure never left, this is a paste, not a reconstruction.
 
+<p style="text-align:center;margin:2rem 0">
+  <a class="btn btn--primary btn--lg" href="https://benjamin.scicoagent.com">Try Benjamin →</a>
+</p>
+
 ## What to check inside the math
 
 If you are proofreading the equations by hand, or sanity-checking a tool that claims it did, this is the checklist that catches the errors that get papers returned:

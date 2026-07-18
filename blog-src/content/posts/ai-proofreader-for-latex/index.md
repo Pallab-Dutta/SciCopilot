@@ -142,6 +142,10 @@ The honest summary: the dedicated tools have solved "do not break the file." The
 
 [Benjamin](/blog/latex-proofreader/) is an AI proofreader built for LaTeX by scientists. He is named for Benjamin Franklin, a printer who caught the slips before a page reached the press and a scientist who understood what the type was trying to say, which is precisely the double vision a manuscript needs. He reads symbol by symbol: your units, your notation, your matrices, and the sign in front of every term. He works in the formats you already live in, so LaTeX, Word, plain text and RTF are all fine, in 95+ languages. And he hands the file back the way a good co-author would, as a clean copy plus tracked changes you can accept, argue with, or throw out one line at a time.
 
+<p style="text-align:center;margin:2rem 0">
+  <a class="btn btn--primary btn--lg" href="https://benjamin.scicoagent.com">Try Benjamin →</a>
+</p>
+
 ## The wrong half of the paper
 
 So here is the thing worth sitting with. When your tool reports that your document is clean, ask which document it read.

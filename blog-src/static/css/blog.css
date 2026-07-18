@@ -33,21 +33,14 @@ a{color:inherit;text-decoration:none}
      font-family:var(--font-sans);font-weight:600;text-decoration:none;border-radius:999px;
      border:1px solid transparent;cursor:pointer;
      transition:transform .15s,box-shadow .15s,background-color .15s,color .15s;white-space:nowrap}
-/* "Sign in with Google" style: white, thin border, dark label, soft shadow; hover adds a
-   faint tint and a 1px lift. The compound `.btn.btn--primary` selector (specificity 0,2,0)
-   is deliberate: it outranks `.post-body a` (0,1,1), which otherwise repainted the in-page
-   CTA labels the same blue as the fill (invisible until hover) and underlined them. */
-.btn.btn--primary{background:#fff;color:var(--text);border-color:#dbe0e8;
-                  box-shadow:0 1px 2px rgba(30,35,45,.12),0 1px 3px rgba(30,35,45,.06)}
-.btn--primary:hover{background:#f4f7fc;border-color:#c6cfdd;transform:translateY(-1px);
-                    box-shadow:0 6px 16px -6px rgba(40,55,80,.28),0 2px 5px rgba(40,55,80,.12)}
-.btn--primary:active{transform:translateY(0);box-shadow:0 1px 2px rgba(30,35,45,.18)}
-/* Dark theme: a raised dark surface instead of a stark white button. */
-[data-theme="dark"] .btn--primary{background:#222a36;color:#eef2f7;border-color:#3a4453;
-                                  box-shadow:0 1px 2px rgba(0,0,0,.45)}
-[data-theme="dark"] .btn--primary:hover{background:#2a3441;border-color:#4a5567;
-                                        box-shadow:0 8px 18px -6px rgba(0,0,0,.6)}
-/* Kill the post-body underline on in-page CTA buttons (color is handled above). */
+/* Matches the login button on the Benjamin landing page (Benjamin/web/index.html): a soft
+   rose fill with dark-red text that flips to green on hover, the brand's mistake-to-correction
+   colour story. The rose/green is self-contained, so it reads the same in light and dark theme
+   (no override needed). The compound `.btn.btn--primary` selector (specificity 0,2,0) is
+   deliberate: it outranks `.post-body a` (0,1,1), which otherwise repainted the in-page CTA
+   labels the fill colour (invisible until hover) and underlined them. */
+.btn.btn--primary{background:#F9C7C7;color:#B33A3B;box-shadow:none}
+.btn--primary:hover{background:#CDE7C9;color:#317B3C;transform:translateY(-1px)}
 .post-body a.btn{text-decoration:none}
 .btn--lg{padding:.85rem 1.7rem;font-size:1rem}
 .btn--sm{padding:.5rem 1.1rem;font-size:.85rem}
@@ -156,6 +149,13 @@ a{color:inherit;text-decoration:none}
 .post-body em{font-style:italic}
 .post-body code{font-family:var(--mono);background:var(--bg-alt);border:1px solid var(--border);
                 border-radius:5px;padding:.06em .35em;font-size:.85em}
+/* Fenced code blocks. Chroma sets the panel colour inline on <pre>, but leaves no padding or
+   overflow handling, so lines start flush against the left edge and long trailing comments
+   spill past the right. Add generous horizontal padding (the panel background fills it, holding
+   the code with breathing room) and scroll long lines inside the panel instead of past it. */
+.post-body pre{padding:1rem 1.25rem;overflow-x:auto;border-radius:10px;margin:1.7rem 0;
+               line-height:1.55;font-size:.9rem}
+.post-body pre code{background:none;border:0;border-radius:0;padding:0;font-size:inherit;white-space:pre}
 .post-body ul{margin:1.4rem 0;list-style:none;display:flex;flex-direction:column;gap:.75rem}
 .post-body ul li{position:relative;padding-left:1.6rem}
 .post-body ul li::before{content:"";position:absolute;left:.2rem;top:.66em;width:.5rem;height:.5rem;

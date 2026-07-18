@@ -79,6 +79,10 @@ The trade-off is honest: if all you need is a fast English polish, a language-fi
 
 **Best for:** scientists whose manuscripts live or die on the equations, units and notation, and who want those read, not just protected.
 
+<p style="text-align:center;margin:2rem 0">
+  <a class="btn btn--primary btn--lg" href="https://benjamin.scicoagent.com">Try Benjamin →</a>
+</p>
+
 ## How to choose
 
 Line up the tools against the errors you are actually worried about.
