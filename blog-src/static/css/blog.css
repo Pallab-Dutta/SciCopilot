@@ -33,8 +33,22 @@ a{color:inherit;text-decoration:none}
      font-family:var(--font-sans);font-weight:600;text-decoration:none;border-radius:999px;
      border:1px solid transparent;cursor:pointer;
      transition:transform .15s,box-shadow .15s,background-color .15s,color .15s;white-space:nowrap}
-.btn--primary{background:var(--accent);color:#fff;box-shadow:0 6px 16px -8px rgba(85,118,166,.6)}
-.btn--primary:hover{background:var(--accent-dark);transform:translateY(-1px)}
+/* "Sign in with Google" style: white, thin border, dark label, soft shadow; hover adds a
+   faint tint and a 1px lift. The compound `.btn.btn--primary` selector (specificity 0,2,0)
+   is deliberate: it outranks `.post-body a` (0,1,1), which otherwise repainted the in-page
+   CTA labels the same blue as the fill (invisible until hover) and underlined them. */
+.btn.btn--primary{background:#fff;color:var(--text);border-color:#dbe0e8;
+                  box-shadow:0 1px 2px rgba(30,35,45,.12),0 1px 3px rgba(30,35,45,.06)}
+.btn--primary:hover{background:#f4f7fc;border-color:#c6cfdd;transform:translateY(-1px);
+                    box-shadow:0 6px 16px -6px rgba(40,55,80,.28),0 2px 5px rgba(40,55,80,.12)}
+.btn--primary:active{transform:translateY(0);box-shadow:0 1px 2px rgba(30,35,45,.18)}
+/* Dark theme: a raised dark surface instead of a stark white button. */
+[data-theme="dark"] .btn--primary{background:#222a36;color:#eef2f7;border-color:#3a4453;
+                                  box-shadow:0 1px 2px rgba(0,0,0,.45)}
+[data-theme="dark"] .btn--primary:hover{background:#2a3441;border-color:#4a5567;
+                                        box-shadow:0 8px 18px -6px rgba(0,0,0,.6)}
+/* Kill the post-body underline on in-page CTA buttons (color is handled above). */
+.post-body a.btn{text-decoration:none}
 .btn--lg{padding:.85rem 1.7rem;font-size:1rem}
 .btn--sm{padding:.5rem 1.1rem;font-size:.85rem}
 
