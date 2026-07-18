@@ -149,13 +149,16 @@ a{color:inherit;text-decoration:none}
 .post-body em{font-style:italic}
 .post-body code{font-family:var(--mono);background:var(--bg-alt);border:1px solid var(--border);
                 border-radius:5px;padding:.06em .35em;font-size:.85em}
-/* Fenced code blocks. Chroma sets the panel colour inline on <pre>, but leaves no padding or
-   overflow handling, so lines start flush against the left edge and long trailing comments
-   spill past the right. Add generous horizontal padding (the panel background fills it, holding
-   the code with breathing room) and scroll long lines inside the panel instead of past it. */
-.post-body pre{padding:1rem 1.25rem;overflow-x:auto;border-radius:10px;margin:1.7rem 0;
+/* Fenced code blocks. Chroma sets the panel colour inline on <pre> but leaves no padding or
+   overflow handling, so lines start flush left and long trailing comments spill past the right.
+   Vertical padding goes on <pre>; the HORIZONTAL padding goes on an inline-block <code> whose
+   min-width fills the panel. That is deliberate: padding-right on a scroll container collapses
+   when you scroll to the end, but padding on the inline-block travels with the widest line, so
+   the right-side space survives the scroll and matches the left. */
+.post-body pre{padding:1rem 0;overflow-x:auto;border-radius:10px;margin:1.7rem 0;
                line-height:1.55;font-size:.9rem}
-.post-body pre code{background:none;border:0;border-radius:0;padding:0;font-size:inherit;white-space:pre}
+.post-body pre code{display:inline-block;box-sizing:border-box;min-width:100%;padding:0 1.25rem;
+                    background:none;border:0;border-radius:0;font-size:inherit;white-space:pre}
 .post-body ul{margin:1.4rem 0;list-style:none;display:flex;flex-direction:column;gap:.75rem}
 .post-body ul li{position:relative;padding-left:1.6rem}
 .post-body ul li::before{content:"";position:absolute;left:.2rem;top:.66em;width:.5rem;height:.5rem;
