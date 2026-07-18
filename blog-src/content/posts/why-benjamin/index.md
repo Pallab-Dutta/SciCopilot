@@ -34,7 +34,7 @@ So I tried to build one. And I gave him a name, because "run it through the tool
 
 Benjamin is a perfectionist, in the good sense of the word. He reads the way the best senior collaborators read, the ones who go through your draft slowly with a pencil and find the one thing that would have cost you. He does not skim. He goes symbol by symbol, watching your units, your notation, your matrices, and the sign in front of every term.
 
-He works in the formats scientists actually live in, so LaTeX, Word, plain text, and RTF are all fine by him. And he does not quietly rewrite your file behind your back. He hands it back the way a good co-author would, as a clean copy plus a full set of tracked changes you can read, argue with, accept, or throw out one line at a time. Nothing happens to your science without your say-so.
+He works in the formats scientists actually live in, so LaTeX, Word, plain text, and RTF are all fine by him. If LaTeX is your world in particular, here is [how he proofreads a LaTeX manuscript](/blog/latex-proofreader/). And he does not quietly rewrite your file behind your back. He hands it back the way a good co-author would, as a clean copy plus a full set of tracked changes you can read, argue with, accept, or throw out one line at a time. Nothing happens to your science without your say-so.
 
 There is a reason he is called Benjamin, and it is not an accident of a name generator.
 

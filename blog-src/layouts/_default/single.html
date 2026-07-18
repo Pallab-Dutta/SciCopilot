@@ -38,6 +38,20 @@
     {{ .Content }}
   </div>
 
+  {{ with .Params.faq }}
+  {{/* Same source as the FAQPage JSON-LD in head.html, so the visible Q&A and the
+       structured data can never drift apart. */}}
+  <section class="post-faq" aria-label="Frequently asked questions">
+    <h2>Frequently asked questions</h2>
+    {{ range . }}
+    <details class="faq-item">
+      <summary>{{ .q }}</summary>
+      <div class="faq-answer">{{ .a | markdownify }}</div>
+    </details>
+    {{ end }}
+  </section>
+  {{ end }}
+
   <aside class="post-cta">
     <p>The third eye that reads your science, not just your spelling.</p>
     <a class="btn btn--primary btn--lg" href="{{ site.Params.appURL }}">Try Benjamin →</a>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 360" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" role="img" aria-label="A LaTeX manuscript has three layers: prose, notation and units, and equations. Generic grammar tools check only the prose. Benjamin checks all three.">
+  <rect x="0" y="0" width="820" height="360" fill="#ffffff"/>
+  <text x="40" y="34" font-size="15" font-weight="700" fill="#262730">One manuscript, three layers, and the two that get skipped</text>
+
+  <!-- column headers -->
+  <text x="612" y="60" font-size="12.5" font-weight="700" fill="#6B7280" text-anchor="middle">Generic tool</text>
+  <text x="726" y="60" font-size="12.5" font-weight="700" fill="#1f4e79" text-anchor="middle">Benjamin</text>
+  <line x1="669" y1="72" x2="669" y2="322" stroke="#eef1f5" stroke-width="1.5"/>
+
+  <!-- Layer 1: Prose (checked by everyone) -->
+  <rect x="40" y="72" width="500" height="70" rx="10" fill="#f2f7f3" stroke="#d6e6db"/>
+  <rect x="40" y="72" width="6" height="70" rx="3" fill="#1a7f4b"/>
+  <text x="64" y="104" font-size="17" font-weight="700" fill="#262730">Prose</text>
+  <text x="64" y="126" font-size="12.5" fill="#6B7280">grammar, clarity, style</text>
+  <text x="612" y="116" font-size="24" fill="#1a7f4b" text-anchor="middle">&#10003;</text>
+  <text x="726" y="116" font-size="24" fill="#1a7f4b" text-anchor="middle">&#10003;</text>
+
+  <!-- Layer 2: Notation and units (skipped by generic) -->
+  <rect x="40" y="152" width="500" height="70" rx="10" fill="#fbf3f2" stroke="#efd9d6"/>
+  <rect x="40" y="152" width="6" height="70" rx="3" fill="#b4232a"/>
+  <text x="64" y="184" font-size="17" font-weight="700" fill="#262730">Notation &amp; units</text>
+  <text x="64" y="206" font-size="12.5" fill="#6B7280">symbols, &#197;, subscripts, dimensions</text>
+  <text x="612" y="196" font-size="24" fill="#b4232a" text-anchor="middle">&#10007;</text>
+  <text x="726" y="196" font-size="24" fill="#1a7f4b" text-anchor="middle">&#10003;</text>
+
+  <!-- Layer 3: Equations (skipped by generic) -->
+  <rect x="40" y="232" width="500" height="70" rx="10" fill="#fbf3f2" stroke="#efd9d6"/>
+  <rect x="40" y="232" width="6" height="70" rx="3" fill="#b4232a"/>
+  <text x="64" y="264" font-size="17" font-weight="700" fill="#262730">Equations</text>
+  <text x="64" y="286" font-size="12.5" fill="#6B7280">indices, signs, exponents, operators</text>
+  <text x="612" y="276" font-size="24" fill="#b4232a" text-anchor="middle">&#10007;</text>
+  <text x="726" y="276" font-size="24" fill="#1a7f4b" text-anchor="middle">&#10003;</text>
+
+  <text x="40" y="340" font-size="12.5" fill="#6B7280">The errors that get papers rejected live in the two layers a grammar checker never reads.</text>
+</svg>

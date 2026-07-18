@@ -72,7 +72,7 @@ This exact problem is why we built **[Benjamin](https://benjamin.scicoagent.com)
 
 Benjamin is **not** a typical grammar app. It is **not** just a spell-checker. It reads your manuscript the exact same way a razor-sharp principal investigator would. It tracks your units, your symbols, and your matrices - and it flags the SciTypos that ordinary tools are constitutionally blind to.
 
-Think of it as your **third eye**. It provides an extra pair of lenses that reads what you *actually wrote*, rather than what you *meant to write*. It works seamlessly on `.docx` and LaTeX files, proofreading the mathematics directly *inside* your equations.
+Think of it as your **third eye**. It provides an extra pair of lenses that reads what you *actually wrote*, rather than what you *meant to write*. It works seamlessly on `.docx` and LaTeX files, proofreading the mathematics directly *inside* your equations. If you write in LaTeX, here is [how Benjamin proofreads a LaTeX paper](/blog/latex-proofreader/).
 
 ## See It Hunt
 

@@ -5,7 +5,7 @@
         <img src="/assets/scicopilot-logo.png" alt="">
         <span>SciCoagent</span>
       </a>
-      {{ if and .IsPage (eq .Section "posts") }}
+      {{ if .IsPage }}
         {{ with .Params.agent }}
           {{ with index site.Params.agents . }}
       <span class="sc-nav__dot" aria-hidden="true">&middot;</span>

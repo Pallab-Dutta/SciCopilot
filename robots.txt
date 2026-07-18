@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://scicoagent.com/sitemap.xml
+Sitemap: https://scicoagent.com/blog/sitemap.xml
