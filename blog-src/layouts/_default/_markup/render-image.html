@@ -1,9 +1,17 @@
 {{- /* Wrap markdown images in a figure card. Resolves page-bundle resources
-       (and publishes them) so `![alt](my.svg)` just works. */ -}}
-{{- $src := .Destination -}}
-{{- with .Page.Resources.GetMatch .Destination -}}
+       (and publishes them) so `![alt](my.svg)` just works.
+       Append `#wide` to the path — `![alt](my.png#wide)` — to let one figure
+       break out past the text column (see .figframe--wide in blog.css). */ -}}
+{{- $dest := .Destination -}}
+{{- $wide := false -}}
+{{- if strings.HasSuffix $dest "#wide" -}}
+  {{- $wide = true -}}
+  {{- $dest = strings.TrimSuffix "#wide" $dest -}}
+{{- end -}}
+{{- $src := $dest -}}
+{{- with .Page.Resources.GetMatch $dest -}}
   {{- $src = .RelPermalink -}}
 {{- end -}}
-<figure class="figframe">
+<figure class="figframe{{ if $wide }} figframe--wide{{ end }}">
   <img src="{{ $src }}" alt="{{ .Text }}"{{ with .Title }} title="{{ . }}"{{ end }} loading="lazy" decoding="async">
 </figure>

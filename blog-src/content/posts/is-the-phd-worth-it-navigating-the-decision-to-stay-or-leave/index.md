@@ -30,7 +30,7 @@ Academic life is often framed as a calling, yet for many mid-career PhD students
 
 Deciding whether to continue a doctoral program or transition out of academia is rarely a binary choice between success and failure. Instead, it is a strategic evaluation of sunk costs versus future utility. Many students report being trapped by the high pressure and low quality of life, often citing poor mentorship or a lack of institutional support as the primary drivers of their distress. 
 
-![A diagram showing the self-perpetuating cycle of academic burnout and research pressure.](figure-2.png)
+![A diagram showing the self-perpetuating cycle of academic burnout and research pressure.](figure-2.png#wide)
 *The cycle of academic burnout and systemic pressure.*
 
 The pressure to perform is often decoupled from the actual practice of science. In an environment where the metric of success is the accumulation of publications rather than the resolution of complex problems, the researcher becomes an object optimized for output. This environment does not just test a student’s resilience; it tests their ability to sacrifice personal health for the sake of institutional metrics that may not align with their long-term professional or personal goals.
@@ -43,7 +43,7 @@ However, the assumption that leaving academia constitutes a departure from scien
 
 
 
-![PhD skills transfer to other careers](figure-3.jpg)
+![PhD skills transfer to other careers](figure-3.jpg#wide)
 *A mind map of potential career opportunities to transfer your PhD skills. Adapted from the original publication: Madan, C. R. (2024). “What will you do after?”: Lessons from Academia and the World Beyond. Quarterly Journal of Experimental Psychology, 77(12), 2385-2390.*
 
 

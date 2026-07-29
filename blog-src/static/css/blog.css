@@ -222,6 +222,10 @@ a{color:inherit;text-decoration:none}
 .figframe{margin:2.2rem 0 .6rem;background:#fff;border:1px solid var(--border);
           border-radius:var(--radius);box-shadow:var(--shadow);padding:1rem;overflow-x:auto}
 .figframe img{width:100%;height:auto}
+/* opt-in via `![alt](img#wide)` — breaks symmetrically past the ~44rem text
+   column, centered on the same axis; clamps to the viewport so it never scrolls. */
+.figframe--wide{position:relative;left:50%;transform:translateX(-50%);
+                width:min(58rem,calc(100vw - 3rem))}
 .figframe+p{margin-top:0;text-align:center;font-family:var(--font-sans);font-size:.9rem;
             font-style:normal;color:var(--muted);max-width:38rem;margin-left:auto;margin-right:auto}
 .figframe+p em{font-style:italic}
