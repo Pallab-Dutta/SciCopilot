@@ -5,7 +5,10 @@ date: '2026-07-29T21:17:56+05:30'
 draft: false
 summary: 'Academic life is often framed as a calling, yet for many mid-career PhD
   students, the reality of the daily grind involves a persistent, gnawing question:
-  should I quit or push through? The dissonance between the idealized vision of...'
+  should I quit or push through? The dissonance between the idealized vision of
+  scientific discovery and the structural pressures of the lab leads many to
+  reconsider the value of their path, and to ask whether leaving is really a
+  departure from science at all.'
 description: Navigating the decision to stay in academia or leave is a common struggle.
   Learn how to evaluate your career path by separating systemic pressures from your
   own skills.
