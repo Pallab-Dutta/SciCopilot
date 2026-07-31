@@ -107,3 +107,16 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Ping IndexNow for freshly changed URLs
+        # Runs only after a successful deploy, so every submitted URL is already live.
+        # Submits just the URLs whose sitemap <lastmod> is inside the window, so quiet
+        # hourly rebuilds send nothing and a publish sends only what it touched. The key
+        # is public by design (served at /<key>.txt), so it is not a secret. Best-effort:
+        # the script never exits non-zero, so IndexNow can never fail a deploy.
+        env:
+          INDEXNOW_HOST: scicoagent.com
+          INDEXNOW_KEY: 50c3c11a188d6e68487b3602e95ca5e5
+          INDEXNOW_WINDOW_HOURS: "3"
+        run: |
+          python3 .github/scripts/indexnow_ping.py _site/sitemap.xml _site/blog/sitemap.xml
