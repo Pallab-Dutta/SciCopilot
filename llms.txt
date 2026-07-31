@@ -1,0 +1,42 @@
+# SciCoagent
+
+> SciCoagent builds AI "Scientist Coagents" that automate the repetitive pain points of academic research, so scientists spend more time on real research. The coagents cover literature and PI discovery, manuscript proofreading, and turning published papers into a thesis, with an AI research coworker taking shape. Benjamin, the proofreader, is the live flagship. Built by a PhD student. Main site: https://scicoagent.com.
+
+## Coagents
+
+- **SciCo-search** (https://search.scicoagent.com): find the right literature fast, and surface labs and PIs aligned with your research area and discovery goals.
+- **SciCoauthor**: context-aware help with the manuscript itself. Includes Benjamin, an AI proofreader that goes beyond spell-check, plus an aRAG assistant that turns your published papers into thesis-ready chapters.
+- **SciCo-work** (ideation stage): an AI scientist coworker to think and build research alongside you. Currently taking shape.
+
+## Benjamin, the proofreader
+
+Benjamin (https://benjamin.scicoagent.com) is the live flagship coagent. It reads LaTeX, Word, plain-text/Markdown, and RTF manuscripts like a meticulous co-author, catching the unit, notation, sign, and equation errors general spell-checkers miss, and returns a full tracked-changes review you accept or reject edit by edit. It never rewrites your science. Full detail, including formats and pricing tiers, is at https://benjamin.scicoagent.com/llms.txt.
+
+## Key pages
+
+- [Home](https://scicoagent.com/): the coagent lineup.
+- [Agents](https://scicoagent.com/agents.html): open any coagent.
+- [Benjamin](https://benjamin.scicoagent.com/): the live AI proofreader (has its own llms.txt).
+- [SciCo-search](https://search.scicoagent.com): literature and PI discovery.
+- [Blog](https://scicoagent.com/blog/): guides on academic writing and proofreading, plus science explainers written for any-discipline researchers.
+
+## Blog: proofreading and academic-writing guides
+
+- [Why Benjamin? A new proofreader for scientists](https://scicoagent.com/blog/posts/why-benjamin/)
+- [AI Proofreader for LaTeX Documents: proofread the math, not just the spelling](https://scicoagent.com/blog/posts/ai-proofreader-for-latex/)
+- [How to Proofread a LaTeX Paper Without Breaking Your Equations](https://scicoagent.com/blog/posts/proofread-latex-without-breaking-equations/)
+- [The Best LaTeX Proofreader in 2026: Benjamin vs Trinka vs SciSpace](https://scicoagent.com/blog/posts/best-latex-proofreader-comparison/)
+- [How to convert published research papers into a thesis](https://scicoagent.com/blog/posts/thesis-from-papers/)
+- [Is the PhD Worth It? Navigating the Decision to Stay or Leave](https://scicoagent.com/blog/posts/is-the-phd-worth-it-navigating-the-decision-to-stay-or-leave/)
+
+## Blog: science explainers
+
+- [Quantum Biology: does life run on the quantum realm?](https://scicoagent.com/blog/posts/quantum-biology/)
+- [The Cosmology Crisis: is our standard model of the universe breaking?](https://scicoagent.com/blog/posts/cosmology-crisis/)
+- [Epigenetic Reprogramming: what if you could restore your age from a backup?](https://scicoagent.com/blog/posts/epigenetic-reprogramming/)
+- [The Hard Problem of Consciousness: what is subjective experience?](https://scicoagent.com/blog/posts/hard-problem-consciousness/)
+- [The Origin of Life: is it written into physics?](https://scicoagent.com/blog/posts/origin-of-life-inevitable/)
+
+## About
+
+SciCoagent is built by Pallab Dutta, a PhD student. Everything is reachable from https://scicoagent.com.
