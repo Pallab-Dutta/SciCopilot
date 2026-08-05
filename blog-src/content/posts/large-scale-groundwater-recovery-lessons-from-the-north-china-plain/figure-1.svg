@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 380" width="820" height="380" role="img" aria-label="Visual comparison of North China Plain hydrogeology: Historical Overdraft (1960s-2010s) vs Intervention &amp; Recovery (Post-2020)">
+  <defs>
+    <!-- Arrow Markers -->
+    <marker id="arrow-down-red" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 2 L5 7 L10 2" fill="none" stroke="#e53e3e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <marker id="arrow-up-blue" viewBox="0 0 10 10" refX="5" refY="3" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 8 L5 3 L10 8" fill="none" stroke="#2f6fed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <marker id="arrow-flow-blue" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M2 0 L8 5 L2 10" fill="none" stroke="#2f6fed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#ffffff"/>
+
+  <!-- Main Title -->
+  <text x="410" y="32" text-anchor="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="16" font-weight="700" fill="#1a202c" letter-spacing="0.5">NORTH CHINA PLAIN HYDROGEOLOGY</text>
+  <text x="410" y="48" text-anchor="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="11" fill="#718096">Groundwater Dynamics: Crisis to Managed Recovery</text>
+
+  <!-- ==================== LEFT PANEL: HISTORICAL OVERDRAFT ==================== -->
+  <g transform="translate(40, 65)">
+    <!-- Panel Box -->
+    <rect width="350" height="285" rx="8" fill="#fcfcfd" stroke="#e2e8f0" stroke-width="1.5"/>
+    <text x="175" y="24" text-anchor="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="13" font-weight="700" fill="#e53e3e">Historical Overdraft (1960s–2010s)</text>
+
+    <!-- Layers -->
+    <!-- Shallow Aquifer (Unconfined) -->
+    <rect x="15" y="70" width="320" height="65" rx="4" fill="#f7fafc" stroke="#edf2f7" stroke-width="1"/>
+    <text x="25" y="85" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="10" font-weight="600" fill="#718096" letter-spacing="0.5">UNCONFINED AQUIFER (SHALLOW)</text>
+
+    <!-- Aquitard (Confining Layer) -->
+    <rect x="15" y="145" width="320" height="20" rx="4" fill="#e2e8f0"/>
+    <text x="175" y="159" text-anchor="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="9" font-weight="600" fill="#4a5568" letter-spacing="1">AQUITARD (CONFINING LAYER)</text>
+
+    <!-- Deep Aquifer (Confined) -->
+    <rect x="15" y="175" width="320" height="65" rx="4" fill="#f7fafc" stroke="#edf2f7" stroke-width="1"/>
+    <text x="25" y="190" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="10" font-weight="600" fill="#718096" letter-spacing="0.5">CONFINED AQUIFER (DEEP)</text>
+
+    <!-- Dry River Bed (Surface) -->
+    <path d="M25 50 Q 40 45 55 50" fill="none" stroke="#a0aec0" stroke-width="2"/>
+    <path d="M20 48 L60 52" fill="none" stroke="#e53e3e" stroke-width="1.5"/>
+    <text x="40" y="42" text-anchor="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="9" font-weight="600" fill="#a0aec0">Dry River</text>
+
+    <!-- Active Deep Well & Drawdown Cone -->
+    <path d="M240 45 L240 215" fill="none" stroke="#4a5568" stroke-width="2.5"/>
+    <polygon points="236,215 244,215 240,225" fill="#4a5568"/>
+    <!-- Extraction Arrows -->
+    <path d="M240 100 L240 60" fill="none" stroke="#e53e3e" stroke-width="2" marker-end="url(#arrow-down-red)"/>
+    <text x="248" y="55" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="9" font-weight="700" fill="#e53e3e">Heavy Pumping</text>
+
+    <!-- Drawdown Curves (Shallow & Deep) -->
+    <!-- Shallow Drawdown -->
+    <path d="M15 95 Q 160 100 240 128 Q 280 100 335 95" fill="none" stroke="#e53e3e" stroke-width="1.5" stroke-dasharray="3,3"/>
+    <text x="28" y="124" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="9" font-weight="600" fill="#e53e3e">Decline: 1-2 m/yr</text>
+
+    <!-- Deep Cone of Depression -->
+    <path d="M15 195 Q 180 195 240 225 Q 280 195 335 195" fill="none" stroke="#e53e3e" stroke-width="1.5" stroke-dasharray="3,3"/>
+    <text x="28" y="232" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="9" font-weight="600" fill="#e53e3e">Severe Drawdown</text>
+
+    <!-- Land Subsidence Callout -->
+    <path d="M300 45 L320 45 L320 60" fill="none" stroke="#e53e3e" stroke-width="1" stroke-dasharray="2,2"/>
+    <text x="325" y="42" text-anchor="end" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="9" font-weight="700" fill="#e53e3e">Subsidence</text>
+
+    <!-- Bottom Stat Box -->
+    <rect x="15" y="248" width="320" height="28" rx="4" fill="#fff5f5" stroke="#feb2b2" stroke-width="1"/>
+    <text x="175" y="265" text-anchor="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="10" font-weight="600" fill="#9b2c2c">Scarcity: &lt;500 m³/yr  •  Cumulative Depletion: ~60 km³</text>
+  </g>
+
+  <!-- ==================== RIGHT PANEL: INTERVENTION & RECOVERY ==================== -->
+  <g transform="translate(430, 65)">
+    <!-- Panel Box -->
+    <rect width="350" height="285" rx="8" fill="#fcfcfd" stroke="#e2e8f0" stroke-width="1.5"/>
+    <text x="175" y="24" text-anchor="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="13" font-weight="700" fill="#2f6fed">Intervention &amp; Recovery (Post-2020)</text>
+
+    <!-- Layers -->
+    <!-- Shallow Aquifer (Recharging) -->
+    <rect x="15" y="70" width="320" height="65" rx="4" fill="#f0f7ff" stroke="#e6f2ff" stroke-width="1"/>
+    <text x="25" y="85" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="10" font-weight="600" fill="#2f6fed" letter-spacing="0.5">UNCONFINED AQUIFER (RECHARGING)</text>
+
+    <!-- Aquitard -->
+    <rect x="15" y="145" width="320" height="20" rx="4" fill="#e2e8f0"/>
+    <text x="175" y="159" text-anchor="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="9" font-weight="600" fill="#4a5568" letter-spacing="1">AQUITARD (CONFINING LAYER)</text>
+
+    <!-- Deep Aquifer (Stabilizing) -->
+    <rect x="15" y="175" width="320" height="65" rx="4" fill="#f0f7ff" stroke="#e6f2ff" stroke-width="1"/>
+    <text x="25" y="190" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="10" font-weight="600" fill="#2f6fed" letter-spacing="0.5">CONFINED AQUIFER (STABILIZING)</text>
+
+    <!-- SNWD Canal & Managed Aquifer Recharge (MAR) -->
+    <rect x="25" y="40" width="70" height="14" rx="3" fill="#ebf8ff" stroke="#3182ce" stroke-width="1"/>
+    <text x="60" y="50" text-anchor="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="8" font-weight="700" fill="#2b6cb0">SNWD CANAL</text>
+    
+    <!-- Flow Arrow from Canal to Shallow Aquifer (MAR) -->
+    <path d="M60 54 L60 69" fill="none" stroke="#2f6fed" stroke-width="2" marker-end="url(#arrow-flow-blue)"/>
+    <text x="67" y="66" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="8" font-weight="700" fill="#2f6fed">MAR</text>
+
+    <!-- Deactivated Well -->
+    <path d="M240 45 L240 215" fill="none" stroke="#cbd5e0" stroke-width="2" stroke-dasharray="3,3"/>
+    <circle cx="240" cy="45" r="5" fill="#fff" stroke="#a0aec0" stroke-width="1.5"/>
+    <line x1="237" y1="42" x2="243" y2="48" stroke="#a0aec0" stroke-width="1.5"/>
+    <line x1="243" y1="42" x2="237" y2="48" stroke="#a0aec0" stroke-width="1.5"/>
+    <text x="248" y="54" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="8" font-weight="700" fill="#718096">Deactivated</text>
+
+    <!-- Recovering Water Tables (Rising Vectors) -->
+    <!-- Shallow Recovery -->
+    <path d="M15 105 L335 105" fill="none" stroke="#2f6fed" stroke-width="1.5"/>
+    <path d="M140 118 L140 110" fill="none" stroke="#2f6fed" stroke-width="1.5" marker-end="url(#arrow-up-blue)"/>
+    <path d="M280 118 L280 110" fill="none" stroke="#2f6fed" stroke-width="1.5" marker-end="url(#arrow-up-blue)"/>
+    <text x="148" y="123" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="9" font-weight="600" fill="#2f6fed">Rise: ~0.7 m/yr</text>
+
+    <!-- Deep Recovery -->
+    <path d="M15 205 L335 205" fill="none" stroke="#2f6fed" stroke-width="1.5"/>
+    <path d="M180 217 L180 207" fill="none" stroke="#2f6fed" stroke-width="1.5" marker-end="url(#arrow-up-blue)"/>
+    <text x="24" y="223" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="9" font-weight="600" fill="#2f6fed">Pressure Rebound</text>
+
+    <!-- Bottom Stat Box -->
+    <rect x="15" y="248" width="320" height="28" rx="4" fill="#ebf8ff" stroke="#90cdf4" stroke-width="1"/>
+    <text x="175" y="265" text-anchor="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="10" font-weight="600" fill="#2b6cb0">Yangtze Water Substitution  •  Environmental Flows Restored</text>
+  </g>
+</svg>
