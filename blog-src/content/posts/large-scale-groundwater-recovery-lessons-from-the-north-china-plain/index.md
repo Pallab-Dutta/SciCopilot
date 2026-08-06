@@ -1,7 +1,7 @@
 ---
 title: 'Large-Scale Groundwater Recovery: Lessons from the North China Plain'
 slug: large-scale-groundwater-recovery-lessons-from-the-north-china-plain
-date: '2026-08-06T01:45:37+05:30'
+date: '2026-08-06T10:13:00+05:30'
 draft: false
 summary: Discover how the North China Plain achieved unprecedented large-scale groundwater
   recovery, and the hidden climatic risks of relying on imported water.
@@ -19,7 +19,7 @@ tags: []
 categories: []
 marketer: educator
 generated_by: sci-comarket
-publishDate: '2026-08-06T01:45:37+05:30'
+publishDate: '2026-08-06T10:13:00+05:30'
 source_run: 2026-08-05/story_educator_115237
 ---
 
