@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 380" width="820" height="380" role="img" aria-label="Evaluation Risk Comparison: Unexplained Gap vs Structured Explanation">
+  <style>
+    .title { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 15px; font-weight: 600; fill: #1e293b; }
+    .subtitle { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 12px; fill: #64748b; }
+    .node-title { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 13px; font-weight: 600; fill: #0f172a; }
+    .node-desc { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 11px; fill: #475569; }
+    .badge-text { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 11px; font-weight: 600; }
+    .arrow-line { stroke: #94a3b8; stroke-width: 1.5; fill: none; }
+    .arrow-line-accent { stroke: #2f6fed; stroke-width: 1.5; fill: none; }
+  </style>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#94a3b8" />
+    </marker>
+    <marker id="arrow-accent" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#2f6fed" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="820" height="380" fill="#ffffff" />
+
+  <!-- Diagram Title -->
+  <text x="40" y="42" class="title">Impact of Explanation Structure on Evaluator Risk Perception</text>
+  <text x="40" y="60" class="subtitle">Comparing unstructured gaps against explicit state, transition, and signal mechanisms</text>
+
+  <!-- TOP ROW: Unexplained Gap (High Risk) -->
+  <g transform="translate(40, 95)">
+    <!-- Row Background Track -->
+    <rect x="0" y="0" width="740" height="110" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" />
+    <text x="20" y="24" font-family="system-ui, sans-serif" font-size="11px" font-weight="700" fill="#94a3b8" letter-spacing="0.5">PATH A: UNSTRUCTURED</text>
+
+    <!-- Box 1: Unexplained Gap -->
+    <rect x="40" y="38" width="220" height="52" rx="8" fill="#ffffff" stroke="#cbd5e0" stroke-width="1.5" />
+    <text x="150" y="61" class="node-title" text-anchor="middle">Unexplained Gap</text>
+    <text x="150" y="77" class="node-desc" text-anchor="middle">Missing transition context</text>
+
+    <!-- Arrow 1 -->
+    <path d="M 260 64 L 478 64" class="arrow-line" marker-end="url(#arrow)" />
+
+    <!-- Box 2: Evaluator Uncertainty -->
+    <rect x="480" y="38" width="220" height="52" rx="8" fill="#ffffff" stroke="#cbd5e0" stroke-width="1.5" />
+    <text x="590" y="61" class="node-title" text-anchor="middle">Evaluator Uncertainty</text>
+    <text x="590" y="77" class="node-desc" text-anchor="middle">Perceived logic flaws &amp; ambiguity</text>
+
+    <!-- High Risk Badge -->
+    <rect x="612" y="12" width="76" height="20" rx="4" fill="#fef2f2" stroke="#fca5a5" stroke-width="1" />
+    <text x="650" y="26" class="badge-text" fill="#991b1b" text-anchor="middle">HIGH RISK</text>
+  </g>
+
+  <!-- BOTTOM ROW: Structured Explanation (Low Risk) -->
+  <g transform="translate(40, 225)">
+    <!-- Row Background Track -->
+    <rect x="0" y="0" width="740" height="120" rx="10" fill="#f4f7ff" stroke="#e0e7ff" stroke-width="1" />
+    <text x="20" y="24" font-family="system-ui, sans-serif" font-size="11px" font-weight="700" fill="#2f6fed" letter-spacing="0.5">PATH B: STRUCTURED MODEL</text>
+
+    <!-- Box 1: Structured Explanation -->
+    <rect x="40" y="38" width="280" height="64" rx="8" fill="#ffffff" stroke="#2f6fed" stroke-width="1.5" />
+    <text x="180" y="58" class="node-title" fill="#2f6fed" text-anchor="middle">Structured Explanation</text>
+    <text x="180" y="76" class="node-desc" text-anchor="middle">Explicit State + Transition + Signal</text>
+
+    <!-- Arrow 2 -->
+    <path d="M 320 70 L 418 70" class="arrow-line-accent" marker-end="url(#arrow-accent)" />
+
+    <!-- Box 2: Focus on Readiness -->
+    <rect x="420" y="38" width="280" height="64" rx="8" fill="#ffffff" stroke="#2f6fed" stroke-width="1.5" />
+    <text x="560" y="58" class="node-title" fill="#2f6fed" text-anchor="middle">Technical Readiness Focus</text>
+    <text x="560" y="76" class="node-desc" text-anchor="middle">Clear objective assessment of criteria</text>
+
+    <!-- Low Risk Badge -->
+    <rect x="612" y="12" width="76" height="20" rx="4" fill="#f0fdf4" stroke="#86efac" stroke-width="1" />
+    <text x="650" y="26" class="badge-text" fill="#166534" text-anchor="middle">LOW RISK</text>
+  </g>
+</svg>
