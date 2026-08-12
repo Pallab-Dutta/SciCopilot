@@ -1,7 +1,7 @@
 ---
 title: 'How to Reclaim Your PhD Timeline: A Diagnostic Framework for Thesis Recovery'
 slug: how-to-reclaim-your-phd-timeline-a-diagnostic-framework-for-thesis-recovery
-date: '2026-08-13T01:37:54+05:30'
+date: '2026-08-13T01:45:00+05:30'
 draft: false
 summary: A practical diagnostic guide for late-stage PhD students to resolve timeline
   delays, audit thesis scope, manage burnout, and meet submission deadlines.
@@ -21,7 +21,7 @@ tags: []
 categories: []
 marketer: educator
 generated_by: sci-comarket
-publishDate: '2026-08-13T01:37:54+05:30'
+publishDate: '2026-08-13T01:45:00+05:30'
 source_run: 2026-08-12/painpoint_educator_200029
 ---
 
