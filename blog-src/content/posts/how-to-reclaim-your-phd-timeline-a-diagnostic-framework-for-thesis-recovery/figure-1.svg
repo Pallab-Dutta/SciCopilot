@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 380" width="820" height="380" role="img" aria-label="Research Process Comparison: Vicious Cycle vs Linear Progress">
+  <defs>
+    <style>
+      .title { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 15px; font-weight: 700; fill: #2f6fed; }
+      .subtitle { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 12px; font-weight: 600; fill: #64748b; }
+      .box-text { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 12px; font-weight: 500; fill: #1e293b; text-anchor: middle; }
+      .box { fill: #f8fafc; stroke: #cbd5e0; stroke-width: 1.5px; rx: 8px; }
+      .box-negative { fill: #fef2f2; stroke: #fca5a5; stroke-width: 1.5px; rx: 8px; }
+      .box-positive { fill: #f0f9ff; stroke: #bae6fd; stroke-width: 1.5px; rx: 8px; }
+      .arrow { fill: none; stroke: #64748b; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+      .arrow-blue { fill: none; stroke: #2f6fed; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+      .arrow-red { fill: none; stroke: #ef4444; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    </style>
+    
+    <marker id="arrow-gray" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#64748b"/>
+    </marker>
+    <marker id="arrow-blue-head" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#2f6fed"/>
+    </marker>
+    <marker id="arrow-red-head" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#ef4444"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="820" height="380" fill="#ffffff"/>
+
+  <!-- ================= TOP PATH: VICIOUS CYCLE ================= -->
+  <text x="40" y="42" class="title">TRADITIONAL PATH</text>
+  <text x="180" y="42" class="subtitle">The Unbounded Research Cycle</text>
+
+  <!-- Box 1: Unbounded Research Questions -->
+  <rect x="40" y="65" width="150" height="56" class="box-negative"/>
+  <text x="115" y="90" class="box-text">Unbounded Research</text>
+  <text x="115" y="106" class="box-text">Questions</text>
+
+  <!-- Arrow 1 -> 2 -->
+  <path d="M 190 93 L 228 93" class="arrow-red" marker-end="url(#arrow-red-head)"/>
+
+  <!-- Box 2: High Cognitive Uncertainty -->
+  <rect x="230" y="65" width="150" height="56" class="box-negative"/>
+  <text x="305" y="90" class="box-text">High Cognitive</text>
+  <text x="305" y="106" class="box-text">Uncertainty</text>
+
+  <!-- Arrow 2 -> 3 -->
+  <path d="M 380 93 L 418 93" class="arrow-red" marker-end="url(#arrow-red-head)"/>
+
+  <!-- Box 3: Avoidance and Procrastination -->
+  <rect x="420" y="65" width="150" height="56" class="box-negative"/>
+  <text x="495" y="90" class="box-text">Avoidance and</text>
+  <text x="495" y="106" class="box-text">Procrastination</text>
+
+  <!-- Arrow 3 -> 4 -->
+  <path d="M 570 93 L 608 93" class="arrow-red" marker-end="url(#arrow-red-head)"/>
+
+  <!-- Box 4: Reduced Available Time -->
+  <rect x="610" y="65" width="150" height="56" class="box-negative"/>
+  <text x="685" y="90" class="box-text">Reduced Available</text>
+  <text x="685" y="106" class="box-text">Time</text>
+
+  <!-- Feedback Loop: Box 4 back to Box 1 -->
+  <path d="M 685 121 L 685 150 L 115 150 L 115 123" class="arrow-red" marker-end="url(#arrow-red-head)"/>
+
+
+  <!-- DIVIDER LINE -->
+  <line x1="40" y1="190" x2="780" y2="190" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4 4"/>
+
+
+  <!-- ================= BOTTOM PATH: PRODUCTIVE FLOW ================= -->
+  <text x="40" y="222" class="title">STRUCTURED PATH</text>
+  <text x="180" y="222" class="subtitle">Targeted Execution Pipeline</text>
+
+  <!-- Box 1: Scope Bounding -->
+  <rect x="40" y="245" width="150" height="56" class="box-positive"/>
+  <text x="115" y="278" class="box-text">Scope Bounding</text>
+
+  <!-- Arrow 1 -> 2 -->
+  <path d="M 190 273 L 228 273" class="arrow-blue" marker-end="url(#arrow-blue-head)"/>
+
+  <!-- Box 2: Discrete Tasks -->
+  <rect x="230" y="245" width="150" height="56" class="box-positive"/>
+  <text x="305" y="278" class="box-text">Discrete Tasks</text>
+
+  <!-- Arrow 2 -> 3 -->
+  <path d="M 380 273 L 418 273" class="arrow-blue" marker-end="url(#arrow-blue-head)"/>
+
+  <!-- Box 3: Targeted Execution -->
+  <rect x="420" y="245" width="150" height="56" class="box-positive"/>
+  <text x="495" y="278" class="box-text">Targeted Execution</text>
+
+  <!-- Arrow 3 -> 4 -->
+  <path d="M 570 273 L 608 273" class="arrow-blue" marker-end="url(#arrow-blue-head)"/>
+
+  <!-- Box 4: Completed Chapters -->
+  <rect x="610" y="245" width="150" height="56" class="box-positive" stroke="#38bdf8"/>
+  <text x="685" y="270" class="box-text" font-weight="700" fill="#0369a1">Completed</text>
+  <text x="685" y="286" class="box-text" font-weight="700" fill="#0369a1">Chapters</text>
+
+<g opacity="0.72"><rect x="700" y="352" width="112" height="20" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/><text x="756" y="366.0" text-anchor="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" font-weight="600" fill="#64748b">scicoagent.com</text></g></svg>

@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 380" width="820" height="380" role="img" aria-label="Pyramid diagram showing thesis scope prioritization with Core Claims at the foundation, Supporting Data in the middle, and Exploratory Additions at the top peak.">
+  <defs>
+    <!-- Arrow marker for side axis -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#2f6fed" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="820" height="380" fill="#ffffff" />
+
+  <!-- Diagram Title / Header -->
+  <text x="440" y="38" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" fill="#1e293b" text-anchor="middle" letter-spacing="0.5">
+    THESIS SCOPE &amp; PRIORITIZATION FRAMEWORK
+  </text>
+
+  <!-- Left Priority Indicator Axis -->
+  <g transform="translate(0, 0)">
+    <!-- Axis Line -->
+    <line x1="85" y1="80" x2="85" y2="310" stroke="#2f6fed" stroke-width="1.5" marker-end="url(#arrow)" />
+    
+    <!-- Axis Labels -->
+    <text x="75" y="85" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="700" fill="#64748b" text-anchor="end" letter-spacing="0.5">LOW</text>
+    <text x="75" y="98" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="500" fill="#94a3b8" text-anchor="end">PRIORITY</text>
+    
+    <text x="75" y="305" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="700" fill="#2f6fed" text-anchor="end" letter-spacing="0.5">HIGH</text>
+    <text x="75" y="318" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="500" fill="#2f6fed" text-anchor="end">CRITICAL</text>
+    
+    <!-- Axis Label Centered along the line -->
+    <text x="50" y="200" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" fill="#475569" text-anchor="middle" transform="rotate(-90 50 200)" letter-spacing="0.5">
+      DEFENSE NECESSITY
+    </text>
+  </g>
+
+  <!-- PYRAMID STRUCTURE -->
+
+  <!-- Top Slice: Exploratory Additions -->
+  <g>
+    <polygon points="440,65 330,145 550,145" fill="#fafafa" stroke="#cbd5e0" stroke-width="1.5" stroke-dasharray="4 3" stroke-linejoin="round" />
+    <!-- Label -->
+    <text x="440" y="112" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" fill="#64748b" text-anchor="middle">
+      Exploratory Additions
+    </text>
+    <text x="440" y="128" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="500" fill="#94a3b8" text-anchor="middle">
+      (Eliminated from Timeline)
+    </text>
+  </g>
+
+  <!-- Middle Slice: Supporting Data -->
+  <g>
+    <polygon points="324,151 556,151 646,231 234,231" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5" stroke-linejoin="round" />
+    <!-- Label -->
+    <text x="440" y="186" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" fill="#334155" text-anchor="middle">
+      Supporting Data
+    </text>
+    <text x="440" y="204" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" fill="#64748b" text-anchor="middle">
+      (Constrained Scope)
+    </text>
+  </g>
+
+  <!-- Bottom Slice: Core Claims (Foundation) -->
+  <g>
+    <polygon points="228,237 652,237 742,317 138,317" fill="#eff6ff" stroke="#2f6fed" stroke-width="2" stroke-linejoin="round" />
+    <!-- Label -->
+    <text x="440" y="271" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" fill="#1e3a8a" text-anchor="middle">
+      Core Claims
+    </text>
+    <text x="440" y="290" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#2f6fed" text-anchor="middle">
+      (Essential for Thesis Defense)
+    </text>
+  </g>
+
+  <!-- Status / Action Callouts on the Right Side -->
+  <g transform="translate(670, 0)">
+    <!-- Top Status -->
+    <line x1="-110" y1="105" x2="20" y2="105" stroke="#cbd5e0" stroke-width="1" stroke-dasharray="2 2" />
+    <circle cx="20" cy="105" r="3" fill="#94a3b8" />
+    <text x="28" y="109" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" fill="#94a3b8">Deselected</text>
+
+    <!-- Middle Status -->
+    <line x1="-20" y1="191" x2="20" y2="191" stroke="#94a3b8" stroke-width="1" stroke-dasharray="2 2" />
+    <circle cx="20" cy="191" r="3" fill="#64748b" />
+    <text x="28" y="195" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" fill="#64748b">Bounded</text>
+
+    <!-- Bottom Status -->
+    <line x1="2" y1="277" x2="20" y2="277" stroke="#2f6fed" stroke-width="1" stroke-dasharray="2 2" />
+    <circle cx="20" cy="277" r="3" fill="#2f6fed" />
+    <text x="28" y="281" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" fill="#2f6fed">Protected</text>
+  </g>
+
+  <!-- Base Line Floor -->
+  <line x1="120" y1="332" x2="760" y2="332" stroke="#e2e8f0" stroke-width="1" />
+<g opacity="0.72"><rect x="700" y="352" width="112" height="20" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/><text x="756" y="366.0" text-anchor="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" font-weight="600" fill="#64748b">scicoagent.com</text></g></svg>

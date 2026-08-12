@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 380" width="820" height="380" role="img" aria-label="Backward Project Scheduling and Uncertainty Buffer Diagram">
+  <defs>
+    <!-- Arrowhead Markers -->
+    <marker id="arrow-blue-left" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 10 0 L 0 5 L 10 10 z" fill="#2f6fed"/>
+    </marker>
+    <marker id="arrow-gray-right" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8"/>
+    </marker>
+
+    <!-- Buffer Pattern -->
+    <pattern id="buffer-stripes" width="8" height="8" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#2f6fed" stroke-width="2.5" opacity="0.25" />
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="820" height="380" fill="#ffffff"/>
+
+  <!-- HEADER SECTION -->
+  <text x="40" y="42" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="18" font-weight="700" fill="#1e293b">BACKWARD PROJECT SCHEDULING</text>
+  <text x="40" y="62" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="12" font-weight="500" fill="#64748b">Buffer allocation and fixed administrative blocks calculated prior to deadline</text>
+
+  <!-- LEGEND -->
+  <g transform="translate(460, 32)">
+    <!-- Active Work Legend -->
+    <rect x="0" y="8" width="14" height="14" rx="3" fill="#f6f8fc" stroke="#cbd5e0" stroke-width="1.5"/>
+    <text x="22" y="20" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="11" fill="#475569">Core Work</text>
+
+    <!-- Buffer Legend -->
+    <rect x="95" y="8" width="14" height="14" rx="3" fill="#eff6ff" stroke="#2f6fed" stroke-width="1.5"/>
+    <rect x="95" y="8" width="14" height="14" rx="3" fill="url(#buffer-stripes)"/>
+    <text x="117" y="20" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="11" font-weight="600" fill="#2f6fed">30% Buffer</text>
+
+    <!-- Admin Legend -->
+    <rect x="190" y="8" width="14" height="14" rx="3" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1.5"/>
+    <text x="212" y="20" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="11" fill="#475569">Fixed Admin</text>
+  </g>
+
+  <!-- BACKWARD PLANNING VECTOR (Top Directional Arrow) -->
+  <g transform="translate(0, 0)">
+    <line x1="770" y1="95" x2="50" y2="95" stroke="#2f6fed" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrow-blue-left)"/>
+    <rect x="310" y="83" width="200" height="24" rx="12" fill="#ffffff" stroke="#2f6fed" stroke-width="1.5"/>
+    <text x="410" y="99" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="11" font-weight="700" fill="#2f6fed" text-anchor="middle">PLANNING DIRECTION (BACKWARD)</text>
+  </g>
+
+  <!-- MAIN TIMELINE PHASES (BLOCKS) -->
+
+  <!-- PHASE 1: Research & Proposal -->
+  <g transform="translate(40, 130)">
+    <!-- Core Work Box (70%) -->
+    <rect x="0" y="0" width="140" height="100" rx="8" fill="#f6f8fc" stroke="#cbd5e0" stroke-width="1.5"/>
+    <text x="70" y="45" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="13" font-weight="700" fill="#1e293b" text-anchor="middle">Phase 1</text>
+    <text x="70" y="63" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="11" fill="#64748b" text-anchor="middle">Research &amp; Design</text>
+
+    <!-- Buffer Box (30%) -->
+    <rect x="140" y="0" width="60" height="100" rx="8" fill="#eff6ff" stroke="#2f6fed" stroke-width="1.5" stroke-dasharray="4,3"/>
+    <rect x="140" y="0" width="60" height="100" rx="8" fill="url(#buffer-stripes)"/>
+    <text x="170" y="48" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="11" font-weight="700" fill="#2f6fed" text-anchor="middle">+30%</text>
+    <text x="170" y="62" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="10" font-weight="600" fill="#2f6fed" text-anchor="middle">Buffer</text>
+  </g>
+
+  <!-- PHASE 2: Execution & Analysis -->
+  <g transform="translate(250, 130)">
+    <!-- Core Work Box (70%) -->
+    <rect x="0" y="0" width="140" height="100" rx="8" fill="#f6f8fc" stroke="#cbd5e0" stroke-width="1.5"/>
+    <text x="70" y="45" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="13" font-weight="700" fill="#1e293b" text-anchor="middle">Phase 2</text>
+    <text x="70" y="63" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="11" fill="#64748b" text-anchor="middle">Execution &amp; Data</text>
+
+    <!-- Buffer Box (30%) -->
+    <rect x="140" y="0" width="60" height="100" rx="8" fill="#eff6ff" stroke="#2f6fed" stroke-width="1.5" stroke-dasharray="4,3"/>
+    <rect x="140" y="0" width="60" height="100" rx="8" fill="url(#buffer-stripes)"/>
+    <text x="170" y="48" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="11" font-weight="700" fill="#2f6fed" text-anchor="middle">+30%</text>
+    <text x="170" y="62" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="10" font-weight="600" fill="#2f6fed" text-anchor="middle">Buffer</text>
+  </g>
+
+  <!-- FIXED ADMIN 1: Supervisor Review -->
+  <g transform="translate(460, 130)">
+    <rect x="0" y="0" width="140" height="100" rx="8" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1.5"/>
+    <text x="70" y="45" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">Supervisor</text>
+    <text x="70" y="63" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="12" font-weight="700" fill="#334155" text-anchor="middle">Review</text>
+    <text x="70" y="82" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="10" font-weight="600" fill="#64748b" text-anchor="middle">[ Fixed Window ]</text>
+  </g>
+
+  <!-- FIXED ADMIN 2: Formatting & Final Submission -->
+  <g transform="translate(610, 130)">
+    <rect x="0" y="0" width="160" height="100" rx="8" fill="#0f172a" stroke="#0f172a" stroke-width="1.5"/>
+    <text x="80" y="43" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle">FORMATTING &amp;</text>
+    <text x="80" y="61" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="13" font-weight="800" fill="#ffffff" text-anchor="middle">SUBMISSION</text>
+    <text x="80" y="82" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="10" font-weight="600" fill="#38bdf8" text-anchor="middle">FIXED DEADLINE</text>
+  </g>
+
+  <!-- BOTTOM TIME AXIS -->
+  <g transform="translate(0, 260)">
+    <!-- Base Horizontal Line -->
+    <line x1="40" y1="20" x2="770" y2="20" stroke="#cbd5e0" stroke-width="2" marker-end="url(#arrow-gray-right)"/>
+
+    <!-- Ticks & Time Labels -->
+    <!-- Start -->
+    <line x1="40" y1="15" x2="40" y2="25" stroke="#94a3b8" stroke-width="2"/>
+    <text x="40" y="42" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="12" font-weight="700" fill="#1e293b" text-anchor="start">Project Start</text>
+    <text x="40" y="56" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="10" fill="#64748b" text-anchor="start">T - 16 Weeks</text>
+
+    <!-- Intermediate Ticks -->
+    <line x1="250" y1="15" x2="250" y2="25" stroke="#94a3b8" stroke-width="1.5"/>
+    <text x="250" y="42" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="11" font-weight="600" fill="#475569" text-anchor="middle">Gate 1</text>
+
+    <line x1="460" y1="15" x2="460" y2="25" stroke="#94a3b8" stroke-width="1.5"/>
+    <text x="460" y="42" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="11" font-weight="600" fill="#475569" text-anchor="middle">Draft Freeze</text>
+
+    <line x1="610" y1="15" x2="610" y2="25" stroke="#94a3b8" stroke-width="1.5"/>
+    <text x="610" y="42" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="11" font-weight="600" fill="#475569" text-anchor="middle">Final Approval</text>
+
+    <!-- Deadline -->
+    <line x1="770" y1="12" x2="770" y2="28" stroke="#2f6fed" stroke-width="2.5"/>
+    <text x="770" y="42" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="12" font-weight="800" fill="#2f6fed" text-anchor="end">Submission Date</text>
+    <text x="770" y="56" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="10" font-weight="700" fill="#2f6fed" text-anchor="end">T = 0 (Fixed Anchor)</text>
+  </g>
+<g opacity="0.72"><rect x="700" y="352" width="112" height="20" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/><text x="756" y="366.0" text-anchor="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" font-weight="600" fill="#64748b">scicoagent.com</text></g></svg>
