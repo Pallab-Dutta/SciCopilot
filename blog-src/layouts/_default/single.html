@@ -30,7 +30,13 @@
 
   {{ with .Resources.GetMatch "cover.*" }}
   <figure class="post-cover">
+    {{/* SVG resources have no .Width/.Height (those are raster-only and error on SVG), so a
+         code-built cover.svg is emitted without them; the SVG's own viewBox sizes it. */}}
+    {{ if eq .MediaType.SubType "svg" }}
+    <img src="{{ .RelPermalink }}" alt="{{ $.Title }}" loading="eager" decoding="async">
+    {{ else }}
     <img src="{{ .RelPermalink }}" alt="{{ $.Title }}" width="{{ .Width }}" height="{{ .Height }}" loading="eager" decoding="async">
+    {{ end }}
   </figure>
   {{ end }}
 
