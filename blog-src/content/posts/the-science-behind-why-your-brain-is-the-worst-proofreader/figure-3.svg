@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 380" width="820" height="380" role="img" aria-label="Manuscript Disruption Pass Routing Diagram">
+  <defs>
+    <!-- Arrow Marker -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#2f6fed" />
+    </marker>
+    <marker id="arrow-gray" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#94a3b8" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="820" height="380" fill="#ffffff" />
+
+  <!-- Title Block -->
+  <text x="40" y="42" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="16" font-weight="700" fill="#2f6fed">ERROR-BASED DISRUPTIVE ROUTING</text>
+  <text x="40" y="60" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="12" fill="#64748b">Directing manuscript passes to targeted visual and sensory disruption modes</text>
+
+  <!-- STEP 1: Input Box -->
+  <g transform="translate(40, 160)">
+    <rect x="0" y="0" width="140" height="90" rx="8" fill="#f6f8fc" stroke="#cbd5e0" stroke-width="1.5" />
+    <text x="70" y="38" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="13" font-weight="600" fill="#1e293b" text-anchor="middle">Manuscript</text>
+    <text x="70" y="56" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="13" font-weight="600" fill="#1e293b" text-anchor="middle">Draft</text>
+  </g>
+
+  <!-- STEP 2: Classification Box -->
+  <g transform="translate(230, 160)">
+    <rect x="0" y="0" width="160" height="90" rx="8" fill="#eff6ff" stroke="#2f6fed" stroke-width="1.5" />
+    <text x="80" y="38" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="13" font-weight="600" fill="#2f6fed" text-anchor="middle">Error Category</text>
+    <text x="80" y="56" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="13" font-weight="600" fill="#2f6fed" text-anchor="middle">Diagnosis</text>
+  </g>
+
+  <!-- Connector: Input -> Classification -->
+  <path d="M 180 205 L 230 205" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow-gray)" />
+
+  <!-- Branch Lines: Classification -> Disruption Passes -->
+  <path d="M 390 205 L 430 205 L 430 85 L 460 85" fill="none" stroke="#2f6fed" stroke-width="1.5" marker-end="url(#arrow)" />
+  <path d="M 390 205 L 430 205 L 430 165 L 460 165" fill="none" stroke="#2f6fed" stroke-width="1.5" marker-end="url(#arrow)" />
+  <path d="M 390 205 L 430 205 L 430 245 L 460 245" fill="none" stroke="#2f6fed" stroke-width="1.5" marker-end="url(#arrow)" />
+  <path d="M 390 205 L 430 205 L 430 325 L 460 325" fill="none" stroke="#2f6fed" stroke-width="1.5" marker-end="url(#arrow)" />
+
+  <!-- STEP 3: Disruption Passes (Target Nodes) -->
+
+  <!-- Pass 1: Delay Period -->
+  <g transform="translate(460, 60)">
+    <rect x="0" y="0" width="320" height="50" rx="8" fill="#f6f8fc" stroke="#cbd5e0" stroke-width="1.5" />
+    <rect x="0" y="0" width="6" height="50" rx="3" fill="#2f6fed" />
+    <text x="20" y="24" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="13" font-weight="600" fill="#1e293b">Delay Period</text>
+    <text x="20" y="39" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="11" fill="#64748b">Pacing &amp; Attention Errors</text>
+  </g>
+
+  <!-- Pass 2: Font Transformation -->
+  <g transform="translate(460, 140)">
+    <rect x="0" y="0" width="320" height="50" rx="8" fill="#f6f8fc" stroke="#cbd5e0" stroke-width="1.5" />
+    <rect x="0" y="0" width="6" height="50" rx="3" fill="#2f6fed" />
+    <text x="20" y="24" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="13" font-weight="600" fill="#1e293b">Font Transformation</text>
+    <text x="20" y="39" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="11" fill="#64748b">Orthographic &amp; Visual Blindness</text>
+  </g>
+
+  <!-- Pass 3: Text-to-Speech -->
+  <g transform="translate(460, 220)">
+    <rect x="0" y="0" width="320" height="50" rx="8" fill="#f6f8fc" stroke="#cbd5e0" stroke-width="1.5" />
+    <rect x="0" y="0" width="6" height="50" rx="3" fill="#2f6fed" />
+    <text x="20" y="24" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="13" font-weight="600" fill="#1e293b">Text-to-Speech</text>
+    <text x="20" y="39" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="11" fill="#64748b">Phonological &amp; Rhythm Discrepancies</text>
+  </g>
+
+  <!-- Pass 4: Line Masking -->
+  <g transform="translate(460, 300)">
+    <rect x="0" y="0" width="320" height="50" rx="8" fill="#f6f8fc" stroke="#cbd5e0" stroke-width="1.5" />
+    <rect x="0" y="0" width="6" height="50" rx="3" fill="#2f6fed" />
+    <text x="20" y="24" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="13" font-weight="600" fill="#1e293b">Line Masking</text>
+    <text x="20" y="39" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="11" fill="#64748b">Structural &amp; Spatial Focus</text>
+  </g>
+<g opacity="0.72"><rect x="700" y="352" width="112" height="20" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/><text x="756" y="366.0" text-anchor="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" font-weight="600" fill="#64748b">scicoagent.com</text></g></svg>

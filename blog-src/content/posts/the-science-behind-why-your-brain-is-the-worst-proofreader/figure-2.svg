@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 380" width="820" height="380" role="img" aria-label="Diagram showing top-down working memory suppressing minor visual discrepancy signals">
+  <defs>
+    <style>
+      .title { font-size: 15px; font-weight: 600; fill: #1e293b; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; }
+      .label { font-size: 13px; font-weight: 600; fill: #1e293b; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; }
+      .subtext { font-size: 11px; fill: #64748b; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; }
+      .accent-text { font-size: 12px; font-weight: 600; fill: #2f6fed; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; }
+      .suppress-text { font-size: 11px; font-weight: 600; fill: #e11d48; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; }
+      
+      .box { fill: #f8fafc; stroke: #cbd5e0; stroke-width: 1.5; rx: 8px; }
+      .box-accent { fill: #f0f5ff; stroke: #2f6fed; stroke-width: 1.5; rx: 8px; }
+      .box-error { fill: #fff1f2; stroke: #fca5a5; stroke-width: 1.5; rx: 8px; }
+      
+      .arrow { stroke: #2f6fed; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .arrow-neutral { stroke: #94a3b8; stroke-width: 1.5; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .arrow-suppressed { stroke: #cbd5e0; stroke-width: 1.5; stroke-dasharray: 4 4; fill: none; }
+    </style>
+
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#2f6fed" />
+    </marker>
+    <marker id="arrow-gray" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#94a3b8" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="820" height="380" fill="#ffffff" />
+
+  <!-- Title Block -->
+  <text x="410" y="36" class="title" text-anchor="middle">Top-Down Contextual Suppression in Visual Perception</text>
+
+  <!-- BOX 1: Sensory Input (Bottom Left) -->
+  <rect x="48" y="240" width="180" height="88" class="box" />
+  <text x="138" y="265" class="label" text-anchor="middle">Noisy Sensory Input</text>
+  <text x="138" y="285" class="subtext" text-anchor="middle">Transposed / missing letters</text>
+  <text x="138" y="303" class="subtext" text-anchor="middle">e.g., "TAED" instead of "DATE"</text>
+
+  <!-- BOX 2: Early Visual Cortex (Bottom Middle) -->
+  <rect x="320" y="240" width="180" height="88" class="box" />
+  <text x="410" y="265" class="label" text-anchor="middle">Visual Cortex (V1–V4)</text>
+  <text x="410" y="285" class="subtext" text-anchor="middle">Detects feature discrepancies</text>
+  <text x="410" y="303" class="subtext" text-anchor="middle">Generates prediction error</text>
+
+  <!-- BOX 3: Conscious Perception (Bottom Right) -->
+  <rect x="592" y="240" width="180" height="88" class="box-accent" />
+  <text x="682" y="265" class="label" text-anchor="middle">Perceived Text</text>
+  <text x="682" y="285" class="accent-text" text-anchor="middle">Fluent Perception</text>
+  <text x="682" y="303" class="subtext" text-anchor="middle">Error-corrected word ("DATE")</text>
+
+  <!-- BOX 4: Working Memory (Top Middle) -->
+  <rect x="290" y="68" width="240" height="88" class="box-accent" />
+  <text x="410" y="93" class="label" text-anchor="middle">Working Memory &amp; Context</text>
+  <text x="410" y="113" class="subtext" text-anchor="middle">Generates top-down expectations</text>
+  <text x="410" y="131" class="subtext" text-anchor="middle">based on sentence semantics</text>
+
+  <!-- CONNECTIONS & ARROWS -->
+
+  <!-- 1. Sensory -> Visual Cortex -->
+  <path d="M 228 284 L 320 284" class="arrow-neutral" marker-end="url(#arrow-gray)" />
+  <text x="274" y="276" class="subtext" text-anchor="middle">Feedforward</text>
+
+  <!-- 2. Working Memory -> Visual Cortex (Top-down Expectation) -->
+  <path d="M 410 156 L 410 240" class="arrow" marker-end="url(#arrow-blue)" />
+  <text x="420" y="190" class="accent-text" text-anchor="start">Strong Expectation</text>
+  <text x="420" y="206" class="subtext" text-anchor="start">(Contextual Template)</text>
+
+  <!-- 3. Suppression Node (Gating mechanism on the rightward flow) -->
+  <!-- Inner suppression element -->
+  <g transform="translate(536, 284)">
+    <circle cx="0" cy="0" r="14" fill="#fff1f2" stroke="#fca5a5" stroke-width="1.5" />
+    <line x1="-6" y1="-6" x2="6" y2="6" stroke="#e11d48" stroke-width="2" stroke-linecap="round" />
+    <line x1="-6" y1="6" x2="6" y2="-6" stroke="#e11d48" stroke-width="2" stroke-linecap="round" />
+  </g>
+
+  <!-- Path from Visual Cortex to Suppression Node -->
+  <path d="M 500 284 L 522 284" class="arrow-neutral" />
+  
+  <!-- Path from Suppression Node to Conscious Perception -->
+  <path d="M 550 284 L 592 284" class="arrow-suppressed" marker-end="url(#arrow-gray)" />
+
+  <!-- Label for Suppressed Discrepancy Signal -->
+  <text x="536" y="322" class="suppress-text" text-anchor="middle">Minor Error Signal</text>
+  <text x="536" y="336" class="suppress-text" text-anchor="middle">Suppressed</text>
+
+<g opacity="0.72"><rect x="700" y="352" width="112" height="20" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/><text x="756" y="366.0" text-anchor="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" font-weight="600" fill="#64748b">scicoagent.com</text></g></svg>

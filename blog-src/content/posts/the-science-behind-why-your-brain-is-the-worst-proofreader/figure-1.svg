@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 380" width="820" height="380" role="img" aria-label="Diagram comparing bottom-up sensory processing and top-down predictive processing">
+  <defs>
+    <!-- Standard Marker -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#2f6fed" />
+    </marker>
+    <!-- Neutral Marker -->
+    <marker id="arrow-neutral" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#94a3b8" />
+    </marker>
+  </defs>
+
+  <style>
+    .title { font-family: system-ui, -apple-system, sans-serif; font-size: 16px; font-weight: 700; fill: #0f172a; text-anchor: middle; }
+    .panel-header { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 600; text-anchor: middle; }
+    .panel-sub { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; fill: #64748b; text-anchor: middle; }
+    .box-title { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 600; fill: #1e293b; text-anchor: middle; }
+    .box-desc { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; fill: #64748b; text-anchor: middle; }
+    .label-text { font-family: system-ui, -apple-system, sans-serif; font-size: 10px; font-weight: 600; text-anchor: middle; }
+  </style>
+
+  <!-- Background -->
+  <rect width="820" height="380" fill="#ffffff" />
+
+  <!-- Main Title -->
+  <text x="410" y="32" class="title">Visual Processing: Bottom-Up vs. Top-Down</text>
+
+  <!-- LEFT PANEL: Bottom-Up -->
+  <rect x="40" y="52" width="350" height="300" rx="12" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5" />
+  <text x="215" y="78" class="panel-header" fill="#334155">Bottom-Up Processing</text>
+  <text x="215" y="93" class="panel-sub">Data-driven • Feedforward stream</text>
+
+  <!-- Bottom-Up Box 1: Sensory -->
+  <rect x="75" y="112" width="280" height="52" rx="8" fill="#ffffff" stroke="#cbd5e0" stroke-width="1.5" />
+  <text x="215" y="133" class="box-title">1. Sensory Signals</text>
+  <text x="215" y="149" class="box-desc">Visual features &amp; individual letters</text>
+
+  <!-- Bottom-Up Arrow 1 -->
+  <line x1="215" y1="164" x2="215" y2="188" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow-neutral)" />
+
+  <!-- Bottom-Up Box 2: Pattern -->
+  <rect x="75" y="190" width="280" height="52" rx="8" fill="#ffffff" stroke="#cbd5e0" stroke-width="1.5" />
+  <text x="215" y="211" class="box-title">2. Pattern Recognition</text>
+  <text x="215" y="227" class="box-desc">Word forms &amp; lexical integration</text>
+
+  <!-- Bottom-Up Arrow 2 -->
+  <line x1="215" y1="242" x2="215" y2="266" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow-neutral)" />
+
+  <!-- Bottom-Up Box 3: Meaning -->
+  <rect x="75" y="268" width="280" height="52" rx="8" fill="#ffffff" stroke="#cbd5e0" stroke-width="1.5" />
+  <text x="215" y="289" class="box-title">3. High-Level Meaning</text>
+  <text x="215" y="305" class="box-desc">Semantic comprehension</text>
+
+
+  <!-- RIGHT PANEL: Top-Down -->
+  <rect x="430" y="52" width="350" height="300" rx="12" fill="#f0f7ff" stroke="#c7d2fe" stroke-width="1.5" />
+  <text x="605" y="78" class="panel-header" fill="#2f6fed">Top-Down (Predictive) Processing</text>
+  <text x="605" y="93" class="panel-sub">Concept-driven • Generative feedback</text>
+
+  <!-- Top-Down Box 1: Prior Context -->
+  <rect x="465" y="112" width="280" height="52" rx="8" fill="#ffffff" stroke="#2f6fed" stroke-width="1.5" />
+  <text x="605" y="133" class="box-title" fill="#2f6fed">1. Prior Context &amp; Intent</text>
+  <text x="605" y="149" class="box-desc">Semantic goal &amp; mental model</text>
+
+  <!-- Top-Down Arrow 1 (Generates Expectation) -->
+  <line x1="605" y1="164" x2="605" y2="188" stroke="#2f6fed" stroke-width="1.5" marker-end="url(#arrow)" />
+  <rect x="555" y="169" width="100" height="14" rx="4" fill="#f0f7ff" />
+  <text x="605" y="180" class="label-text" fill="#2f6fed">PREDICTS</text>
+
+  <!-- Top-Down Box 2: Visual Expectation -->
+  <rect x="465" y="190" width="280" height="52" rx="8" fill="#ffffff" stroke="#2f6fed" stroke-width="1.5" />
+  <text x="605" y="211" class="box-title">2. Perceptual Expectation</text>
+  <text x="605" y="227" class="box-desc">Anticipated word structures</text>
+
+  <!-- Top-Down Arrow 2 (Bi-directional / Sampling) -->
+  <line x1="605" y1="242" x2="605" y2="266" stroke="#2f6fed" stroke-width="1.5" marker-end="url(#arrow)" />
+  <rect x="525" y="247" width="160" height="14" rx="4" fill="#f0f7ff" />
+  <text x="605" y="258" class="label-text" fill="#2f6fed">SAMPLES &amp; CONFIRMS</text>
+
+  <!-- Top-Down Box 3: Sensory Sampling -->
+  <rect x="465" y="268" width="280" height="52" rx="8" fill="#ffffff" stroke="#cbd5e0" stroke-width="1.5" />
+  <text x="605" y="289" class="box-title">3. Selective Sensory Input</text>
+  <text x="605" y="305" class="box-desc">Features sampled to test hypothesis</text>
+<g opacity="0.72"><rect x="700" y="352" width="112" height="20" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/><text x="756" y="366.0" text-anchor="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" font-weight="600" fill="#64748b">scicoagent.com</text></g></svg>
