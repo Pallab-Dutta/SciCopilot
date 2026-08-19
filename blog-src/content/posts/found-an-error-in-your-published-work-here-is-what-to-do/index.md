@@ -26,6 +26,7 @@ categories:
 marketer: educator
 generated_by: sci-comarket
 scicoagent: benjamin
+agent: "benjamin"
 tools:
 - proofread
 - benjamin
