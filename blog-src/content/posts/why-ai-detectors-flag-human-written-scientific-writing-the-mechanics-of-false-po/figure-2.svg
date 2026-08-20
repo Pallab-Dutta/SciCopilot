@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 380" width="820" height="380" role="img" aria-label="Quadrant graph of Perplexity vs Burstiness showing text classification regions">
+  <style>
+    .label { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 12px; fill: #333333; }
+    .axis-title { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 13px; font-weight: 600; fill: #2f6fed; }
+    .quad-title { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 13px; font-weight: 600; fill: #d93838; }
+    .quad-title-alt { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 13px; font-weight: 600; fill: #2f6fed; }
+    .box-text { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 12px; font-weight: 500; fill: #1a202c; }
+    .sub-text { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 11px; fill: #718096; }
+  </style>
+
+  <defs>
+    <!-- Arrowhead Marker -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#2f6fed" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="820" height="380" fill="#ffffff" />
+
+  <!-- Plot Area Boundaries & Grid -->
+  <!-- Origin at (140, 310), Top-Right at (740, 60). Width = 600, Height = 250 -->
+  
+  <!-- Highlighted Quadrant: Bottom-Left (Low Perplexity, Low Burstiness) -->
+  <rect x="140" y="185" width="300" height="125" fill="#fdf2f2" rx="0" />
+  
+  <!-- Axis Grid Lines (Quadrant Dividers) -->
+  <line x1="440" y1="60" x2="440" y2="310" stroke="#cbd5e0" stroke-width="1.5" stroke-dasharray="4 4" />
+  <line x1="140" y1="185" x2="740" y2="185" stroke="#cbd5e0" stroke-width="1.5" stroke-dasharray="4 4" />
+
+  <!-- Quadrant Labels -->
+  <!-- Bottom-Left Region Label -->
+  <rect x="152" y="195" width="140" height="22" rx="4" fill="#fecdcd" opacity="0.6" />
+  <text x="160" y="210" class="quad-title">Flagged as Synthetic</text>
+
+  <!-- Top-Right Region Label -->
+  <text x="452" y="80" class="quad-title-alt">Human Characteristic Zone</text>
+
+  <!-- Content Boxes -->
+  
+  <!-- Quadrant: Low Perplexity, Low Burstiness -->
+  <!-- Box 1: LLM Generated Text -->
+  <rect x="160" y="235" width="160" height="50" rx="8" fill="#ffffff" stroke="#e53e3e" stroke-width="1.5" />
+  <text x="240" y="258" class="box-text" text-anchor="middle">LLM Generated Text</text>
+  <text x="240" y="273" class="sub-text" text-anchor="middle">Predictable &amp; Uniform</text>
+
+  <!-- Box 2: Standardized Academic Prose -->
+  <rect x="330" y="235" width="180" height="50" rx="8" fill="#ffffff" stroke="#e53e3e" stroke-width="1.5" />
+  <text x="420" y="252" class="box-text" text-anchor="middle">Standardized Academic</text>
+  <text x="420" y="267" class="box-text" text-anchor="middle">Prose</text>
+  <text x="420" y="280" class="sub-text" text-anchor="middle">False-Positive Risk</text>
+
+  <!-- Quadrant: High Perplexity, High Burstiness -->
+  <!-- Box 3: Informal Narrative Writing -->
+  <rect x="520" y="100" width="180" height="50" rx="8" fill="#f6f8fc" stroke="#2f6fed" stroke-width="1.5" />
+  <text x="610" y="123" class="box-text" text-anchor="middle">Informal Narrative</text>
+  <text x="610" y="138" class="box-text" text-anchor="middle">Writing</text>
+  <text x="610" y="151" class="sub-text" text-anchor="middle">High Variation &amp; Unpredictable</text>
+
+  <!-- Main Axes -->
+  <!-- Vertical Axis (Perplexity) -->
+  <line x1="140" y1="310" x2="140" y2="52" stroke="#2f6fed" stroke-width="2" marker-end="url(#arrow)" />
+  <!-- Horizontal Axis (Burstiness) -->
+  <line x1="140" y1="310" x2="748" y2="310" stroke="#2f6fed" stroke-width="2" marker-end="url(#arrow)" />
+
+  <!-- Axis Labels & Tick Indicators -->
+  <!-- Vertical Axis Label -->
+  <text x="45" y="180" class="axis-title" text-anchor="middle" transform="rotate(-90 45 180)">PERPLEXITY</text>
+  <text x="125" y="305" class="label" text-anchor="end">Low</text>
+  <text x="125" y="70" class="label" text-anchor="end">High</text>
+
+  <!-- Horizontal Axis Label -->
+  <text x="440" y="350" class="axis-title" text-anchor="middle">BURSTINESS</text>
+  <text x="140" y="328" class="label" text-anchor="middle">Low</text>
+  <text x="740" y="328" class="label" text-anchor="middle">High</text>
+
+<g opacity="0.72"><rect x="700" y="352" width="112" height="20" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/><text x="756" y="366.0" text-anchor="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" font-weight="600" fill="#64748b">scicoagent.com</text></g></svg>
