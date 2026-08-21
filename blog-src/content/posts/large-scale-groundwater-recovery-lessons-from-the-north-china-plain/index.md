@@ -15,7 +15,7 @@ keywords:
 - hydrology
 - South-to-North Water Diversion
 - North China Plain
-tags: []
+tags: ["groundwater", "hydrology", "aquifer-recovery", "water-management", "north-china-plain", "climate"]
 categories: []
 marketer: educator
 generated_by: sci-comarket

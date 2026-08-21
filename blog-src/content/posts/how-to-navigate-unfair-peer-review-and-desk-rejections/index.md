@@ -14,7 +14,7 @@ keywords:
 - scientific publishing
 - research manuscript
 - editorial process
-tags: []
+tags: ["peer-review", "desk-rejection", "scientific-publishing", "reviewer-bias", "academic-publishing", "manuscript-submission"]
 categories: []
 marketer: educator
 generated_by: sci-comarket

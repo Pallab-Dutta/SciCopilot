@@ -21,7 +21,7 @@ tools:
 - proofread
 - benjamin
 agent: "benjamin"
-tags: []
+tags: ["proofreading", "neuroscience", "predictive-coding", "scientific-writing", "cognitive-bias", "Benjamin", "SciCoagent"]
 categories: []
 marketer: educator
 generated_by: sci-comarket

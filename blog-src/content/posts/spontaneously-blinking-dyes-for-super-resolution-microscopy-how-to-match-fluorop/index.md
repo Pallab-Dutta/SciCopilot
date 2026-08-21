@@ -16,7 +16,7 @@ keywords:
 - single molecule localization kinetics
 - lysosome super resolution imaging
 - fluorophore on off ratio
-tags: []
+tags: ["super-resolution-microscopy", "SMLM", "fluorophores", "blinking-dyes", "single-molecule-imaging", "biophysics"]
 categories: []
 marketer: educator
 generated_by: sci-comarket

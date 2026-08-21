@@ -15,7 +15,7 @@ keywords:
 - leave of absence PhD
 - academic CV gap statement
 - re-entry after academic burnout
-tags: []
+tags: ["academic-applications", "career-gap", "grad-school", "non-linear-career", "statement-of-purpose", "academic-cv"]
 categories: []
 marketer: educator
 generated_by: sci-comarket

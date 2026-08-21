@@ -17,7 +17,7 @@ keywords:
 cover: cover.svg
 images:
 - cover.svg
-tags: []
+tags: ["phd", "thesis-writing", "academic-burnout", "time-management", "grad-school", "supervisor-relationship"]
 categories: []
 marketer: educator
 generated_by: sci-comarket

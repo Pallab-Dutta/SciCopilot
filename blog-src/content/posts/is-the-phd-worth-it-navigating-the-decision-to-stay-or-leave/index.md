@@ -19,7 +19,7 @@ keywords:
 - graduate student mental health
 - researcher career transition
 - PhD worth it
-tags: []
+tags: ["phd", "leaving-academia", "academic-burnout", "career-transition", "grad-school", "mental-health"]
 categories: []
 marketer: data_proof
 generated_by: sci-comarket

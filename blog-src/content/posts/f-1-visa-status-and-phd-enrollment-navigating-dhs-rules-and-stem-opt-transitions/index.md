@@ -15,7 +15,7 @@ keywords:
 - SEVIS transfer rules
 - 5-month rule
 - Duration of Status
-tags: []
+tags: ["f-1-visa", "STEM-OPT", "SEVIS", "international-students", "phd-admissions", "immigration"]
 categories: []
 marketer: educator
 generated_by: sci-comarket
