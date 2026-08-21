@@ -2,7 +2,7 @@
 title: 'Why AI Detectors Flag Human Written Scientific Writing: The Mechanics of False
   Positives'
 slug: why-ai-detectors-flag-human-written-scientific-writing-the-mechanics-of-false-po
-date: '2026-08-21T01:26:32+05:30'
+date: '2026-08-21T08:38:02+05:30'
 draft: false
 summary: Discover why AI detectors flag human written scientific writing, how perplexity
   and burstiness work, and why clear academic prose triggers false positives.
@@ -23,7 +23,7 @@ tags: []
 categories: []
 marketer: contrarian
 generated_by: sci-comarket
-publishDate: '2026-08-21T01:26:32+05:30'
+publishDate: '2026-08-21T08:38:02+05:30'
 source_run: 2026-08-20/painpoint_contrarian_175807
 ---
 
