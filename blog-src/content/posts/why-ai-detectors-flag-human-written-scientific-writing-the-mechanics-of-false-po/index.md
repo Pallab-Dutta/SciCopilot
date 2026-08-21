@@ -19,7 +19,7 @@ keywords:
 cover: cover.jpg
 images:
 - cover.jpg
-tags: ["ai-detectors", "scientific-writing", "perplexity", "burstiness", "academic-publishing", "false-positives"]
+tags: ["ai-detectors", "ai checker", "scientific-writing", "perplexity", "burstiness", "academic-publishing", "false-positives"]
 categories: []
 marketer: contrarian
 generated_by: sci-comarket
