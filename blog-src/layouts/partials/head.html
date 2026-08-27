@@ -7,8 +7,11 @@
 {{/* Open Graph / Twitter card for rich link previews (X, LinkedIn, iMessage, Slack…) */}}
 {{- $desc := cond (ne .Description "") .Description (cond (ne .Summary "") (.Summary | plainify) site.Params.description) -}}
 {{- $cover := "" -}}
-{{- with .Resources.GetMatch "cover.*" }}{{ $cover = .Permalink }}{{ end -}}
+{{/* og:image must be a raster: X/LinkedIn/Slack ignore SVG (and animated-SVG covers). Prefer a
+     raster cover resource, then the front-matter images twin, then any cover.* as a last resort. */}}
+{{- with .Resources.GetMatch "cover.{jpg,jpeg,png,webp}" }}{{ $cover = .Permalink }}{{ end -}}
 {{- if not $cover }}{{ with .Params.images }}{{ $cover = absURL (index . 0) }}{{ end }}{{ end -}}
+{{- if not $cover }}{{ with .Resources.GetMatch "cover.*" }}{{ $cover = .Permalink }}{{ end }}{{ end -}}
 <meta property="og:site_name" content="{{ site.Title }}">
 <meta property="og:type" content="{{ if eq .Kind "page" }}article{{ else }}website{{ end }}">
 <meta property="og:title" content="{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }}{{ end }}">

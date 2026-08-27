@@ -28,7 +28,10 @@
     </button>
   </div>
 
-  {{ with .Resources.GetMatch "cover.*" }}
+  {{/* Prefer an SVG cover for the on-page hero (it animates and is featherweight); fall back to
+       whatever cover.* raster exists. og:image stays raster — see head.html. */}}
+  {{ $cov := .Resources.GetMatch "cover.svg" }}{{ if not $cov }}{{ $cov = .Resources.GetMatch "cover.*" }}{{ end }}
+  {{ with $cov }}
   <figure class="post-cover">
     {{/* SVG resources have no .Width/.Height (those are raster-only and error on SVG), so a
          code-built cover.svg is emitted without them; the SVG's own viewBox sizes it. */}}
