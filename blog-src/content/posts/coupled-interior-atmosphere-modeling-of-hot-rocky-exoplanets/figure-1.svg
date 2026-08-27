@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 380" width="820" height="380" role="img" aria-label="Comparison of Previous Uncoupled Models vs This Work's Thermodynamically Coupled Model for Magma Ocean-Atmosphere Equilibrium">
+  <style>
+    .title { font-family: system-ui, -apple-system, sans-serif; font-size: 15px; font-weight: 700; fill: #1e293b; }
+    .subtitle { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 600; fill: #2f6fed; }
+    .label { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; fill: #334155; }
+    .label-bold { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 600; fill: #1e293b; }
+    .label-sm { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; fill: #64748b; }
+    .box { fill: #f8fafc; stroke: #cbd5e1; stroke-width: 1.5; rx: 8px; }
+    .box-accent { fill: #f0f5ff; stroke: #2f6fed; stroke-width: 1.5; rx: 8px; }
+    .box-error { fill: #fff5f5; stroke: #fca5a5; stroke-width: 1.5; rx: 8px; }
+    .arrow { stroke: #2f6fed; stroke-width: 1.5; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+    .arrow-err { stroke: #ef4444; stroke-width: 1.5; stroke-dasharray: 4 3; fill: none; }
+    .divider { stroke: #e2e8f0; stroke-width: 1; stroke-dasharray: 6 4; }
+  </style>
+
+  <defs>
+    <!-- Arrowhead markers -->
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2f6fed" />
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#ef4444" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="820" height="380" fill="#ffffff" />
+
+  <!-- LEFT PANEL: Previous Models -->
+  <g transform="translate(32, 24)">
+    <!-- Header -->
+    <text x="160" y="20" class="title" text-anchor="middle">Previous Models</text>
+    <text x="160" y="38" class="subtitle" fill="#64748b" text-anchor="middle">(Uncoupled / Titration)</text>
+
+    <!-- Atmosphere Box -->
+    <rect x="20" y="65" width="280" height="64" class="box" />
+    <text x="160" y="87" class="label-bold" text-anchor="middle">Ad-hoc Gas Mixture</text>
+    <text x="160" y="107" class="label" text-anchor="middle">Volatiles (H&#x2082;, CO) + Mineral Gases (SiO, Fe)</text>
+
+    <!-- Disconnected / Error Loop -->
+    <path d="M 90,129 L 90,171" class="arrow-err" marker-end="url(#arrow-red)" />
+    <path d="M 230,171 L 230,129" class="arrow-err" marker-end="url(#arrow-red)" />
+
+    <!-- Red X over feedback -->
+    <circle cx="160" cy="150" r="16" fill="#ffffff" stroke="#ef4444" stroke-width="1.5" />
+    <path d="M 150,140 L 170,160 M 170,140 L 150,160" stroke="#ef4444" stroke-width="2" stroke-linecap="round" />
+
+    <!-- Magma Ocean Box -->
+    <rect x="20" y="171" width="280" height="64" class="box" />
+    <text x="160" y="193" class="label-bold" text-anchor="middle">Magma Ocean Melt</text>
+    <text x="160" y="213" class="label-sm" text-anchor="middle">Fixed composition (Unreactive interior)</text>
+
+    <!-- Result Box -->
+    <rect x="20" y="260" width="280" height="52" class="box-error" />
+    <text x="160" y="281" class="label-bold" fill="#991b1b" text-anchor="middle">Oxygen Fugacity (fO&#x2082;) Drifts</text>
+    <text x="160" y="299" class="label-sm" fill="#991b1b" text-anchor="middle">System strays from true mantle equilibrium</text>
+  </g>
+
+  <!-- DIVIDER LINE -->
+  <line x1="390" y1="40" x2="390" y2="340" class="divider" />
+
+  <!-- RIGHT PANEL: This Work -->
+  <g transform="translate(428, 24)">
+    <!-- Header -->
+    <text x="180" y="20" class="title" text-anchor="middle">This Work</text>
+    <text x="180" y="38" class="subtitle" text-anchor="middle">(Thermodynamically Coupled)</text>
+
+    <!-- Atmosphere Box -->
+    <rect x="20" y="65" width="320" height="64" class="box" />
+    <text x="180" y="87" class="label-bold" text-anchor="middle">Equilibrated Atmosphere</text>
+    <text x="180" y="107" class="label" text-anchor="middle">Speciation: H&#x2082;O, H&#x2082;, CO&#x2082;, CO, CH&#x2084;, SiO, Mg, Fe</text>
+
+    <!-- Bidirectional Coupled Arrows -->
+    <path d="M 100,129 L 100,171" class="arrow" marker-end="url(#arrow-blue)" />
+    <path d="M 100,171 L 100,129" class="arrow" marker-end="url(#arrow-blue)" />
+    
+    <path d="M 260,129 L 260,171" class="arrow" marker-end="url(#arrow-blue)" />
+    <path d="M 260,171 L 260,129" class="arrow" marker-end="url(#arrow-blue)" />
+
+    <!-- Central Control Dial / Core Mechanism -->
+    <rect x="115" y="137" width="130" height="26" rx="13" fill="#ffffff" stroke="#2f6fed" stroke-width="1.5" />
+    <text x="180" y="154" class="label-bold" fill="#2f6fed" text-anchor="middle">Mass &amp; Element Mass Transfer</text>
+
+    <!-- Magma Ocean Box -->
+    <rect x="20" y="171" width="320" height="64" class="box-accent" />
+    <text x="180" y="193" class="label-bold" fill="#1e40af" text-anchor="middle">Magma Ocean Interior Melt</text>
+    <text x="180" y="213" class="label" fill="#1e40af" text-anchor="middle">Multi-component: Si &#x2013; Mg &#x2013; Fe &#x2013; O &#x2013; C &#x2013; H &#x2013; S &#x2013; N</text>
+
+    <!-- Result / Controlling Factor Box -->
+    <rect x="20" y="260" width="320" height="52" class="box-accent" />
+    <text x="180" y="281" class="label-bold" fill="#1e40af" text-anchor="middle">Mantle Oxygen Fugacity (fO&#x2082;)</text>
+    <text x="180" y="299" class="label" fill="#2f6fed" text-anchor="middle">Directly dictates vaporization &amp; speciation (&#x0394;IW -6 to +6)</text>
+  </g>
+<g opacity="0.72"><rect x="700" y="352" width="112" height="20" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/><text x="756" y="366.0" text-anchor="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" font-weight="600" fill="#64748b">scicoagent.com</text></g></svg>

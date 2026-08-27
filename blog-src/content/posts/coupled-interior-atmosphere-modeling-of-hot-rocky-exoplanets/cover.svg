@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="100%" height="100%">
+  <defs>
+    <!-- Background -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f6f8fb"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#eef2f7" stroke-width="1"/>
+    </pattern>
+
+    <!-- Planet base + magma -->
+    <radialGradient id="planetBody" cx="38%" cy="34%" r="75%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="60%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0b1220"/>
+    </radialGradient>
+    <radialGradient id="magma" cx="72%" cy="74%" r="60%">
+      <stop offset="0%" stop-color="#fde68a"/>
+      <stop offset="35%" stop-color="#f59e0b"/>
+      <stop offset="70%" stop-color="#dc2626"/>
+      <stop offset="100%" stop-color="#7c2d12"/>
+    </radialGradient>
+    <radialGradient id="atmo" cx="50%" cy="50%" r="50%">
+      <stop offset="76%" stop-color="#38bdf8" stop-opacity="0"/>
+      <stop offset="90%" stop-color="#38bdf8" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#0ea5e9" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="starGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fffbe6" stop-opacity="0.95"/>
+      <stop offset="45%" stop-color="#fde68a" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#fde68a" stop-opacity="0"/>
+    </radialGradient>
+
+    <clipPath id="diskClip"><circle cx="900" cy="300" r="150"/></clipPath>
+
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="3" stdDeviation="7" flood-color="#0f172a" flood-opacity="0.08"/>
+    </filter>
+
+    <style>
+      /* periods all divide 3.5s -> seamless GIF loop */
+      @keyframes magmaPulse { 0%,100%{ opacity:.72 } 50%{ opacity:1 } }
+      @keyframes atmoShimmer { 0%,100%{ opacity:.55; transform:scale(1) } 50%{ opacity:.95; transform:scale(1.015) } }
+      @keyframes rise {
+        0%   { transform: translateY(0);    opacity:0 }
+        18%  { opacity:.95 }
+        82%  { opacity:.5 }
+        100% { transform: translateY(-84px); opacity:0 }
+      }
+      @keyframes twinkle { 0%,100%{ opacity:.55 } 50%{ opacity:1 } }
+      @keyframes scan {
+        0%   { transform: translateX(0);   opacity:0 }
+        12%  { opacity:1 }
+        88%  { opacity:1 }
+        100% { transform: translateX(300px); opacity:0 }
+      }
+      @keyframes ping { 0%,100%{ r:4px; opacity:1 } 50%{ r:8px; opacity:.55 } }
+      @keyframes drawline { to { stroke-dashoffset: 0 } }
+
+      .magma    { transform-origin:900px 300px; animation: magmaPulse 1.75s ease-in-out infinite; }
+      .atmo     { transform-origin:900px 300px; animation: atmoShimmer 3.5s ease-in-out infinite; }
+      .star     { animation: twinkle 1.75s ease-in-out infinite; }
+      .p        { animation: rise 3.5s ease-in-out infinite; }
+      .p2       { animation-delay: 1.166s; }
+      .p3       { animation-delay: 2.333s; }
+      .p4       { animation-delay: .7s; }
+      .p5       { animation-delay: 1.9s; }
+      .scanline { animation: scan 3.5s ease-in-out infinite; }
+      .ping     { animation: ping 1.75s ease-in-out infinite; }
+      .spectrum { stroke-dasharray: 520; stroke-dashoffset: 520; animation: drawline 3.5s ease-out infinite; }
+
+      .eyebrow  { font-family:'SF Pro Text',-apple-system,'Segoe UI',Roboto,Helvetica,sans-serif; font-weight:700; letter-spacing:.14em; fill:#2f6fed; }
+      .title    { font-family:'SF Pro Display',-apple-system,'Segoe UI',Roboto,Helvetica,sans-serif; font-weight:700; fill:#0f172a; }
+      .dek      { font-family:'SF Pro Text',-apple-system,'Segoe UI',Roboto,Helvetica,sans-serif; font-weight:400; fill:#475569; }
+      .brand    { font-family:'SF Pro Text',-apple-system,'Segoe UI',Roboto,Helvetica,sans-serif; font-weight:600; fill:#64748b; letter-spacing:.02em; }
+      .axis     { font-family:'SF Mono','JetBrains Mono',monospace; fill:#94a3b8; }
+    </style>
+  </defs>
+
+  <!-- Canvas -->
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect x="0" y="0" width="8" height="630" fill="#2f6fed"/>
+
+  <!-- ============ RIGHT: the planet system ============ -->
+  <!-- host-star glow, upper right -->
+  <circle class="star" cx="1120" cy="96" r="120" fill="url(#starGlow)"/>
+
+  <!-- atmosphere halo -->
+  <circle class="atmo" cx="900" cy="300" r="176" fill="url(#atmo)"/>
+  <circle class="atmo" cx="900" cy="300" r="164" fill="none" stroke="#7dd3fc" stroke-width="1.5" stroke-opacity="0.45"/>
+
+  <!-- planet disk -->
+  <circle cx="900" cy="300" r="150" fill="url(#planetBody)"/>
+  <!-- magma ocean on the day-side limb (clipped to the disk) -->
+  <g clip-path="url(#diskClip)">
+    <ellipse class="magma" cx="958" cy="360" rx="150" ry="120" fill="url(#magma)" filter="url(#soft)"/>
+    <path class="magma" d="M760 340 q70 40 150 30 t190 -26" fill="none" stroke="#fda4af" stroke-width="2" stroke-opacity="0.5"/>
+  </g>
+  <!-- terminator sheen -->
+  <circle cx="900" cy="300" r="150" fill="none" stroke="#0b1220" stroke-width="1.5" stroke-opacity="0.5"/>
+
+  <!-- outgassing particles rising off the magma limb into the atmosphere -->
+  <g fill="#7dd3fc">
+    <circle class="p"     cx="852" cy="404" r="3.5"/>
+    <circle class="p p2"  cx="900" cy="418" r="3"/>
+    <circle class="p p3"  cx="946" cy="404" r="3.5"/>
+    <circle class="p p4"  cx="820" cy="380" r="2.5"/>
+    <circle class="p p5"  cx="978" cy="382" r="2.5"/>
+  </g>
+
+  <!-- ============ spectrum inset (bottom-right): JWST-style transmission dip ============ -->
+  <g transform="translate(628,470)">
+    <rect x="0" y="0" width="332" height="128" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#cardShadow)"/>
+    <text class="axis" x="16" y="24" font-size="12">TRANSMISSION SPECTRUM</text>
+    <!-- baseline -->
+    <line x1="20" y1="104" x2="312" y2="104" stroke="#e2e8f0" stroke-width="1"/>
+    <line x1="20" y1="40" x2="20" y2="104" stroke="#e2e8f0" stroke-width="1"/>
+    <!-- the trace: a flat continuum with one absorption dip (CO/CO2) -->
+    <path class="spectrum" d="M22 62 L110 60 Q150 60 170 92 Q188 66 208 62 L312 60"
+          fill="none" stroke="#2f6fed" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- detection ping at the dip -->
+    <circle class="ping" cx="170" cy="92" r="4" fill="#dc2626"/>
+    <text class="axis" x="150" y="122" font-size="11" fill="#64748b">CO / CO₂</text>
+    <!-- sweeping scan line -->
+    <g clip-path="none">
+      <rect class="scanline" x="20" y="34" width="2.5" height="72" fill="#2f6fed" opacity="0.0"/>
+    </g>
+  </g>
+
+  <!-- ============ LEFT: title block ============ -->
+  <g transform="translate(80,0)">
+    <text class="eyebrow" x="0" y="150" font-size="20">FRONTIER SCIENCE · PLANETARY SCIENCE</text>
+
+    <text class="title" x="-2" y="214" font-size="52">Coupled Interior-</text>
+    <text class="title" x="-2" y="272" font-size="52">Atmosphere Modeling</text>
+    <text class="title" x="-2" y="330" font-size="52">of Hot Rocky Exoplanets</text>
+
+    <line x1="0" y1="366" x2="120" y2="366" stroke="#2f6fed" stroke-width="4" stroke-linecap="round"/>
+
+    <text class="dek" x="0" y="410" font-size="21">How a magma ocean's oxidation state</text>
+    <text class="dek" x="0" y="440" font-size="21">writes itself into an exoplanet's spectrum.</text>
+
+    <text class="brand" x="0" y="556" font-size="17">SciCoagent · benjamin.scicoagent.com</text>
+  </g>
+</svg>
