@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 380" width="820" height="380" role="img" aria-label="Process diagram showing the progression from Scientific Data through Internal Peer Review, Investigative Journalism Inquiry, to Institutional Retraction and Reform.">
+  <defs>
+    <!-- Arrowhead marker -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#2f6fed" />
+    </marker>
+    
+    <!-- Subtle Shadow -->
+    <filter id="shadow" x="-4%" y="-4%" width="108%" height="108%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.06"/>
+    </filter>
+  </defs>
+
+  <style>
+    .title { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; font-size: 16px; font-weight: 600; fill: #0f172a; }
+    .subtitle { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; font-size: 12px; font-weight: 400; fill: #64748b; }
+    .node-title { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; font-size: 13px; font-weight: 600; fill: #1e293b; }
+    .node-desc { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; font-size: 11px; font-weight: 400; fill: #64748b; line-height: 1.3; }
+    .step-num { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; font-size: 10px; font-weight: 700; fill: #2f6fed; letter-spacing: 0.5px; }
+    .flow-line { stroke: #2f6fed; stroke-width: 1.5; fill: none; }
+  </style>
+
+  <!-- Background -->
+  <rect width="820" height="380" fill="#ffffff" />
+
+  <!-- Header -->
+  <g transform="translate(40, 42)">
+    <text class="title" x="0" y="0">Mechanism of Scientific Self-Correction</text>
+    <text class="subtitle" x="0" y="18">From initial data generation to public external scrutiny and institutional accountability</text>
+  </g>
+
+  <!-- Process Track Background Line -->
+  <line x1="115" y1="205" x2="705" y2="205" stroke="#e2e8f0" stroke-width="2" stroke-dasharray="4 4" />
+
+  <!-- STEP 1: Scientific Data -->
+  <g transform="translate(40, 125)">
+    <rect width="150" height="160" rx="8" fill="#f8fafc" stroke="#cbd5e0" stroke-width="1.5" filter="url(#shadow)"/>
+    <rect x="12" y="12" width="28" height="16" rx="4" fill="#eff6ff" />
+    <text class="step-num" x="26" y="23" text-anchor="middle">01</text>
+    
+    <!-- Icon/Graphic element -->
+    <g transform="translate(15, 42)" stroke="#2f6fed" stroke-width="1.5" fill="none" stroke-linecap="round">
+      <path d="M0 4 h24 M0 10 h16 M0 16 h20" />
+      <circle cx="28" cy="16" r="1.5" fill="#2f6fed" />
+    </g>
+
+    <text class="node-title" x="15" y="82">Scientific Data</text>
+    <text class="node-desc" x="15" y="102">
+      <tspan x="15" dy="0">Primary research,</tspan>
+      <tspan x="15" dy="14">experimental results,</tspan>
+      <tspan x="15" dy="14">&amp; raw datasets</tspan>
+    </text>
+  </g>
+
+  <!-- Arrow 1 -> 2 -->
+  <path class="flow-line" d="M 190 205 L 228 205" marker-end="url(#arrow)" />
+
+  <!-- STEP 2: Internal Peer Review Gate -->
+  <g transform="translate(235, 125)">
+    <rect width="150" height="160" rx="8" fill="#f8fafc" stroke="#cbd5e0" stroke-width="1.5" filter="url(#shadow)"/>
+    <rect x="12" y="12" width="28" height="16" rx="4" fill="#eff6ff" />
+    <text class="step-num" x="26" y="23" text-anchor="middle">02</text>
+
+    <!-- Icon/Graphic element -->
+    <g transform="translate(15, 40)" stroke="#2f6fed" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="0" y="0" width="22" height="18" rx="2" />
+      <path d="M7 9 l3 3 l6 -6" />
+    </g>
+
+    <text class="node-title" x="15" y="82">Peer Review Gate</text>
+    <text class="node-desc" x="15" y="102">
+      <tspan x="15" dy="0">Journal evaluation,</tspan>
+      <tspan x="15" dy="14">editorial assessment,</tspan>
+      <tspan x="15" dy="14">&amp; formal publication</tspan>
+    </text>
+  </g>
+
+  <!-- Arrow 2 -> 3 -->
+  <path class="flow-line" d="M 385 205 L 423 205" marker-end="url(#arrow)" />
+
+  <!-- STEP 3: Investigative Journalism Inquiry -->
+  <g transform="translate(430, 125)">
+    <!-- Highlighted border for external intervention -->
+    <rect width="150" height="160" rx="8" fill="#f8fafc" stroke="#2f6fed" stroke-width="1.5" filter="url(#shadow)"/>
+    <rect x="12" y="12" width="28" height="16" rx="4" fill="#eff6ff" />
+    <text class="step-num" x="26" y="23" text-anchor="middle">03</text>
+
+    <!-- Icon/Graphic element -->
+    <g transform="translate(15, 40)" stroke="#2f6fed" stroke-width="1.5" fill="none" stroke-linecap="round">
+      <circle cx="9" cy="9" r="7" />
+      <path d="M14 14 l5 5" />
+    </g>
+
+    <text class="node-title" x="15" y="82">Journalism Inquiry</text>
+    <text class="node-desc" x="15" y="102">
+      <tspan x="15" dy="0">External scrutiny,</tspan>
+      <tspan x="15" dy="14">data forensics, &amp;</tspan>
+      <tspan x="15" dy="14">public reporting</tspan>
+    </text>
+  </g>
+
+  <!-- Arrow 3 -> 4 -->
+  <path class="flow-line" d="M 580 205 L 618 205" marker-end="url(#arrow)" />
+
+  <!-- STEP 4: Institutional Retraction and Reform -->
+  <g transform="translate(625, 125)">
+    <rect width="150" height="160" rx="8" fill="#f8fafc" stroke="#cbd5e0" stroke-width="1.5" filter="url(#shadow)"/>
+    <rect x="12" y="12" width="28" height="16" rx="4" fill="#eff6ff" />
+    <text class="step-num" x="26" y="23" text-anchor="middle">04</text>
+
+    <!-- Icon/Graphic element -->
+    <g transform="translate(15, 40)" stroke="#2f6fed" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 17h18 M5 17V8l7-5 7 5v9 M9 17v-4h6v4" />
+    </g>
+
+    <text class="node-title" x="15" y="76">
+      <tspan x="15" dy="0">Retraction &amp;</tspan>
+      <tspan x="15" dy="16">Reform</tspan>
+    </text>
+    <text class="node-desc" x="15" y="112">
+      <tspan x="15" dy="0">Formal correction,</tspan>
+      <tspan x="15" dy="14">policy updates, &amp;</tspan>
+      <tspan x="15" dy="14">systemic oversight</tspan>
+    </text>
+  </g>
+
+  <!-- Bottom Legend / Note -->
+  <g transform="translate(40, 322)">
+    <line x1="0" y1="0" x2="740" y2="0" stroke="#f1f5f9" stroke-width="1" />
+    <circle cx="4" cy="18" r="3" fill="#2f6fed" />
+    <text class="subtitle" x="14" y="21">External independent inquiry serves as a critical secondary check when internal gates fail to detect flaws.</text>
+  </g>
+<g opacity="0.72"><rect x="700" y="352" width="112" height="20" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/><text x="756" y="366.0" text-anchor="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" font-weight="600" fill="#64748b">scicoagent.com</text></g></svg>

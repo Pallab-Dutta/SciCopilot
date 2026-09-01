@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 380" width="820" height="380" role="img" aria-label="Academic Publishing Incentive Pipeline: Volume incentives lead to rapid manuscript generation, increasing peer review forensic burden, resulting in post-publication exposure.">
+  <defs>
+    <style>
+      .bg { fill: #ffffff; }
+      .title { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 16px; font-weight: 700; fill: #1e293b; letter-spacing: -0.2px; }
+      .subtitle { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 13px; font-weight: 400; fill: #64748b; }
+      .node-bg { fill: #f8fafc; stroke: #cbd5e0; stroke-width: 1.5px; rx: 8px; }
+      .node-accent { fill: #f0f5ff; stroke: #2f6fed; stroke-width: 1.5px; rx: 8px; }
+      .node-title { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 13px; font-weight: 700; fill: #0f172a; }
+      .node-text { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 11px; font-weight: 400; fill: #475569; }
+      .accent-text { fill: #2f6fed; }
+      .alert-text { fill: #d97706; }
+      .arrow-line { stroke: #94a3b8; stroke-width: 1.5px; fill: none; }
+      .arrow-line-active { stroke: #2f6fed; stroke-width: 1.5px; fill: none; }
+      .step-num { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 10px; font-weight: 700; fill: #94a3b8; }
+    </style>
+    
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#94a3b8" />
+    </marker>
+    
+    <marker id="arrow-active" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#2f6fed" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" class="bg" />
+
+  <!-- Header -->
+  <text x="40" y="45" class="title">The Integrity Cascade in Academic Publishing</text>
+  <text x="40" y="66" class="subtitle">Systemic pressure downstream from misaligned systemic incentives</text>
+
+  <!-- Flow Line Background Track -->
+  <line x1="160" y1="180" x2="660" y2="180" stroke="#f1f5f9" stroke-width="4" stroke-dasharray="4 4" />
+
+  <!-- STEP 1: Upstream Incentives -->
+  <g transform="translate(40, 110)">
+    <rect width="150" height="140" class="node-bg" />
+    <text x="15" y="25" class="step-num">01</text>
+    <text x="75" y="48" class="node-title" text-anchor="middle">Upstream</text>
+    <text x="75" y="64" class="node-title" text-anchor="middle">Incentives</text>
+    <line x1="25" y1="76" x2="125" y2="76" stroke="#e2e8f0" stroke-width="1" />
+    <text x="75" y="96" class="node-text" text-anchor="middle">"Publish or Perish"</text>
+    <text x="75" y="112" class="node-text accent-text" text-anchor="middle">Volume &gt; Depth</text>
+    <text x="75" y="128" class="node-text" text-anchor="middle">Metrics focus</text>
+  </g>
+
+  <!-- Arrow 1 -> 2 -->
+  <path d="M 190 180 L 228 180" class="arrow-line" marker-end="url(#arrow)" />
+
+  <!-- STEP 2: Manuscript Generation -->
+  <g transform="translate(230, 110)">
+    <rect width="150" height="140" class="node-bg" />
+    <text x="15" y="25" class="step-num">02</text>
+    <text x="75" y="48" class="node-title" text-anchor="middle">Manuscript</text>
+    <text x="75" y="64" class="node-title" text-anchor="middle">Generation</text>
+    <line x1="25" y1="76" x2="125" y2="76" stroke="#e2e8f0" stroke-width="1" />
+    <text x="75" y="96" class="node-text" text-anchor="middle">Accelerated output</text>
+    <text x="75" y="112" class="node-text" text-anchor="middle">Salami slicing</text>
+    <text x="75" y="128" class="node-text" text-anchor="middle">Paper mills &amp; AI</text>
+  </g>
+
+  <!-- Arrow 2 -> 3 -->
+  <path d="M 380 180 L 418 180" class="arrow-line" marker-end="url(#arrow)" />
+
+  <!-- STEP 3: Downstream Peer Review -->
+  <g transform="translate(420, 110)">
+    <rect width="150" height="140" class="node-bg" />
+    <text x="15" y="25" class="step-num">03</text>
+    <text x="75" y="48" class="node-title" text-anchor="middle">Peer Review</text>
+    <text x="75" y="64" class="node-title" text-anchor="middle">Bottleneck</text>
+    <line x1="25" y1="76" x2="125" y2="76" stroke="#e2e8f0" stroke-width="1" />
+    <text x="75" y="96" class="node-text" text-anchor="middle">Reviewer fatigue</text>
+    <text x="75" y="112" class="node-text alert-text" text-anchor="middle">Forensic burden</text>
+    <text x="75" y="128" class="node-text" text-anchor="middle">Superficial checks</text>
+  </g>
+
+  <!-- Arrow 3 -> 4 -->
+  <path d="M 570 180 L 608 180" class="arrow-line-active" marker-end="url(#arrow-active)" />
+
+  <!-- STEP 4: Post-Publication Exposure -->
+  <g transform="translate(610, 110)">
+    <rect width="170" height="140" class="node-accent" />
+    <text x="15" y="25" class="step-num" fill="#2f6fed">04</text>
+    <text x="85" y="48" class="node-title accent-text" text-anchor="middle">Post-Publication</text>
+    <text x="85" y="64" class="node-title accent-text" text-anchor="middle">Exposure</text>
+    <line x1="25" y1="76" x2="145" y2="76" stroke="#cbd5e0" stroke-width="1" />
+    <text x="85" y="96" class="node-text" text-anchor="middle">Public whistleblowing</text>
+    <text x="85" y="112" class="node-text" text-anchor="middle">Image forensics</text>
+    <text x="85" y="128" class="node-text accent-text" font-weight="700" text-anchor="middle">Retractions &amp; distrust</text>
+  </g>
+
+  <!-- Footer / Systemic Diagnosis Bar -->
+  <g transform="translate(40, 280)">
+    <rect width="740" height="50" rx="6" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1" />
+    <circle cx="25" cy="25" r="4" fill="#2f6fed" />
+    <text x="40" y="29" class="node-text" fill="#334155">
+      <tspan font-weight="700" fill="#1e293b">Structural Asymmetry:</tspan> Quality control is pushed downstream onto uncompensated reviewers, shifting detection to post-publication.
+    </text>
+  </g>
+<g opacity="0.72"><rect x="700" y="352" width="112" height="20" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/><text x="756" y="366.0" text-anchor="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" font-weight="600" fill="#64748b">scicoagent.com</text></g></svg>
