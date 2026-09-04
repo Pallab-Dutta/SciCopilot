@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 380" width="820" height="380" role="img" aria-label="4-stage AI-assisted qualitative workflow diagram">
+  <defs>
+    <!-- Marker for standard flow arrows -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#2f6fed" />
+    </marker>
+    <!-- Marker for feedback loop arrow -->
+    <marker id="arrow-sub" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#718096" />
+    </marker>
+    <style>
+      .title { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 16px; font-weight: 600; fill: #1a202c; }
+      .subtitle { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 12px; fill: #718096; }
+      .stage-num { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 11px; font-weight: 700; fill: #2f6fed; letter-spacing: 0.5px; }
+      .node-title { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 13px; font-weight: 600; fill: #2d3748; }
+      .node-desc { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 11px; fill: #4a5568; }
+      .label-sub { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 10px; fill: #718096; }
+    </style>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="820" height="380" fill="#ffffff" />
+
+  <!-- Header -->
+  <text x="40" y="42" class="title">AI-Assisted Qualitative Workflow</text>
+  <text x="40" y="60" class="subtitle">A 4-stage methodological framework for rigor and interpretive transparency</text>
+
+  <!-- Flow Connector Lines (Drawn behind boxes for clean edges) -->
+  <line x1="195" y1="180" x2="225" y2="180" stroke="#2f6fed" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="380" y1="180" x2="410" y2="180" stroke="#2f6fed" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="565" y1="180" x2="595" y2="180" stroke="#2f6fed" stroke-width="1.5" marker-end="url(#arrow)" />
+
+  <!-- Stage 1 -->
+  <g transform="translate(40, 95)">
+    <rect width="155" height="170" rx="8" fill="#f6f8fc" stroke="#cbd5e0" stroke-width="1.5" />
+    <rect width="155" height="170" rx="8" fill="none" stroke="#2f6fed" stroke-width="1.5" stroke-dasharray="0" />
+    <circle cx="24" cy="24" r="12" fill="#ebf8ff" />
+    <text x="24" y="28" text-anchor="middle" class="stage-num">01</text>
+    <text x="24" y="62" class="node-title">Epistemological</text>
+    <text x="24" y="78" class="node-title">Grounding</text>
+    <line x1="24" y1="92" x2="131" y2="92" stroke="#e2e8f0" stroke-width="1" />
+    <text x="24" y="112" class="node-desc">• Paradigm stance</text>
+    <text x="24" y="128" class="node-desc">• Human agency</text>
+    <text x="24" y="144" class="node-desc">• Bias disclosure</text>
+  </g>
+
+  <!-- Stage 2 -->
+  <g transform="translate(225, 95)">
+    <rect width="155" height="170" rx="8" fill="#f6f8fc" stroke="#cbd5e0" stroke-width="1.5" />
+    <circle cx="24" cy="24" r="12" fill="#ebf8ff" />
+    <text x="24" y="28" text-anchor="middle" class="stage-num">02</text>
+    <text x="24" y="62" class="node-title">Prompting &amp;</text>
+    <text x="24" y="78" class="node-title">Codebook Map</text>
+    <line x1="24" y1="92" x2="131" y2="92" stroke="#e2e8f0" stroke-width="1" />
+    <text x="24" y="112" class="node-desc">• Schema definition</text>
+    <text x="24" y="128" class="node-desc">• Zero/few-shot rules</text>
+    <text x="24" y="144" class="node-desc">• Structural prompts</text>
+  </g>
+
+  <!-- Stage 3 -->
+  <g transform="translate(410, 95)">
+    <rect width="155" height="170" rx="8" fill="#f6f8fc" stroke="#cbd5e0" stroke-width="1.5" />
+    <circle cx="24" cy="24" r="12" fill="#ebf8ff" />
+    <text x="24" y="28" text-anchor="middle" class="stage-num">03</text>
+    <text x="24" y="62" class="node-title">Blind Dual-Coding</text>
+    <text x="24" y="78" class="node-title">&amp; IRR Metrics</text>
+    <line x1="24" y1="92" x2="131" y2="92" stroke="#e2e8f0" stroke-width="1" />
+    <text x="24" y="112" class="node-desc">• Parallel human/AI</text>
+    <text x="24" y="128" class="node-desc">• Cohen's Kappa / IRR</text>
+    <text x="24" y="144" class="node-desc">• Discrepancy audit</text>
+  </g>
+
+  <!-- Stage 4 -->
+  <g transform="translate(595, 95)">
+    <rect width="155" height="170" rx="8" fill="#f6f8fc" stroke="#cbd5e0" stroke-width="1.5" />
+    <circle cx="24" cy="24" r="12" fill="#ebf8ff" />
+    <text x="24" y="28" text-anchor="middle" class="stage-num">04</text>
+    <text x="24" y="62" class="node-title">Interpretive</text>
+    <text x="24" y="78" class="node-title">Synthesis</text>
+    <line x1="24" y1="92" x2="131" y2="92" stroke="#e2e8f0" stroke-width="1" />
+    <text x="24" y="112" class="node-desc">• Thematic grouping</text>
+    <text x="24" y="128" class="node-desc">• Contextual nuance</text>
+    <text x="24" y="144" class="node-desc">• Final theory building</text>
+  </g>
+
+  <!-- Iterative Feedback Loop (Stage 3 back to Stage 2) -->
+  <path d="M 487 265 L 487 295 L 302 295 L 302 271" fill="none" stroke="#718096" stroke-width="1.2" stroke-dasharray="4 3" marker-end="url(#arrow-sub)" />
+  <rect x="352" y="285" width="86" height="20" rx="4" fill="#ffffff" stroke="#cbd5e0" stroke-width="1" />
+  <text x="395" y="298" text-anchor="middle" class="label-sub">Refine Codebook</text>
+
+  <!-- Footer Legend/Status -->
+  <line x1="40" y1="335" x2="780" y2="335" stroke="#edf2f7" stroke-width="1" />
+  <circle cx="48" cy="352" r="4" fill="#2f6fed" />
+  <text x="60" y="355" class="label-sub">Methodological Integrity Checkpoint</text>
+  <circle cx="248" cy="352" r="4" fill="#cbd5e0" />
+  <text x="260" y="355" class="label-sub">Human-in-the-Loop Validation</text>
+<g opacity="0.72"><rect x="700" y="352" width="112" height="20" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/><text x="756" y="366.0" text-anchor="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" font-weight="600" fill="#64748b">scicoagent.com</text></g></svg>

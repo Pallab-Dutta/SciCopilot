@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+<defs>
+<style>
+.title{font-family:Inter,Arial,sans-serif;font-size:56px;font-weight:700;fill:#111}
+.sub{font-family:Inter,Arial,sans-serif;font-size:25px;fill:#666}
+.head{font-family:Inter,Arial,sans-serif;font-size:29px;font-weight:700;fill:#111}
+.body{font-family:Inter,Arial,sans-serif;font-size:23px;fill:#333}
+.small{font-family:Inter,Arial,sans-serif;font-size:20px;fill:#666}
+.card{fill:#fafafa;stroke:#ddd;stroke-width:2}
+.line{stroke:#111;stroke-width:3;fill:none;stroke-linecap:round}
+</style>
+</defs>
+
+<rect width="1600" height="900" fill="white"/>
+
+<!-- Title -->
+<text x="90" y="92" class="title">How to Transition to AI-Driven Research</text>
+<text x="90" y="157" class="title">Without Abandoning Methodological Rigor</text>
+<text x="92" y="205" class="sub">AI should strengthen your method—not replace it.</text>
+
+<!-- Animated underline: deliberately separated from text -->
+<path d="M92 224 H760" stroke="#111" stroke-width="4" stroke-linecap="round"
+      stroke-dasharray="668" stroke-dashoffset="668">
+  <animate attributeName="stroke-dashoffset"
+           values="668;0;0;668" dur="7s" repeatCount="indefinite"/>
+</path>
+
+<!-- Core transition -->
+<g>
+<circle cx="800" cy="390" r="105" fill="#f5f5f5" stroke="#111" stroke-width="3"/>
+<circle cx="800" cy="390" r="105" fill="none" stroke="#777" stroke-width="5"
+        stroke-dasharray="24 16">
+<animateTransform attributeName="transform" type="rotate"
+from="0 800 390" to="360 800 390" dur="14s" repeatCount="indefinite"/>
+</circle>
+<text x="800" y="382" text-anchor="middle" class="head">AI-DRIVEN</text>
+<text x="800" y="417" text-anchor="middle" class="head">RESEARCH</text>
+</g>
+
+<!-- Method -->
+<g>
+<rect x="90" y="330" width="340" height="150" rx="18" class="card"/>
+<text x="260" y="375" text-anchor="middle" class="head">METHOD</text>
+<text x="260" y="414" text-anchor="middle" class="body">systematic + transparent</text>
+<path d="M155 447 H365" class="line"/>
+</g>
+
+<!-- Epistemology -->
+<g>
+<rect x="1170" y="330" width="340" height="150" rx="18" class="card"/>
+<text x="1340" y="375" text-anchor="middle" class="head">EPISTEMOLOGY</text>
+<text x="1340" y="414" text-anchor="middle" class="body">explicit + auditable</text>
+<circle cx="1340" cy="447" r="7" fill="#111">
+<animate attributeName="r" values="6;11;6" dur="1.6s" repeatCount="indefinite"/>
+</circle>
+</g>
+
+<!-- Connectors -->
+<path d="M430 405 C535 405 610 390 695 390" class="line" stroke-dasharray="11 11">
+<animate attributeName="stroke-dashoffset" from="22" to="0" dur="1.2s" repeatCount="indefinite"/>
+</path>
+<path d="M905 390 C990 390 1065 405 1170 405" class="line" stroke-dasharray="11 11">
+<animate attributeName="stroke-dashoffset" from="22" to="0" dur="1.2s" repeatCount="indefinite"/>
+</path>
+
+<!-- Take-home cards -->
+<g>
+<rect x="90" y="570" width="690" height="210" rx="20" class="card"/>
+<text x="125" y="620" class="head">DON'T</text>
+<circle cx="132" cy="667" r="6" fill="#111"/>
+<text x="155" y="675" class="body">Turn qualitative judgment into</text>
+<text x="155" y="707" class="body">performative quantitative metrics.</text>
+<circle cx="132" cy="744" r="6" fill="#111"/>
+<text x="155" y="752" class="body">Use AI without documenting how it shaped analysis.</text>
+</g>
+
+<g>
+<rect x="830" y="570" width="680" height="210" rx="20" class="card"/>
+<text x="865" y="620" class="head">DO</text>
+<circle cx="872" cy="667" r="6" fill="#111"/>
+<text x="895" y="675" class="body">Treat LLMs as coders, auditors,</text>
+<text x="895" y="707" class="body">or pattern generators—explicitly.</text>
+<circle cx="872" cy="744" r="6" fill="#111"/>
+<text x="895" y="752" class="body">Formalize prompts, codebooks, and audit trails.</text>
+</g>
+
+<!-- Closing principle -->
+<text x="800" y="840" text-anchor="middle" class="small">
+Rigor comes from transparency, not from pretending AI is “just another tool.”
+</text>
+</svg>
