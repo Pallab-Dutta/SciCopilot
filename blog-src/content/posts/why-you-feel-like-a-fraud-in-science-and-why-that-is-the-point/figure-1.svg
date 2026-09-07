@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 380" width="820" height="380" role="img" aria-label="Comparison between Personal Defect Model and Structural Model of Research Doubt">
+  <defs>
+    <style>
+      .title { font-family: system-ui, -apple-system, sans-serif; font-size: 16px; font-weight: 700; fill: #0f172a; text-anchor: middle; }
+      .subtitle { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; fill: #64748b; text-anchor: middle; }
+      .col-header { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.5px; text-anchor: middle; text-transform: uppercase; }
+      .box-title { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 600; text-anchor: middle; }
+      .box-desc { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; text-anchor: middle; }
+      .tag-text { font-family: system-ui, -apple-system, sans-serif; font-size: 10px; font-weight: 700; text-anchor: middle; text-transform: uppercase; letter-spacing: 0.5px; }
+      
+      .bg-neutral { fill: #f8fafc; stroke: #cbd5e0; stroke-width: 1.5px; rx: 8px; }
+      .bg-accent { fill: #f0f5ff; stroke: #2f6fed; stroke-width: 1.5px; rx: 8px; }
+      .bg-accent-light { fill: #ffffff; stroke: #93c5fd; stroke-width: 1.5px; rx: 6px; }
+      
+      .arrow-neutral { stroke: #94a3b8; stroke-width: 1.5px; fill: none; marker-end: url(#arrowhead-neutral); }
+      .arrow-accent { stroke: #2f6fed; stroke-width: 1.5px; fill: none; marker-end: url(#arrowhead-accent); }
+    </style>
+
+    <marker id="arrowhead-neutral" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#94a3b8" />
+    </marker>
+    <marker id="arrowhead-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2f6fed" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="820" height="380" fill="#ffffff" />
+
+  <!-- Diagram Title -->
+  <text x="410" y="34" class="title">Conceptualizing Epistemic Doubt in Research</text>
+  <text x="410" y="52" class="subtitle">Contrasting internal pathology against environmental registration</text>
+
+  <!-- ================= LEFT COLUMN: PERSONAL DEFECT MODEL ================= -->
+  <!-- Column Header Tag -->
+  <rect x="130" y="78" width="180" height="22" rx="11" fill="#f1f5f9" />
+  <text x="220" y="93" class="tag-text" fill="#475569">Personal Defect Model</text>
+
+  <!-- Box L1: Trigger -->
+  <g transform="translate(70, 115)">
+    <rect width="300" height="54" class="bg-neutral" />
+    <text x="150" y="24" class="box-title" fill="#334155">Encounter with Novel Domain</text>
+    <text x="150" y="40" class="box-desc" fill="#64748b">High ambiguity, unmapped research terrain</text>
+  </g>
+
+  <!-- Arrow L1 -> L2 -->
+  <path d="M 220 169 L 220 191" class="arrow-neutral" />
+
+  <!-- Box L2: Interpretation (Core Mechanism) -->
+  <g transform="translate(70, 193)">
+    <rect width="300" height="62" class="bg-neutral" style="stroke: #a0aec0;" />
+    <text x="150" y="24" class="box-title" fill="#1e293b">Internal Flaw Attribution</text>
+    <text x="150" y="41" class="box-desc" fill="#64748b">Frames doubt as personal inadequacy,</text>
+    <text x="150" y="54" class="box-desc" fill="#64748b">imposterism, or lack of capability</text>
+  </g>
+
+  <!-- Arrow L2 -> L3 -->
+  <path d="M 220 255 L 220 277" class="arrow-neutral" />
+
+  <!-- Box L3: Outcome -->
+  <g transform="translate(70, 279)">
+    <rect width="300" height="54" class="bg-neutral" />
+    <text x="150" y="24" class="box-title" fill="#475569">Pathologized Self-Blame</text>
+    <text x="150" y="40" class="box-desc" fill="#64748b">Leads to anxiety, withdrawal, and silence</text>
+  </g>
+
+
+  <!-- Central Separator Line -->
+  <line x1="410" y1="80" x2="410" y2="335" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="4 4" />
+
+
+  <!-- ================= RIGHT COLUMN: STRUCTURAL MODEL ================= -->
+  <!-- Column Header Tag -->
+  <rect x="510" y="78" width="180" height="22" rx="11" fill="#eff6ff" />
+  <text x="600" y="93" class="tag-text" fill="#2f6fed">Structural Model</text>
+
+  <!-- Box R1: Trigger -->
+  <g transform="translate(450, 115)">
+    <rect width="300" height="54" class="bg-neutral" />
+    <text x="150" y="24" class="box-title" fill="#334155">Encounter with Novel Domain</text>
+    <text x="150" y="40" class="box-desc" fill="#64748b">High ambiguity, unmapped research terrain</text>
+  </g>
+
+  <!-- Arrow R1 -> R2 -->
+  <path d="M 600 169 L 600 191" class="arrow-accent" />
+
+  <!-- Box R2: Interpretation (Core Mechanism) -->
+  <g transform="translate(450, 193)">
+    <rect width="300" height="62" class="bg-accent" />
+    <text x="150" y="24" class="box-title" fill="#1e3a8a">Accurate Signal Registration</text>
+    <text x="150" y="41" class="box-desc" fill="#2f6fed">Frames doubt as precise metric of</text>
+    <text x="150" y="54" class="box-desc" fill="#2f6fed">environmental novelty &amp; complexity</text>
+  </g>
+
+  <!-- Arrow R2 -> R3 -->
+  <path d="M 600 255 L 600 277" class="arrow-accent" />
+
+  <!-- Box R3: Outcome -->
+  <g transform="translate(450, 279)">
+    <rect width="300" height="54" class="bg-accent-light" />
+    <text x="150" y="24" class="box-title" fill="#1e3a8a">Epistemic Calibration</text>
+    <text x="150" y="40" class="box-desc" fill="#3b82f6">Fosters targeted inquiry &amp; active exploration</text>
+  </g>
+
+<g opacity="0.72"><rect x="700" y="352" width="112" height="20" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/><text x="756" y="366.0" text-anchor="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" font-weight="600" fill="#64748b">scicoagent.com</text></g></svg>
