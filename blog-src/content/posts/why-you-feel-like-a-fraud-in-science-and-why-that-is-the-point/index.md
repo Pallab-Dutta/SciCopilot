@@ -1,7 +1,7 @@
 ---
 title: Why You Feel Like a Fraud in Science (And Why That Is the Point)
 slug: why-you-feel-like-a-fraud-in-science-and-why-that-is-the-point
-date: '2026-09-07T08:27:31+05:30'
+date: '2026-09-07T08:42:34+05:30'
 draft: false
 summary: Feeling like an imposter in graduate school is not a personal defect. Discover
   why cognitive uncertainty is the mechanical signature of frontier scientific research.
@@ -27,7 +27,7 @@ tags:
 categories: []
 marketer: contrarian
 generated_by: sci-comarket
-publishDate: '2026-09-07T08:27:31+05:30'
+publishDate: '2026-09-07T08:42:34+05:30'
 source_run: 2026-09-04/painpoint_contrarian_182045
 ---
 
