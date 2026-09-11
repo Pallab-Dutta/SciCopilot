@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 380" width="820" height="380" role="img" aria-label="Structural symmetry between introduction and conclusion">
+  <defs>
+    <style>
+      .title { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 15px; font-weight: 600; fill: #1e293b; text-anchor: middle; }
+      .subtitle { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 12px; fill: #64748b; text-anchor: middle; }
+      .col-header { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 14px; font-weight: 600; fill: #2f6fed; text-anchor: middle; }
+      .box-text-title { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 12px; font-weight: 600; fill: #1e293b; text-anchor: middle; }
+      .box-text-sub { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 11px; fill: #64748b; text-anchor: middle; }
+      .funnel-label { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 10px; font-weight: 600; fill: #94a3b8; text-anchor: middle; letter-spacing: 0.05em; }
+    </style>
+    <marker id="arrow" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 6 4 L 0 7 z" fill="#2f6fed"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="820" height="380" fill="#ffffff"/>
+
+  <!-- Main Headers -->
+  <text x="410" y="36" class="title">Symmetry of Introduction and Conclusion</text>
+  <text x="410" y="54" class="subtitle">Direct inverted mapping of contextual scope</text>
+
+  <!-- Left Column: Introduction (Funnel Down) -->
+  <text x="210" y="92" class="col-header">INTRODUCTION</text>
+  <text x="210" y="108" class="funnel-label">NARROWING SCOPE</text>
+
+  <!-- Intro Stage 1: Broad -->
+  <rect x="70" y="124" width="280" height="48" rx="8" fill="#f6f8fc" stroke="#cbd5e0" stroke-width="1.5"/>
+  <text x="210" y="145" class="box-text-title">1. Broad Context</text>
+  <text x="210" y="160" class="box-text-sub">General field &amp; real-world importance</text>
+
+  <!-- Intro Stage 2: Medium -->
+  <rect x="95" y="188" width="230" height="48" rx="8" fill="#f6f8fc" stroke="#cbd5e0" stroke-width="1.5"/>
+  <text x="210" y="209" class="box-text-title">2. Research Gap</text>
+  <text x="210" y="224" class="box-text-sub">Specific problem &amp; limitations</text>
+
+  <!-- Intro Stage 3: Narrow -->
+  <rect x="120" y="252" width="180" height="48" rx="8" fill="#f6f8fc" stroke="#2f6fed" stroke-width="1.5"/>
+  <text x="210" y="273" class="box-text-title">3. This Study</text>
+  <text x="210" y="288" class="box-text-sub">Hypothesis &amp; objectives</text>
+
+  <!-- Right Column: Discussion / Conclusion (Funnel Up) -->
+  <text x="610" y="92" class="col-header">CONCLUSION</text>
+  <text x="610" y="108" class="funnel-label">EXPANDING SCOPE</text>
+
+  <!-- Conclusion Stage 1: Narrow -->
+  <rect x="520" y="124" width="180" height="48" rx="8" fill="#f6f8fc" stroke="#2f6fed" stroke-width="1.5"/>
+  <text x="610" y="145" class="box-text-title">1. Direct Findings</text>
+  <text x="610" y="160" class="box-text-sub">Answers to study objectives</text>
+
+  <!-- Conclusion Stage 2: Medium -->
+  <rect x="495" y="188" width="230" height="48" rx="8" fill="#f6f8fc" stroke="#cbd5e0" stroke-width="1.5"/>
+  <text x="610" y="209" class="box-text-title">2. Contextualization</text>
+  <text x="610" y="224" class="box-text-sub">How findings fill the gap</text>
+
+  <!-- Conclusion Stage 3: Broad -->
+  <rect x="470" y="252" width="280" height="48" rx="8" fill="#f6f8fc" stroke="#cbd5e0" stroke-width="1.5"/>
+  <text x="610" y="273" class="box-text-title">3. Broader Implications</text>
+  <text x="610" y="288" class="box-text-sub">Impact on the wider field</text>
+
+  <!-- Mapping Connections (Horizontal Symmetry) -->
+  <!-- Top Intro to Bottom Conclusion -->
+  <path d="M 350 148 L 410 148 L 410 276 L 470 276" fill="none" stroke="#2f6fed" stroke-width="1.5" stroke-dasharray="4 4" marker-end="url(#arrow)"/>
+
+  <!-- Middle Intro to Middle Conclusion -->
+  <path d="M 325 212 L 495 212" fill="none" stroke="#2f6fed" stroke-width="1.5" stroke-dasharray="4 4" marker-end="url(#arrow)"/>
+
+  <!-- Bottom Intro to Top Conclusion -->
+  <path d="M 300 276 L 390 276 L 390 148 L 520 148" fill="none" stroke="#2f6fed" stroke-width="1.5" opacity="0.3"/>
+  <path d="M 300 276 L 390 276 L 390 148 L 520 148" fill="none" stroke="#2f6fed" stroke-width="1.5" stroke-dasharray="4 4" marker-end="url(#arrow)"/>
+
+  <!-- Central Core Label -->
+  <rect x="360" y="322" width="100" height="26" rx="13" fill="#edf2fe" stroke="#2f6fed" stroke-width="1"/>
+  <text x="410" y="339" class="box-text-sub" font-weight="600" fill="#2f6fed">INVERSE MAP</text>
+<g opacity="0.72"><rect x="700" y="352" width="112" height="20" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/><text x="756" y="366.0" text-anchor="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" font-weight="600" fill="#64748b">scicoagent.com</text></g></svg>
