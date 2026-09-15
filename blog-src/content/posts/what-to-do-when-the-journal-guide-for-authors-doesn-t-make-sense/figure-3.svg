@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 380" width="820" height="380" role="img" aria-label="Separation of peer review and production pipelines">
+  <defs>
+    <style>
+      .title { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 16px; font-weight: 600; fill: #1e293b; }
+      .subtitle { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 13px; fill: #64748b; }
+      .phase-hdr { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; }
+      .box-title { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 14px; font-weight: 600; fill: #0f172a; }
+      .box-desc { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 12px; fill: #475569; }
+      .note-text { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 11px; fill: #64748b; }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#2f6fed" />
+    </marker>
+    <marker id="arrow-gray" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#94a3b8" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="820" height="380" fill="#ffffff" />
+
+  <!-- Main Container / Border -->
+  <rect x="32" y="32" width="756" height="316" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" />
+
+  <!-- Header -->
+  <text x="56" y="64" class="title">Journal Publishing Workflow</text>
+  <text x="56" y="83" class="subtitle">Structural separation between peer review evaluation and post-acceptance typesetting</text>
+
+  <!-- PIPELINE 1: PEER REVIEW -->
+  <g transform="translate(56, 108)">
+    <!-- Section Backdrop -->
+    <rect x="0" y="0" width="336" height="216" rx="8" fill="#f8fafc" stroke="#cbd5e0" stroke-width="1" stroke-dasharray="4 4" />
+    <text x="16" y="28" class="phase-hdr" fill="#2f6fed">Phase 1: Peer Review</text>
+    
+    <!-- Box 1: Manuscript -->
+    <rect x="16" y="44" width="136" height="80" rx="6" fill="#ffffff" stroke="#cbd5e0" stroke-width="1.5" />
+    <text x="84" y="78" class="box-title" text-anchor="middle">Submission</text>
+    <text x="84" y="96" class="box-desc" text-anchor="middle">Content &amp; Rigor</text>
+
+    <!-- Arrow 1 -> 2 -->
+    <path d="M 152 84 L 184 84" fill="none" stroke="#2f6fed" stroke-width="1.5" marker-end="url(#arrow)" />
+
+    <!-- Box 2: Peer Review -->
+    <rect x="184" y="44" width="136" height="80" rx="6" fill="#ffffff" stroke="#cbd5e0" stroke-width="1.5" />
+    <text x="252" y="78" class="box-title" text-anchor="middle">Evaluation</text>
+    <text x="252" y="96" class="box-desc" text-anchor="middle">Expert Reading</text>
+
+    <!-- Bottom Note -->
+    <rect x="16" y="140" width="304" height="60" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="1" />
+    <text x="168" y="163" class="note-text" text-anchor="middle" font-weight="600" fill="#334155">Flexible Layout Requirements</text>
+    <text x="168" y="181" class="note-text" text-anchor="middle">Focus is on scientific validity, not typography</text>
+  </g>
+
+  <!-- TRANSITION: ACCEPTANCE -->
+  <g transform="translate(392, 182)">
+    <path d="M 0 10 L 36 10" fill="none" stroke="#2f6fed" stroke-width="2" marker-end="url(#arrow)" />
+    <text x="18" y="-2" class="note-text" text-anchor="middle" font-weight="600" fill="#2f6fed">ACCEPT</text>
+  </g>
+
+  <!-- PIPELINE 2: PRODUCTION -->
+  <g transform="translate(428, 108)">
+    <!-- Section Backdrop -->
+    <rect x="0" y="0" width="336" height="216" rx="8" fill="#f8fafc" stroke="#cbd5e0" stroke-width="1" stroke-dasharray="4 4" />
+    <text x="16" y="28" class="phase-hdr" fill="#0f172a">Phase 2: Production</text>
+
+    <!-- Box 3: Typesetting -->
+    <rect x="16" y="44" width="136" height="80" rx="6" fill="#ffffff" stroke="#cbd5e0" stroke-width="1.5" />
+    <text x="84" y="78" class="box-title" text-anchor="middle">Typesetting</text>
+    <text x="84" y="96" class="box-desc" text-anchor="middle">Publisher Layout</text>
+
+    <!-- Arrow 3 -> 4 -->
+    <path d="M 152 84 L 184 84" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow-gray)" />
+
+    <!-- Box 4: Publication -->
+    <rect x="184" y="44" width="136" height="80" rx="6" fill="#ffffff" stroke="#cbd5e0" stroke-width="1.5" />
+    <text x="252" y="78" class="box-title" text-anchor="middle">Version of Record</text>
+    <text x="252" y="96" class="box-desc" text-anchor="middle">Final Publication</text>
+
+    <!-- Bottom Note -->
+    <rect x="16" y="140" width="304" height="60" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="1" />
+    <text x="168" y="163" class="note-text" text-anchor="middle" font-weight="600" fill="#334155">Strict Brand &amp; Spec Rules</text>
+    <text x="168" y="181" class="note-text" text-anchor="middle">Reformatting occurs post-acceptance by vendor</text>
+  </g>
+<g opacity="0.72"><rect x="700" y="352" width="112" height="20" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/><text x="756" y="366.0" text-anchor="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" font-weight="600" fill="#64748b">scicoagent.com</text></g></svg>

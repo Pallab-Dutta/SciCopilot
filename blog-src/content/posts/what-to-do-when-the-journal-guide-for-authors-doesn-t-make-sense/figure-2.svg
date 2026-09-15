@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 380" width="820" height="380" role="img" aria-label="Decision flow diagram for publishing requirements">
+  <style>
+    .bg { fill: #ffffff; }
+    .title { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 15px; font-weight: 600; fill: #1e293b; text-anchor: middle; }
+    .subtitle { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 12px; fill: #64748b; text-anchor: middle; }
+    .node-rect { fill: #f8fafc; stroke: #cbd5e0; stroke-width: 1.5px; rx: 8px; }
+    .node-rect-active { fill: #eff6ff; stroke: #2f6fed; stroke-width: 1.5px; rx: 8px; }
+    .node-num { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 11px; font-weight: 700; fill: #2f6fed; text-anchor: middle; }
+    .node-text { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 12px; font-weight: 500; fill: #1e293b; text-anchor: middle; }
+    .node-text-light { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 11px; fill: #64748b; text-anchor: middle; }
+    .arrow-line { stroke: #94a3b8; stroke-width: 1.5px; fill: none; }
+    .arrow-head { fill: #94a3b8; }
+  </style>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" class="arrow-head" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" class="bg" />
+
+  <!-- Header -->
+  <text x="410" y="42" class="title">REQUIREMENT EVALUATION WORKFLOW</text>
+  <text x="410" y="62" class="subtitle">Standard Operating Procedure for Editorial Decision Making</text>
+
+  <!-- Flow Steps -->
+
+  <!-- Step 1 -->
+  <g transform="translate(48, 110)">
+    <rect width="150" height="180" class="node-rect" />
+    <circle cx="75" cy="36" r="14" fill="#e0e7ff" />
+    <text x="75" y="40" class="node-num">01</text>
+    <text x="75" y="80" class="node-text">Classify</text>
+    <text x="75" y="98" class="node-text">Requirement</text>
+    <line x1="30" y1="120" x2="120" y2="120" stroke="#e2e8f0" stroke-width="1" />
+    <text x="75" y="142" class="node-text-light">Identify type &amp;</text>
+    <text x="75" y="158" class="node-text-light">scope of rule</text>
+  </g>
+
+  <!-- Arrow 1 -> 2 -->
+  <path d="M 198 200 L 232 200" class="arrow-line" marker-end="url(#arrow)" />
+
+  <!-- Step 2 -->
+  <g transform="translate(234, 110)">
+    <rect width="150" height="180" class="node-rect" />
+    <circle cx="75" cy="36" r="14" fill="#e0e7ff" />
+    <text x="75" y="40" class="node-num">02</text>
+    <text x="75" y="80" class="node-text">Audit</text>
+    <text x="75" y="98" class="node-text">Guide</text>
+    <line x1="30" y1="120" x2="120" y2="120" stroke="#e2e8f0" stroke-width="1" />
+    <text x="75" y="142" class="node-text-light">Check official</text>
+    <text x="75" y="158" class="node-text-light">author guidelines</text>
+  </g>
+
+  <!-- Arrow 2 -> 3 -->
+  <path d="M 384 200 L 418 200" class="arrow-line" marker-end="url(#arrow)" />
+
+  <!-- Step 3 -->
+  <g transform="translate(420, 110)">
+    <rect width="150" height="180" class="node-rect" />
+    <circle cx="75" cy="36" r="14" fill="#e0e7ff" />
+    <text x="75" y="40" class="node-num">03</text>
+    <text x="75" y="80" class="node-text">Compare Recent</text>
+    <text x="75" y="98" class="node-text">Articles</text>
+    <line x1="30" y1="120" x2="120" y2="120" stroke="#e2e8f0" stroke-width="1" />
+    <text x="75" y="142" class="node-text-light">Verify actual</text>
+    <text x="75" y="158" class="node-text-light">published practice</text>
+  </g>
+
+  <!-- Arrow 3 -> 4 -->
+  <path d="M 570 200 L 604 200" class="arrow-line" marker-end="url(#arrow)" />
+
+  <!-- Step 4 (Primary Decision/Outcome) -->
+  <g transform="translate(606, 110)">
+    <rect width="166" height="180" class="node-rect-active" />
+    <circle cx="83" cy="36" r="14" fill="#2f6fed" />
+    <text x="83" y="40" class="node-num" fill="#ffffff">04</text>
+    <text x="83" y="78" class="node-text" fill="#1e3a8a">Apply Hierarchy</text>
+    <text x="83" y="96" class="node-text" fill="#1e3a8a">of Authority</text>
+    <line x1="30" y1="120" x2="136" y2="120" stroke="#bfdbfe" stroke-width="1" />
+    <text x="83" y="142" class="node-text-light" fill="#1d4ed8">Resolve conflicts &amp;</text>
+    <text x="83" y="158" class="node-text-light" fill="#1d4ed8">finalize rule</text>
+  </g>
+
+  <!-- Footer / Status Line -->
+  <path d="M 48 330 L 772 330" stroke="#f1f5f9" stroke-width="1" />
+  <text x="410" y="352" class="subtitle" font-size="11px">Sequential evaluation ensures compliance with official and precedent standards</text>
+<g opacity="0.72"><rect x="700" y="352" width="112" height="20" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/><text x="756" y="366.0" text-anchor="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" font-weight="600" fill="#64748b">scicoagent.com</text></g></svg>
