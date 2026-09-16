@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 380" width="820" height="380" role="img" aria-label="Comparison of Linear OCR vs Spatial Parsing for Handwritten Math Expressions">
+  <style>
+    .title { font: bold 16px system-ui, -apple-system, sans-serif; fill: #1a1a1a; text-anchor: middle; }
+    .subtitle { font: 12px system-ui, -apple-system, sans-serif; fill: #666666; text-anchor: middle; }
+    .node-title { font: bold 13px system-ui, -apple-system, sans-serif; fill: #1a1a1a; text-anchor: middle; }
+    .node-sub { font: 12px system-ui, -apple-system, sans-serif; fill: #4a5568; text-anchor: middle; }
+    .code-text { font: 12px "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; fill: #2b6cb0; text-anchor: middle; }
+    .label { font: bold 11px system-ui, -apple-system, sans-serif; fill: #718096; text-anchor: middle; letter-spacing: 0.5px; }
+    .box { fill: #f8fafc; stroke: #cbd5e0; stroke-width: 1.5; rx: 8px; }
+    .box-accent { fill: #f0f4f9; stroke: #475569; stroke-width: 1.5; rx: 8px; }
+    .arrow { stroke: #475569; stroke-width: 1.5; fill: none; stroke-linejoin: round; }
+    .bounding-box { fill: rgba(66, 153, 225, 0.08); stroke: #3182ce; stroke-width: 1; stroke-dasharray: 3,3; rx: 4px; }
+    .bb-label { font: 9px system-ui, -apple-system, sans-serif; fill: #2b6cb0; font-weight: bold; }
+  </style>
+
+  <defs>
+    <marker id="arrowhead" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#475569" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#ffffff" />
+
+  <!-- Main Title -->
+  <text x="410" y="36" class="title">Parsing Strategies for Math Expressions</text>
+  <text x="410" y="54" class="subtitle">Linear sequential reading vs. 2D spatial hierarchy reconstruction</text>
+
+  <!-- LEFT: INPUT EXPRESSION -->
+  <g transform="translate(40, 115)">
+    <rect width="180" height="190" class="box-accent" />
+    <text x="90" y="28" class="label">INPUT IMAGE</text>
+    
+    <!-- Handwritten Expression Drawing -->
+    <g transform="translate(25, 45)">
+      <!-- Integral Symbol -->
+      <path d="M 30 15 C 35 5, 20 0, 15 25 L 15 75 C 10 100, 0 95, 5 85" fill="none" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" />
+      <!-- Upper Bound (infinity) -->
+      <path d="M 28 12 C 28 6, 34 6, 37 12 C 40 18, 46 18, 46 12 C 46 6, 40 6, 37 12 C 34 18, 28 18, 28 12 Z" fill="none" stroke="#1a1a1a" stroke-width="2" />
+      <!-- Lower Bound (0) -->
+      <ellipse cx="10" cy="92" rx="5" ry="7" fill="none" stroke="#1a1a1a" stroke-width="2" />
+      <!-- Integrand (x^2) -->
+      <path d="M 55 45 L 70 65 M 70 45 L 55 65" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round" />
+      <path d="M 75 40 C 75 35, 85 35, 83 45 L 75 50 L 86 50" fill="none" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      <!-- Differential (dx) -->
+      <path d="M 102 38 L 102 65 M 102 50 C 94 50, 94 65, 102 65" fill="none" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round" />
+      <path d="M 110 48 L 122 65 M 122 48 L 110 65" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round" />
+    </g>
+    <text x="90" y="172" class="node-sub">Handwritten Integral</text>
+  </g>
+
+  <!-- PATH A: LINEAR OCR (Top Branch) -->
+  <!-- Branching Arrow Top -->
+  <path d="M 220 170 L 260 170 L 260 135 L 299 135" class="arrow" marker-end="url(#arrowhead)" />
+  
+  <g transform="translate(300, 90)">
+    <rect width="210" height="90" class="box" />
+    <text x="105" y="28" class="node-title">Path A: Linear OCR</text>
+    <text x="105" y="48" class="node-sub">1D Left-to-Right Scan</text>
+    <line x1="20" y1="58" x2="190" y2="58" stroke="#e2e8f0" stroke-width="1" />
+    <text x="105" y="74" class="code-text">"int _ 0 ^ inf x^2 dx"</text>
+  </g>
+
+  <path d="M 510 135 L 569 135" class="arrow" marker-end="url(#arrowhead)" />
+
+  <g transform="translate(570, 90)">
+    <rect width="210" height="90" class="box" />
+    <text x="105" y="32" class="node-title">Flat String Output</text>
+    <text x="105" y="54" class="node-sub">Lacks explicit 2D</text>
+    <text x="105" y="70" class="node-sub">structural relationships</text>
+  </g>
+
+  <!-- PATH B: SPATIAL PARSING (Bottom Branch) -->
+  <!-- Branching Arrow Bottom -->
+  <path d="M 220 250 L 260 250 L 260 275 L 299 275" class="arrow" marker-end="url(#arrowhead)" />
+
+  <g transform="translate(300, 230)">
+    <rect width="210" height="90" class="box" />
+    <text x="105" y="25" class="node-title">Path B: Spatial Parsing</text>
+    <text x="105" y="43" class="node-sub">Bounding-Box Hierarchy</text>
+    
+    <!-- Mini Spatial Bounding Boxes Visual -->
+    <g transform="translate(45, 48)">
+      <rect x="0" y="5" width="20" height="30" class="bounding-box" />
+      <rect x="23" y="0" width="15" height="14" class="bounding-box" />
+      <text x="25" y="10" class="bb-label">sup</text>
+      <rect x="23" y="24" width="15" height="14" class="bounding-box" />
+      <text x="25" y="34" class="bb-label">sub</text>
+      <rect x="42" y="5" width="75" height="30" class="bounding-box" />
+      <text x="60" y="23" class="bb-label">integrand</text>
+    </g>
+  </g>
+
+  <path d="M 510 275 L 569 275" class="arrow" marker-end="url(#arrowhead)" />
+
+  <g transform="translate(570, 230)">
+    <rect width="210" height="90" class="box" />
+    <text x="105" y="28" class="node-title">2D Syntax Tree</text>
+    <text x="105" y="50" class="node-sub">Preserves operator bounds,</text>
+    <text x="105" y="66" class="node-sub">exponents &amp; baselines</text>
+  </g>
+
+<g opacity="0.72"><rect x="700" y="352" width="112" height="20" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/><text x="756" y="366.0" text-anchor="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" font-weight="600" fill="#64748b">scicoagent.com</text></g></svg>

@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 380" width="820" height="380" role="img" aria-label="Handwritten Equation to LaTeX Translation Pipeline">
+  <defs>
+    <style>
+      .bg { fill: #ffffff; }
+      .title { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 15px; font-weight: 600; fill: #1a1a1a; text-anchor: middle; }
+      .label-main { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 13px; font-weight: 600; fill: #1a1a1a; text-anchor: middle; }
+      .label-sub { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 11px; font-weight: 400; fill: #555555; text-anchor: middle; }
+      .node-bg { fill: #f8fafc; stroke: #cbd5e0; stroke-width: 1.5; rx: 8px; }
+      .node-accent { fill: #f1f5f9; stroke: #1a1a1a; stroke-width: 1.5; rx: 8px; }
+      .arrow-line { stroke: #1a1a1a; stroke-width: 1.5; fill: none; stroke-linejoin: round; }
+      .tree-line { stroke: #64748b; stroke-width: 1.25; fill: none; }
+      .tree-node { fill: #1a1a1a; }
+      .handwriting { font-family: "Georgia", "Times New Roman", serif; font-style: italic; font-size: 18px; fill: #1a1a1a; text-anchor: middle; }
+      .code-text { font-family: "Courier New", Courier, monospace; font-size: 12px; font-weight: 600; fill: #0f172a; text-anchor: middle; }
+    </style>
+
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#1a1a1a" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="820" height="380" class="bg" />
+
+  <!-- Title -->
+  <text x="410" y="42" class="title">Handwritten Equation to LaTeX Translation</text>
+
+  <!-- Stage 1: Handwritten Input -->
+  <g transform="translate(40, 105)">
+    <rect width="125" height="170" class="node-bg" />
+    <text x="62.5" y="28" class="label-main">Input Image</text>
+    <line x1="15" y1="40" x2="110" y2="40" stroke="#e2e8f0" stroke-width="1" />
+    <!-- Simulated handwritten equation: \int x^2 dx -->
+    <g transform="translate(20, 55)">
+      <path d="M 22 75 C 22 85 15 90 10 90 C 7 90 5 87 7 83 C 12 70 25 30 28 15 C 29 10 27 5 20 5 C 14 5 10 10 8 15" stroke="#1a1a1a" stroke-width="2.2" fill="none" stroke-linecap="round" />
+      <path d="M 33 55 L 48 75 M 48 55 L 33 75" stroke="#1a1a1a" stroke-width="2" fill="none" stroke-linecap="round" />
+      <text x="54" y="52" class="handwriting" font-size="13">2</text>
+      <text x="63" y="73" class="handwriting" font-size="16">d</text>
+      <path d="M 73 58 L 83 73 M 83 58 L 73 73" stroke="#1a1a1a" stroke-width="1.8" fill="none" stroke-linecap="round" />
+    </g>
+    <text x="62.5" y="152" class="label-sub">Raw Stroke Data</text>
+  </g>
+
+  <!-- Arrow 1 to 2 -->
+  <path d="M 165 190 L 199 190" class="arrow-line" marker-end="url(#arrow)" />
+
+  <!-- Stage 2: Encoder Model -->
+  <g transform="translate(205, 105)">
+    <rect width="135" height="170" class="node-bg" />
+    <text x="67.5" y="28" class="label-main">Encoder Model</text>
+    <line x1="15" y1="40" x2="120" y2="40" stroke="#e2e8f0" stroke-width="1" />
+    
+    <!-- Feature Map Visual -->
+    <g transform="translate(24, 55)">
+      <rect x="0" y="0" width="87" height="65" rx="4" fill="#ffffff" stroke="#cbd5e0" stroke-width="1" />
+      <line x1="0" y1="21.6" x2="87" y2="21.6" stroke="#f1f5f9" stroke-width="1" />
+      <line x1="0" y1="43.3" x2="87" y2="43.3" stroke="#f1f5f9" stroke-width="1" />
+      <line x1="29" y1="0" x2="29" y2="65" stroke="#f1f5f9" stroke-width="1" />
+      <line x1="58" y1="0" x2="58" y2="65" stroke="#f1f5f9" stroke-width="1" />
+      
+      <rect x="31" y="23.6" x2="25" y2="19.6" fill="#94a3b8" rx="2" />
+      <rect x="60" y="23.6" x2="25" y2="19.6" fill="#cbd5e0" rx="2" />
+      <rect x="31" y="2" x2="25" y2="19.6" fill="#cbd5e0" rx="2" />
+    </g>
+    
+    <text x="67.5" y="142" class="label-sub">Visual Feature</text>
+    <text x="67.5" y="156" class="label-sub">Extraction</text>
+  </g>
+
+  <!-- Arrow 2 to 3 -->
+  <path d="M 340 190 L 374 190" class="arrow-line" marker-end="url(#arrow)" />
+
+  <!-- Stage 3: Spatial Layout Tree -->
+  <g transform="translate(380, 105)">
+    <rect width="145" height="170" class="node-bg" />
+    <text x="72.5" y="28" class="label-main">Structural Tree</text>
+    <line x1="15" y1="40" x2="130" y2="40" stroke="#e2e8f0" stroke-width="1" />
+    
+    <!-- Tree Diagram Visual -->
+    <g transform="translate(21, 53)">
+      <!-- Connections -->
+      <path d="M 50 12 L 25 35 M 50 12 L 75 35" class="tree-line" />
+      <path d="M 75 35 L 63 58 M 75 35 L 87 58" class="tree-line" />
+      
+      <!-- Nodes -->
+      <circle cx="50" cy="12" r="5" class="tree-node" />
+      <circle cx="25" cy="35" r="4" fill="#64748b" />
+      <circle cx="75" cy="35" r="4" fill="#64748b" />
+      <circle cx="63" cy="58" r="3.5" fill="#94a3b8" />
+      <circle cx="87" cy="58" r="3.5" fill="#94a3b8" />
+    </g>
+
+    <text x="72.5" y="142" class="label-sub">Spatial &amp; Operator</text>
+    <text x="72.5" y="156" class="label-sub">Hierarchy</text>
+  </g>
+
+  <!-- Arrow 3 to 4 -->
+  <path d="M 525 190 L 559 190" class="arrow-line" marker-end="url(#arrow)" />
+
+  <!-- Stage 4: Decoder Model -->
+  <g transform="translate(565, 105)">
+    <rect width="135" height="170" class="node-bg" />
+    <text x="67.5" y="28" class="label-main">Decoder Model</text>
+    <line x1="15" y1="40" x2="120" y2="40" stroke="#e2e8f0" stroke-width="1" />
+    
+    <!-- Recurrent/Attention Visual -->
+    <g transform="translate(27, 58)">
+      <rect x="0" y="8" width="24" height="40" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1.2" />
+      <rect x="29" y="8" width="24" height="40" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1.2" />
+      <rect x="58" y="8" width="24" height="40" rx="4" fill="#ffffff" stroke="#1a1a1a" stroke-width="1.5" />
+      
+      <path d="M 24 28 L 29 28" class="arrow-line" />
+      <path d="M 53 28 L 58 28" class="arrow-line" />
+    </g>
+
+    <text x="67.5" y="142" class="label-sub">Sequential Token</text>
+    <text x="67.5" y="156" class="label-sub">Generation</text>
+  </g>
+
+  <!-- Arrow 4 to 5 -->
+  <path d="M 700 190 L 734 190" class="arrow-line" marker-end="url(#arrow)" />
+
+  <!-- Stage 5: Formatted LaTeX Code Output -->
+  <g transform="translate(740, 105)">
+    <rect width="40" height="170" class="node-accent" />
+    <!-- Vertical rotated text or icon for final output container -->
+    <g transform="translate(20, 85) rotate(-90)">
+      <text x="0" y="4" class="code-text" font-size="11" letter-spacing="1">\int x^2 dx</text>
+    </g>
+  </g>
+
+  <!-- Legend / Flow Footer -->
+  <path d="M 102 285 L 102 315 L 760 315 L 760 285" fill="none" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4 4" />
+  <rect x="330" y="304" width="160" height="22" fill="#ffffff" />
+  <text x="410" y="319" class="label-sub" font-size="10" fill="#94a3b8">END-TO-END PIPELINE</text>
+<g opacity="0.72"><rect x="700" y="352" width="112" height="20" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/><text x="756" y="366.0" text-anchor="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" font-weight="600" fill="#64748b">scicoagent.com</text></g></svg>
