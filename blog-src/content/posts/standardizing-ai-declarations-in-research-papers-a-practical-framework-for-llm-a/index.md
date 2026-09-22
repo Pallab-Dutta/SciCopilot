@@ -2,7 +2,7 @@
 title: 'Standardizing AI Declarations in Research Papers: A Practical Framework for
   LLM Auditing and Authorship'
 slug: standardizing-ai-declarations-in-research-papers-a-practical-framework-for-llm-a
-date: '2026-09-22T10:33:09+05:30'
+date: '2026-09-22T11:28:47+05:30'
 draft: false
 summary: A practical framework for researchers to audit, document, and disclose LLM
   usage in scientific manuscripts while maintaining peer-review integrity.
@@ -27,7 +27,7 @@ tags:
 categories: []
 marketer: educator
 generated_by: sci-comarket
-publishDate: '2026-09-22T10:33:09+05:30'
+publishDate: '2026-09-22T11:28:47+05:30'
 source_run: 2026-09-22/painpoint_educator_043704
 ---
 
