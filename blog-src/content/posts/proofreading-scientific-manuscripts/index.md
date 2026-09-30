@@ -1,7 +1,7 @@
 ---
 title: 'Proofreading Scientific Manuscripts: A Complete Guide for Researchers'
 slug: proofreading-scientific-manuscripts
-date: '2026-09-30T16:12:55+05:30'
+date: '2026-09-30T20:10:50+05:30'
 draft: false
 summary: What proofreading scientific manuscripts means, a full checklist of what
   to catch, a step-by-step pass, and where automated tools genuinely help before you
@@ -37,7 +37,7 @@ agent: benjamin
 tools:
 - proofread
 - benjamin
-publishDate: '2026-09-30T16:12:55+05:30'
+publishDate: '2026-09-30T20:10:50+05:30'
 source_run: 2026-09-30/benjamin_educator_055924
 ---
 
