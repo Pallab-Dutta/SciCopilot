@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 380" width="820" height="380" role="img" aria-label="Alternative Access Pathways for Paywalled Research Flowchart">
+  <defs>
+    <!-- Arrow marker -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#2f6fed" />
+    </marker>
+    <!-- Neutral gray arrow marker for alternative/secondary paths if needed, keeping it simple with blue -->
+    <marker id="arrow-gray" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#94a3b8" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#ffffff" />
+
+  <!-- Title / Header -->
+  <text x="40" y="50" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="16px" font-weight="600" fill="#1e293b">Alternative Access Pathways for Paywalled Research</text>
+  <text x="40" y="72" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="12px" fill="#64748b">A systematic approach to legally locating open-access versions of academic literature.</text>
+
+  <!-- ================= ROW 1: THE SEARCH STEPS ================= -->
+
+  <!-- Node 1: Paywalled Paper (Start) -->
+  <g transform="translate(40, 115)">
+    <rect width="140" height="70" rx="8" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5" />
+    <text x="70" y="32" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="13px" font-weight="600" fill="#1e293b" text-anchor="middle">Paywalled Paper</text>
+    <text x="70" y="49" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="11px" fill="#64748b" text-anchor="middle">Identification</text>
+  </g>
+
+  <!-- Node 2: Check OA Aggregators -->
+  <g transform="translate(230, 115)">
+    <rect width="160" height="70" rx="8" fill="#f8fafc" stroke="#cbd5e0" stroke-width="1.5" />
+    <text x="80" y="30" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="13px" font-weight="600" fill="#1e293b" text-anchor="middle">1. OA Aggregators</text>
+    <text x="80" y="48" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="11px" fill="#64748b" text-anchor="middle">Unpaywall, CORE, etc.</text>
+  </g>
+
+  <!-- Node 3: Check Repositories -->
+  <g transform="translate(440, 115)">
+    <rect width="160" height="70" rx="8" fill="#f8fafc" stroke="#cbd5e0" stroke-width="1.5" />
+    <text x="80" y="30" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="13px" font-weight="600" fill="#1e293b" text-anchor="middle">2. Repositories</text>
+    <text x="80" y="48" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="11px" fill="#64748b" text-anchor="middle">arXiv, OSF, Institutional</text>
+  </g>
+
+  <!-- Node 4: Contact Author -->
+  <g transform="translate(640, 115)">
+    <rect width="140" height="70" rx="8" fill="#f8fafc" stroke="#cbd5e0" stroke-width="1.5" />
+    <text x="70" y="30" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="13px" font-weight="600" fill="#1e293b" text-anchor="middle">3. Contact Author</text>
+    <text x="70" y="48" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="11px" fill="#64748b" text-anchor="middle">Direct Request</text>
+  </g>
+
+  <!-- ================= ROW 2: SUCCESS OUTCOMES ================= -->
+
+  <!-- Success 1: Found Open Copy -->
+  <g transform="translate(230, 255)">
+    <rect width="160" height="60" rx="8" fill="#f0f7ff" stroke="#2f6fed" stroke-width="1.5" />
+    <text x="80" y="28" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="13px" font-weight="600" fill="#2f6fed" text-anchor="middle">Found Open Copy</text>
+    <text x="80" y="44" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="11px" fill="#64748b" text-anchor="middle">Publisher Version / OA</text>
+  </g>
+
+  <!-- Success 2: Found AAM -->
+  <g transform="translate(440, 255)">
+    <rect width="160" height="60" rx="8" fill="#f0f7ff" stroke="#2f6fed" stroke-width="1.5" />
+    <text x="80" y="28" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="13px" font-weight="600" fill="#2f6fed" text-anchor="middle">Found AAM</text>
+    <text x="80" y="44" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="11px" fill="#64748b" text-anchor="middle">Accepted Manuscript</text>
+  </g>
+
+  <!-- Success 3: Received AAM -->
+  <g transform="translate(640, 255)">
+    <rect width="140" height="60" rx="8" fill="#f0f7ff" stroke="#2f6fed" stroke-width="1.5" />
+    <text x="70" y="28" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="13px" font-weight="600" fill="#2f6fed" text-anchor="middle">Received AAM</text>
+    <text x="70" y="44" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="11px" fill="#64748b" text-anchor="middle">Shared by Author</text>
+  </g>
+
+  <!-- ================= CONNECTIONS & ARROWS ================= -->
+
+  <!-- Horizontals (Main search flow if "not found") -->
+  <!-- Node 1 -> Node 2 -->
+  <path d="M 180 150 L 220 150" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow-gray)" />
+
+  <!-- Node 2 -> Node 3 -->
+  <path d="M 390 150 L 430 150" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow-gray)" />
+  <text x="410" y="142" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="10px" font-weight="600" fill="#94a3b8" text-anchor="middle">No</text>
+
+  <!-- Node 3 -> Node 4 -->
+  <path d="M 600 150 L 630 150" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow-gray)" />
+  <text x="615" y="142" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="10px" font-weight="600" fill="#94a3b8" text-anchor="middle">No</text>
+
+  <!-- Verticals (Success routes) -->
+  <!-- Node 2 -> Success 1 -->
+  <path d="M 310 185 L 310 245" fill="none" stroke="#2f6fed" stroke-width="1.5" marker-end="url(#arrow)" />
+  <text x="322" y="220" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="11px" font-weight="600" fill="#2f6fed" text-anchor="start">Yes</text>
+
+  <!-- Node 3 -> Success 2 -->
+  <path d="M 510 185 L 510 245" fill="none" stroke="#2f6fed" stroke-width="1.5" marker-end="url(#arrow)" />
+  <text x="522" y="220" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="11px" font-weight="600" fill="#2f6fed" text-anchor="start">Yes</text>
+
+  <!-- Node 4 -> Success 3 -->
+  <path d="M 710 185 L 710 245" fill="none" stroke="#2f6fed" stroke-width="1.5" marker-end="url(#arrow)" />
+  <text x="722" y="220" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="11px" font-weight="600" fill="#2f6fed" text-anchor="start">Yes</text>
+
+<g opacity="0.72"><rect x="700" y="352" width="112" height="20" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/><text x="756" y="366.0" text-anchor="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" font-weight="600" fill="#64748b">scicoagent.com</text></g></svg>
