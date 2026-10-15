@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 380" width="820" height="380" role="img" aria-label="Comparison of iterative vs linear scientific writing workflows">
+  <style>
+    .title { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 15px; font-weight: 600; fill: #1e293b; }
+    .subtitle { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 12px; fill: #64748b; }
+    .label { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 13px; font-weight: 500; fill: #1e293b; text-anchor: middle; }
+    .sublabel { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 11px; fill: #64748b; text-anchor: middle; }
+    .badge-text { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 11px; font-weight: 600; fill: #d97706; text-anchor: middle; }
+    .box { fill: #f8fafc; stroke: #cbd5e0; stroke-width: 1.5; rx: 8px; }
+    .box-accent { fill: #f0f5ff; stroke: #2f6fed; stroke-width: 1.5; rx: 8px; }
+    .arrow { stroke: #2f6fed; stroke-width: 1.5; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+    .arrow-gray { stroke: #94a3b8; stroke-width: 1.5; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+  </style>
+
+  <defs>
+    <!-- Blue Marker -->
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2f6fed" />
+    </marker>
+    <!-- Gray Marker -->
+    <marker id="arrow-gray" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#94a3b8" />
+    </marker>
+    <!-- Warning/Loop Background -->
+    <rect id="badge" x="0" y="0" width="160" height="22" rx="11" fill="#fffbeb" stroke="#fde68a" stroke-width="1"/>
+  </defs>
+
+  <!-- Background -->
+  <rect width="820" height="380" fill="#ffffff" />
+
+  <!-- SECTION 1: TRADITIONAL / ITERATIVE TRAP -->
+  <g transform="translate(40, 32)">
+    <text x="0" y="18" class="title">Ad-Hoc Workflow</text>
+    <text x="0" y="36" class="subtitle">Unstructured coupling causes circular revision loops</text>
+
+    <!-- Box 1: Data Analysis -->
+    <rect x="0" y="60" width="160" height="64" class="box" />
+    <text x="80" y="90" class="label">Data Analysis</text>
+    <text x="80" y="106" class="sublabel">Exploratory / Fluid</text>
+
+    <!-- Bi-directional Arrows -->
+    <!-- Top Arrow: Right -->
+    <path d="M 160 82 L 238 82" class="arrow-gray" marker-end="url(#arrow-gray)" />
+    <!-- Bottom Arrow: Left -->
+    <path d="M 244 102 L 166 102" class="arrow-gray" marker-end="url(#arrow-gray)" />
+
+    <!-- Box 2: Prose Drafting -->
+    <rect x="244" y="60" width="160" height="64" class="box" />
+    <text x="324" y="90" class="label">Prose Drafting</text>
+    <text x="324" y="106" class="sublabel">Premature Writing</text>
+
+    <!-- Feedback Loop Badge -->
+    <g transform="translate(122, 138)">
+      <use href="#badge" x="0" y="0" />
+      <text x="80" y="15" class="badge-text">Infinite Rewrite Loop</text>
+    </g>
+  </g>
+
+  <!-- DIVIDER LINE -->
+  <line x1="40" y1="212" x2="780" y2="212" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4 4" />
+
+  <!-- SECTION 2: STRUCTURED / MATRIX WORKFLOW -->
+  <g transform="translate(40, 236)">
+    <text x="0" y="18" class="title">Structured Matrix Workflow</text>
+    <text x="0" y="36" class="subtitle">Systematic progression from logic to execution</text>
+
+    <!-- Box 1: Analytical Matrix -->
+    <rect x="0" y="60" width="180" height="64" class="box-accent" />
+    <text x="90" y="88" class="label" fill="#1e3a8a">Analytical Matrix</text>
+    <text x="90" y="104" class="sublabel" fill="#2f6fed">Structured Evidence</text>
+
+    <!-- Arrow 1 -->
+    <path d="M 180 92 L 278 92" class="arrow" marker-end="url(#arrow-blue)" />
+
+    <!-- Box 2: Draft Results -->
+    <rect x="280" y="60" width="180" height="64" class="box" />
+    <text x="370" y="88" class="label">Draft Results</text>
+    <text x="370" y="104" class="sublabel">Factual Description</text>
+
+    <!-- Arrow 2 -->
+    <path d="M 460 92 L 558 92" class="arrow" marker-end="url(#arrow-blue)" />
+
+    <!-- Box 3: Draft Discussion -->
+    <rect x="560" y="60" width="180" height="64" class="box" />
+    <text x="650" y="88" class="label">Draft Discussion</text>
+    <text x="650" y="104" class="sublabel">Context &amp; Synthesis</text>
+  </g>
+<g opacity="0.72"><rect x="700" y="352" width="112" height="20" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/><text x="756" y="366.0" text-anchor="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" font-weight="600" fill="#64748b">scicoagent.com</text></g></svg>
