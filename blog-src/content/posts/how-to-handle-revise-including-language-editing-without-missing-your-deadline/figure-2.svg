@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 380" width="820" height="380" role="img" aria-label="Comparison of sequential versus parallel revision workflows">
+  <defs>
+    <style>
+      .title { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; font-size: 15px; font-weight: 600; fill: #1a202c; }
+      .label { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; font-size: 12px; fill: #333333; text-anchor: middle; dominant-baseline: middle; }
+      .sublabel { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; font-size: 10px; fill: #718096; text-anchor: middle; dominant-baseline: middle; }
+      .box { fill: #f6f8fc; stroke: #cbd5e0; stroke-width: 1.5; rx: 8; }
+      .box-accent { fill: #ebf2ff; stroke: #2f6fed; stroke-width: 1.5; rx: 8; }
+      .arrow { stroke: #2f6fed; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .arrow-gray { stroke: #a0aec0; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+    </style>
+    <marker id="arrowhead" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#2f6fed"/>
+    </marker>
+    <marker id="arrowhead-gray" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#a0aec0"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="820" height="380" fill="#ffffff" />
+
+  <!-- Section 1: Sequential Workflow (Inefficient) -->
+  <text x="48" y="45" class="title">Sequential Workflow (Wastes Time)</text>
+  
+  <g transform="translate(48, 70)">
+    <!-- Step 1 -->
+    <rect x="0" y="0" width="130" height="60" class="box" />
+    <text x="65" y="24" class="label">Scientific</text>
+    <text x="65" y="40" class="sublabel">Revisions</text>
+
+    <path d="M 130 30 L 165 30" class="arrow-gray" marker-end="url(#arrowhead-gray)" />
+
+    <!-- Step 2 -->
+    <rect x="165" y="0" width="130" height="60" class="box" />
+    <text x="230" y="24" class="label">Language</text>
+    <text x="230" y="40" class="sublabel">Polishing</text>
+
+    <path d="M 295 30 L 330 30" class="arrow-gray" marker-end="url(#arrowhead-gray)" />
+
+    <!-- Step 3 (Rework) -->
+    <rect x="330" y="0" width="130" height="60" class="box" style="stroke: #e53e3e; fill: #fff5f5;" />
+    <text x="395" y="24" class="label" style="fill: #c53030;">Forced Rework</text>
+    <text x="395" y="40" class="sublabel" style="fill: #e53e3e;">Polished text broken</text>
+  </g>
+
+  <!-- Divider -->
+  <line x1="48" y1="170" x2="772" y2="170" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4 4" />
+
+  <!-- Section 2: Parallel / Triage Workflow (Efficient) -->
+  <text x="48" y="210" class="title">Triage &amp; Workflow Separation (Recommended)</text>
+
+  <g transform="translate(48, 235)">
+    <!-- Initial Split -->
+    <rect x="0" y="30" width="120" height="60" class="box-accent" />
+    <text x="60" y="54" class="label" style="fill: #2f6fed;">Manuscript</text>
+    <text x="60" y="70" class="sublabel">Assessment</text>
+
+    <!-- Branch Arrows -->
+    <path d="M 120 60 C 145 60, 145 20, 170 20" class="arrow" marker-end="url(#arrowhead)" />
+    <path d="M 120 60 C 145 60, 145 100, 170 100" class="arrow" marker-end="url(#arrowhead)" />
+
+    <!-- Upper Branch: Core Science -->
+    <rect x="170" y="0" width="140" height="40" class="box" />
+    <text x="240" y="20" class="label">Scientific Rewrites</text>
+
+    <path d="M 310 20 L 350 20" class="arrow" marker-end="url(#arrowhead)" />
+
+    <rect x="350" y="0" width="140" height="40" class="box" />
+    <text x="420" y="20" class="label">Equation / Data Fix</text>
+
+    <!-- Lower Branch: Stable elements -->
+    <rect x="170" y="80" width="140" height="40" class="box" />
+    <text x="240" y="100" class="label">Isolate Stable Text</text>
+
+    <path d="M 310 100 L 350 100" class="arrow" marker-end="url(#arrowhead)" />
+
+    <rect x="350" y="80" width="140" height="40" class="box" />
+    <text x="420" y="100" class="label">Early Polishing</text>
+
+    <!-- Convergence -->
+    <path d="M 490 20 C 520 20, 520 50, 545 50" class="arrow" marker-end="url(#arrowhead)" />
+    <path d="M 490 100 C 520 100, 520 70, 545 70" class="arrow" marker-end="url(#arrowhead)" />
+
+    <!-- Final Integration -->
+    <rect x="545" y="30" width="130" height="60" class="box-accent" />
+    <text x="610" y="54" class="label" style="fill: #2f6fed;">Final Integration</text>
+    <text x="610" y="70" class="sublabel">&amp; Submission</text>
+  </g>
+
+<g opacity="0.72"><rect x="700" y="352" width="112" height="20" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/><text x="756" y="366.0" text-anchor="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" font-weight="600" fill="#64748b">scicoagent.com</text></g></svg>
