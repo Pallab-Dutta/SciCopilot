@@ -1,3 +1,6 @@
+{{- if and .IsPage (partial "product-home.html" .) -}}
+{{ partial "moved.html" . }}
+{{- else -}}
 <!DOCTYPE html>
 <html lang="{{ or site.Language.LanguageCode "en" }}">
 <head>
@@ -47,3 +50,4 @@
   </script>
 </body>
 </html>
+{{- end }}

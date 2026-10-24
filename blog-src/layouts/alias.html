@@ -1,0 +1,5 @@
+{{- /* Hugo's built-in alias (old-address) redirect, except that an alias of a product post goes
+     straight to the product site rather than via this blog's own redirect page. */ -}}
+{{- $url := .Permalink -}}
+{{- with .Page -}}{{- if partial "product-home.html" . -}}{{- $url = partial "post-url.html" . -}}{{- end -}}{{- end -}}
+<!DOCTYPE html><html lang="{{ site.Language.LanguageCode }}"><head><title>{{ $url }}</title><link rel="canonical" href="{{ $url }}"><meta charset="utf-8"><meta http-equiv="refresh" content="0; url={{ $url }}"></head></html>

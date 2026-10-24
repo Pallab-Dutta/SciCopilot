@@ -1,0 +1,6 @@
+{{- /* Where a link to this page should point: the product site's copy for a product post
+     (absolute: same path, other host), else this build's own relative permalink. */ -}}
+{{- $home := partial "product-home.html" . -}}
+{{- $url := .RelPermalink -}}
+{{- if $home -}}{{- $url = printf "%s%s" (strings.TrimSuffix "/" $home) .RelPermalink -}}{{- end -}}
+{{- return $url -}}

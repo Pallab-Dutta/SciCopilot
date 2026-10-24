@@ -15,6 +15,15 @@ enableEmoji = true
   homeURL   = "/"                                 # SciCoagent landing (site root)
   agentsURL = "/agents.html"                      # the Agents / tools hub
   appURL    = "https://benjamin.scicoagent.com"   # Benjamin, the scientist-proofreader (post CTA)
+  suiteURL  = "/"                                 # SciCoagent home, from any build (footer)
+  assetsBase = ""                                 # prefix for /assets/... (the suite site's folder)
+
+# Product blogs. A post whose front-matter `agent` is listed here LIVES on that product's site,
+# built from this same repo by the product site's own workflow (see products/<key>.toml). Here,
+# on the central blog, it is still listed everywhere but links there, and its old address
+# becomes a redirect page so its ranking moves with it.
+[params.productBlogs]
+  benjamin = "https://benjamin.scicoagent.com"
 
 # Agents this blog can front. Add a [params.agents.<key>] block per agent, then set
 # `agent: "<key>"` in a post's front matter to show that agent in the nav — but only

@@ -1,0 +1,16 @@
+{{- /* Links inside posts. A site-relative link to another page of this blog ("/blog/...") is
+     pointed at wherever that page really lives: the product site for a product post, or the
+     central blog (absolute) when this is a product build and the target is not on it. Every
+     other link renders exactly as Hugo's default would. */ -}}
+{{- $dest := .Destination -}}
+{{- if hasPrefix $dest "/blog/" -}}
+  {{- $target := "" -}}
+  {{- range site.Pages -}}{{- if and (not $target) (eq .RelPermalink $dest) -}}{{- $target = . -}}{{- end -}}{{- end -}}
+  {{- with $target -}}
+    {{- $dest = partial "post-url.html" . -}}
+  {{- else -}}
+    {{- with site.Params.productKey -}}{{- $dest = printf "%s%s" (strings.TrimSuffix "/" site.Params.suiteURL) $.Destination -}}{{- end -}}
+  {{- end -}}
+{{- end -}}
+<a href="{{ $dest | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}>{{ .Text | safeHTML }}</a>
+{{- /* chomp trailing newline */ -}}

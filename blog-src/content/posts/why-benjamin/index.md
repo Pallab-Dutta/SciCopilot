@@ -46,7 +46,7 @@ And then there was the other half of him, the scientist. He flew a kite into a s
 
 He even built the glasses for the job. Bifocals were his invention, two lenses in a single frame, one for what sits close in your hand and one for what stands far across the room, so he never had to choose between the page and the world.
 
-<img src="/assets/benjamin-name.svg" alt="The Benjamin logo: a pair of spectacles, the left lens holding a struck-through A, the right lens holding the corrected Angstrom sign." width="240" style="display:block;margin:2rem auto .4rem;width:240px;max-width:60%;height:auto">
+<img src="https://scicoagent.com/assets/benjamin-name.svg" alt="The Benjamin logo: a pair of spectacles, the left lens holding a struck-through A, the right lens holding the corrected Angstrom sign." width="240" style="display:block;margin:2rem auto .4rem;width:240px;max-width:60%;height:auto">
 
 That whole dream is folded into our logo, if you look closely. It is a pair of Benjamin's spectacles. Through the left lens you find a plain "A", struck through. Through the right, the very same letter set right, as an "Å". One glass for the mistake, one glass for the fix, both worn by the same careful eye. We are simply trying to build a proofreader who reads your manuscript the way Franklin might have, as a printer and a scientist at once, looking through both lenses at the same time.
 

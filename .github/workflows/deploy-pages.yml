@@ -120,3 +120,21 @@ jobs:
           INDEXNOW_WINDOW_HOURS: "3"
         run: |
           python3 .github/scripts/indexnow_ping.py _site/sitemap.xml _site/blog/sitemap.xml
+
+      - name: Rebuild the product sites' blogs
+        # Product posts (front matter `agent: benjamin`) are served from the product's own site,
+        # which builds them from THIS repo in its own deploy workflow. That workflow also runs
+        # hourly, but a post published "now" would redirect here to a page the product site has
+        # not built yet, for up to an hour. So on a push, ask it to rebuild straight away.
+        # Optional: needs secret PRODUCT_SITES_TOKEN (fine-grained PAT, repo scicoproof-web,
+        # Actions: read and write). Without it this step says so and the hourly run catches up.
+        if: github.event_name == 'push'
+        env:
+          GH_TOKEN: ${{ secrets.PRODUCT_SITES_TOKEN }}
+        run: |
+          if [ -z "$GH_TOKEN" ]; then
+            echo "PRODUCT_SITES_TOKEN not set; product blogs refresh on their hourly run."
+            exit 0
+          fi
+          gh workflow run deploy-pages.yml -R Pallab-Dutta/scicoproof-web --ref main \
+            || echo "could not trigger scicoproof-web (non-fatal)"

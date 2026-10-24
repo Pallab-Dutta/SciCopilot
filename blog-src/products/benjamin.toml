@@ -1,0 +1,18 @@
+# Benjamin's blog, built from this repo by benjamin.scicoagent.com's own deploy workflow
+# (repo scicoproof-web, .github/workflows/deploy-pages.yml) with:
+#   python3 .github/scripts/product_blog.py benjamin <out-src>
+#   hugo --source <out-src> --config hugo.toml,product.toml
+# It holds only posts whose front matter says `agent: "benjamin"`. Same paths as the central
+# blog (/blog/posts/<slug>/), so the central blog's redirect pages map one to one.
+baseURL = "https://benjamin.scicoagent.com/blog/"
+title = "Benjamin's Blog"
+
+[params]
+  productKey  = "benjamin"
+  description = "Field notes on proofreading scientific manuscripts: LaTeX, units, notation, and the SciTypos that hide in plain sight."
+  blogLabel   = "Benjamin · Blog"
+  homeURL     = "https://benjamin.scicoagent.com/"
+  pricingURL  = "https://benjamin.scicoagent.com/pricing.html"
+  suiteURL    = "https://scicoagent.com/"
+  agentsURL   = "https://scicoagent.com/agents.html"
+  assetsBase  = "https://scicoagent.com"

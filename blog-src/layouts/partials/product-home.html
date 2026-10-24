@@ -1,0 +1,10 @@
+{{- /* The origin of the product site that owns this page (e.g. "https://benjamin.scicoagent.com"),
+     or "" when the page lives on this blog. A post belongs to a product when its front-matter
+     `agent` has an entry in params.productBlogs. On that product's own build (params.productKey)
+     the page is local, so this returns "". */ -}}
+{{- $home := "" -}}
+{{- $agent := .Params.agent | default "" -}}
+{{- if and $agent (ne $agent (site.Params.productKey | default "")) -}}
+  {{- with site.Params.productBlogs -}}{{- with index . $agent -}}{{- $home = . -}}{{- end -}}{{- end -}}
+{{- end -}}
+{{- return $home -}}

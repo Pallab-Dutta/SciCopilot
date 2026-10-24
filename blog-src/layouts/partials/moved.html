@@ -1,0 +1,26 @@
+{{- /* A product post on the central blog: a redirect page to its home on the product site.
+     A 0-second meta refresh plus a matching canonical is what Google treats as a permanent
+     redirect on a static host, so the post's ranking moves to the product site. OG tags stay so
+     an old shared link still previews properly. */ -}}
+{{- $url := partial "post-url.html" . -}}{{/* always absolute here: this page is moved */}}
+{{- $desc := cond (ne .Description "") .Description (cond (ne .Summary "") (.Summary | plainify) site.Params.description) -}}
+<!DOCTYPE html>
+<html lang="{{ or site.Language.LanguageCode "en" }}">
+<head>
+<meta charset="utf-8">
+<title>{{ .Title }}</title>
+<link rel="canonical" href="{{ $url }}">
+<meta http-equiv="refresh" content="0; url={{ $url }}">
+<meta name="description" content="{{ $desc }}">
+<meta property="og:type" content="article">
+<meta property="og:title" content="{{ .Title }}">
+<meta property="og:description" content="{{ $desc }}">
+<meta property="og:url" content="{{ $url }}">
+{{- with .Resources.GetMatch "cover.{jpg,jpeg,png,webp}" }}
+<meta property="og:image" content="{{ .Permalink }}">
+<meta name="twitter:card" content="summary_large_image">{{ end }}
+</head>
+<body>
+<p>This post has moved to <a href="{{ $url }}">{{ $url }}</a>.</p>
+</body>
+</html>
