@@ -1,0 +1,50 @@
+{{- $home := site.Params.homeURL -}}
+<footer class="footer">
+  <div class="footer__inner">
+    <a class="footer__logo" href="{{ $home }}" aria-label="Benjamin home">
+      <img src="{{ $home }}Benjamin_name.svg" alt="Benjamin" class="benjamin-logo benjamin-logo--footer">
+    </a>
+    <span class="footer__copy">An AI proofreading assistant for scientific writing.</span>
+    <span class="footer__copy"><a href="{{ $home }}terms.html">Terms</a> · <a href="{{ $home }}privacy.html">Privacy</a> · <a href="mailto:contact@scicoagent.com">Contact</a></span>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="{{ $home }}js/auth.js"></script>
+<script src="{{ $home }}js/email-signin.js"></script>
+<script>
+(function () {
+  /* Google sign-in: signed-in readers go straight to the app; others start Google sign-in. */
+  async function enterProofread() {
+    try {
+      var user = await window.SciCoProofAuth.getUser();
+      if (user) { location.href = "{{ $home }}app.html"; return; }
+      await window.SciCoProofAuth.signInWithGoogle();
+    } catch (err) {
+      console.error("Google sign-in failed:", err);
+      if (window.SciCoSigninReport)
+        window.SciCoSigninReport(window.supabase ? "google_start" : "library", (err && err.message) || String(err));
+      if (window.__signinWait) window.__signinWait(false);
+    }
+  }
+  document.querySelectorAll(".js-signin").forEach(function (b) { b.addEventListener("click", enterProofread); });
+  window.__signinReady = true;
+  var pending = window.__signinPending;
+  window.__signinPending = null;
+  if (pending === "google") enterProofread();
+  else if (pending === "email" && window.SciCoEmailSignIn) window.SciCoEmailSignIn.open();
+
+  /* Nav: shadow once scrolled; hamburger menu on phones. */
+  var nav = document.querySelector(".nav");
+  var onScroll = function () { nav.classList.toggle("nav--scrolled", window.scrollY > 10); };
+  onScroll(); window.addEventListener("scroll", onScroll, { passive: true });
+  var toggle = document.getElementById("nav-toggle");
+  var links = document.getElementById("nav-links");
+  toggle.addEventListener("click", function () {
+    var open = nav.classList.toggle("nav--open");
+    toggle.setAttribute("aria-expanded", String(open));
+  });
+  links.querySelectorAll("a").forEach(function (a) {
+    a.addEventListener("click", function () { nav.classList.remove("nav--open"); toggle.setAttribute("aria-expanded", "false"); });
+  });
+})();
+</script>

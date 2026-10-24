@@ -1,3 +1,7 @@
+{{- $p := printf "partials/product/%s-header.html" (site.Params.productKey | default "") -}}
+{{- if and site.Params.productKey (templates.Exists $p) -}}
+{{ partial (printf "product/%s-header.html" site.Params.productKey) . }}
+{{- else -}}
 <header class="sc-nav">
   <div class="sc-nav__inner">
     <div class="sc-nav__left">
@@ -29,3 +33,4 @@
     </nav>
   </div>
 </header>
+{{- end }}

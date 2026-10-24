@@ -16,3 +16,5 @@ title = "Benjamin's Blog"
   suiteURL    = "https://scicoagent.com/"
   agentsURL   = "https://scicoagent.com/agents.html"
   assetsBase  = "https://scicoagent.com"
+  # Benjamin's own Microsoft Clarity project, so blog visits sit with the rest of the site.
+  clarityID   = "y4p1gzg5xx"

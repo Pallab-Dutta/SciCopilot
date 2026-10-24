@@ -1,0 +1,47 @@
+{{/* Benjamin's blog (benjamin.scicoagent.com/blog/) wears Benjamin's own chrome: favicons, fonts,
+     palette, nav, footer and Google sign-in, all served from the same origin as the main site,
+     so a sign-in here is the same session as on the home page. Mirrors scicoproof-web/index.html. */}}
+{{- $home := site.Params.homeURL -}}
+<link rel="icon" type="image/svg+xml" href="{{ $home }}favicon.svg">
+<link rel="icon" type="image/x-icon" href="{{ $home }}favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ $home }}favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ $home }}favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ $home }}apple-touch-icon.png">
+<link rel="stylesheet" href="{{ "css/product-benjamin.css" | relURL }}">
+<script src="{{ $home }}js/config.js"></script>
+<script src="{{ $home }}js/signin-report.js"></script>
+<script>
+/* Sign-in click: show "Signing you in via Google" right away; a click made before the sign-in
+   library has loaded is remembered and finished once it is ready (same as the home page). */
+(function () {
+  window.__signinPending = null;
+  function waitScreen(on) {
+    var el = document.getElementById("signinWait");
+    if (!el && on) {
+      el = document.createElement("div");
+      el.id = "signinWait"; el.className = "signin-wait"; el.setAttribute("role", "status");
+      el.innerHTML = '<img src="{{ $home }}Benjamin_name.svg" alt="Benjamin">' +
+        '<div class="signin-wait__site">scicoagent.com</div>' +
+        '<div class="signin-wait__msg"><span class="signin-wait__spin"></span>Signing you in via Google</div>';
+      document.body.appendChild(el);
+    }
+    if (el) el.classList.toggle("on", !!on);
+    document.querySelectorAll(".js-signin").forEach(function (b) { b.disabled = !!on; });
+  }
+  window.__signinWait = waitScreen;
+  document.addEventListener("click", function (e) {
+    var t = e.target.closest && e.target.closest(".js-signin, .js-email-signin");
+    if (!t) return;
+    var google = t.classList.contains("js-signin");
+    if (google) waitScreen(true);
+    if (window.__signinReady) return;
+    e.preventDefault(); e.stopImmediatePropagation();
+    window.__signinPending = google ? "google" : "email";
+    if (!window.__signinTimer) window.__signinTimer = setTimeout(function () {
+      if (!window.__signinReady && window.SciCoSigninReport)
+        window.SciCoSigninReport("library", "sign-in library still not loaded 25 s after the click (blog)");
+    }, 25000);
+  }, true);
+  window.addEventListener("pageshow", function (e) { if (e.persisted) waitScreen(false); });
+})();
+</script>
