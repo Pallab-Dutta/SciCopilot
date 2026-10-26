@@ -1,7 +1,7 @@
 ---
 title: 'Using AI for scientific translation: Risks and best practices'
 slug: using-ai-for-scientific-translation-risks-and-best-practices
-date: '2026-10-26T10:38:37+05:30'
+date: '2026-10-26T10:43:11+05:30'
 draft: false
 summary: Learn how non-native English speakers can safely use AI for scientific translation
   without introducing hidden logical errors or violating publishing ethics.
@@ -33,7 +33,7 @@ agent: benjamin
 tools:
 - proofread
 - benjamin
-publishDate: '2026-10-26T10:38:37+05:30'
+publishDate: '2026-10-26T10:43:11+05:30'
 source_run: 2026-10-26/benjamin_educator_013122
 ---
 
