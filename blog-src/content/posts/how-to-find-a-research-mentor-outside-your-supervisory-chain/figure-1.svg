@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 380" width="820" height="380" role="img" aria-label="Diagram contrasting restricted supervisory chain versus multi-directional informal mentorship web">
+  <style>
+    .heading { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; font-size: 15px; font-weight: 600; fill: #2f6fed; text-anchor: middle; }
+    .label { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; font-size: 12px; font-weight: 500; fill: #333333; text-anchor: middle; dominant-baseline: central; }
+    .box { fill: #f6f8fc; stroke: #cbd5e0; stroke-width: 1.5px; rx: 8px; }
+    .accent-box { fill: #ebf2ff; stroke: #2f6fed; stroke-width: 1.5px; rx: 8px; }
+    .line { stroke: #cbd5e0; stroke-width: 1.5px; stroke-linecap: round; }
+    .accent-line { stroke: #2f6fed; stroke-width: 1.5px; stroke-linecap: round; }
+    .arrow { fill: #cbd5e0; }
+    .accent-arrow { fill: #2f6fed; }
+  </style>
+
+  <!-- Background -->
+  <rect width="820" height="380" fill="#ffffff" />
+
+  <!-- SECTION 1: Restricted Supervisory Chain -->
+  <g transform="translate(40, 40)">
+    <!-- Section Title -->
+    <text x="170" y="20" class="heading">Restricted Supervisory Chain</text>
+
+    <!-- Vertical Chain Nodes -->
+    <!-- Top: Senior Leader -->
+    <rect x="110" y="60" width="120" height="44" class="box" />
+    <text x="170" y="82" class="label">Senior Leader</text>
+
+    <!-- Middle: Supervisor -->
+    <rect x="110" y="150" width="120" height="44" class="accent-box" />
+    <text x="170" y="172" class="label" fill="#2f6fed">Supervisor</text>
+
+    <!-- Bottom: Employee -->
+    <rect x="110" y="240" width="120" height="44" class="box" />
+    <text x="170" y="262" class="label">Employee</text>
+
+    <!-- Arrows (Top to Middle to Bottom) -->
+    <line x1="170" y1="104" x2="170" y2="142" class="line" />
+    <polygon points="165,140 170,150 175,140" class="arrow" />
+
+    <line x1="170" y1="194" x2="170" y2="232" class="line" />
+    <polygon points="165,230 170,240 175,230" class="arrow" />
+  </g>
+
+  <!-- Divider -->
+  <line x1="410" y1="60" x2="410" y2="340" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4 4" />
+
+  <!-- SECTION 2: Informal Mentorship Web -->
+  <g transform="translate(450, 40)">
+    <!-- Section Title -->
+    <text x="170" y="20" class="heading">Multi-Directional Mentorship Web</text>
+
+    <!-- Web Nodes (Distributed layout) -->
+    <!-- Center/Focus: Employee -->
+    <rect x="110" y="150" width="120" height="44" class="accent-box" />
+    <text x="170" y="172" class="label" fill="#2f6fed">Employee</text>
+
+    <!-- Node 1: Peer Mentor (Top Left) -->
+    <rect x="30" y="70" width="110" height="44" class="box" />
+    <text x="85" y="92" class="label">Peer Mentor</text>
+
+    <!-- Node 2: Subject Expert (Top Right) -->
+    <rect x="200" y="70" width="110" height="44" class="box" />
+    <text x="255" y="92" class="label">Subject Expert</text>
+
+    <!-- Node 3: Sponsor (Bottom Left) -->
+    <rect x="30" y="230" width="110" height="44" class="box" />
+    <text x="85" y="252" class="label">Sponsor</text>
+
+    <!-- Node 4: Cross-Unit Ally (Bottom Right) -->
+    <rect x="200" y="230" width="110" height="44" class="box" />
+    <text x="255" y="252" class="label">Cross-Unit Ally</text>
+
+    <!-- Multi-directional Web Connections (Accent lines with bidirectional feel) -->
+    <!-- Peer to Center -->
+    <line x1="108" y1="114" x2="142" y2="150" class="accent-line" />
+    <polygon points="135,145 145,152 140,142" class="accent-arrow" />
+
+    <!-- Expert to Center -->
+    <line x1="232" y1="114" x2="198" y2="150" class="accent-line" />
+    <polygon points="200,142 195,152 205,145" class="accent-arrow" />
+
+    <!-- Sponsor to Center -->
+    <line x1="108" y1="230" x2="142" y2="194" class="accent-line" />
+    <polygon points="140,202 145,192 135,195" class="accent-arrow" />
+
+    <!-- Ally to Center -->
+    <line x1="232" y1="230" x2="198" y2="194" class="accent-line" />
+    <polygon points="205,195 195,192 200,202" class="accent-arrow" />
+
+    <!-- Lateral Connections (Web effect) -->
+    <line x1="140" y1="92" x2="200" y2="92" class="line" stroke-dasharray="3 3" />
+    <line x1="85" y1="114" x2="85" y2="230" class="line" stroke-dasharray="3 3" />
+    <line x1="255" y1="114" x2="255" y2="230" class="line" stroke-dasharray="3 3" />
+  </g>
+<g opacity="0.72"><rect x="700" y="352" width="112" height="20" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/><text x="756" y="366.0" text-anchor="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" font-weight="600" fill="#64748b">scicoagent.com</text></g></svg>
