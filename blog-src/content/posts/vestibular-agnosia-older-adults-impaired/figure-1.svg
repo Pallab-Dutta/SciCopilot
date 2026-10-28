@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 380" width="820" height="380" role="img" aria-label="Schematic of balance sensory inputs showing Vestibular Agnosia with impaired perception and preserved reflex">
+  <defs>
+    <style>
+      .bg { fill: #ffffff; }
+      .box { fill: #f6f8fc; stroke: #cbd5e0; stroke-width: 1.5; rx: 8px; }
+      .accent-box { fill: #f0f4ff; stroke: #2f6fed; stroke-width: 2; rx: 8px; }
+      .text-main { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; font-size: 12px; fill: #333333; text-anchor: middle; }
+      .text-title { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; font-size: 14px; font-weight: 600; fill: #1a202c; text-anchor: middle; }
+      .text-accent { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; font-size: 13px; font-weight: 600; fill: #2f6fed; text-anchor: middle; }
+      .text-small { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; font-size: 10px; fill: #718096; text-anchor: middle; }
+      .arrow { stroke: #2f6fed; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .arrow-broken { stroke: #e53e3e; stroke-width: 2; stroke-dasharray: 4,4; fill: none; }
+      .cross { stroke: #e53e3e; stroke-width: 2.5; stroke-linecap: round; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2f6fed"/>
+    </marker>
+    <marker id="arrowhead-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e53e3e"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect class="bg" width="820" height="380"/>
+
+  <!-- Title -->
+  <text x="410" y="32" class="text-title">Sensorimotor Integration &amp; Vestibular Agnosia</text>
+
+  <!-- Sensory Inputs Column (Left) -->
+  <g transform="translate(50, 70)">
+    <!-- Vision -->
+    <rect x="0" y="0" width="140" height="60" class="box"/>
+    <text x="70" y="25" class="text-title">Vision</text>
+    <text x="70" y="42" class="text-small">Eye-tracking / Visual</text>
+
+    <!-- Proprioception -->
+    <rect x="0" y="90" width="140" height="60" class="box"/>
+    <text x="70" y="115" class="text-title">Proprioception</text>
+    <text x="70" y="132" class="text-small">Legs / Joints</text>
+
+    <!-- Vestibular -->
+    <rect x="0" y="180" width="140" height="60" class="accent-box"/>
+    <text x="70" y="205" class="text-accent">Vestibular</text>
+    <text x="70" y="222" class="text-small">Inner Ear / Semicircular</text>
+  </g>
+
+  <!-- Center: Older Adult / Compliant Surface -->
+  <g transform="translate(240, 110)">
+    <rect x="0" y="0" width="120" height="150" class="box" stroke-dasharray="3,3"/>
+    <text x="60" y="30" class="text-title">Older Adult</text>
+    <text x="60" y="55" class="text-main">Standing on</text>
+    <text x="60" y="72" class="text-main">Compliant</text>
+    <text x="60" y="89" class="text-main">Surface</text>
+    <!-- Simple icon/figure placeholder -->
+    <circle cx="60" cy="112" r="8" fill="#4a5568"/>
+    <path d="M60,120 L60,140 M50,150 L60,120 L70,150" stroke="#4a5568" stroke-width="2" fill="none"/>
+  </g>
+
+  <!-- Intermediate Arrows from Inputs to Subject -->
+  <path d="M 190 100 L 240 140" class="arrow" marker-end="url(#arrowhead)"/>
+  <path d="M 190 190 L 240 170" class="arrow" marker-end="url(#arrowhead)"/>
+  <path d="M 190 280 L 240 200" class="arrow" marker-end="url(#arrowhead)"/>
+
+  <!-- Path from Subject to Processing / Brain -->
+  <path d="M 360 185 L 440 185" class="arrow" marker-end="url(#arrowhead)"/>
+
+  <!-- Processing / Brain Column (Right) -->
+  <g transform="translate(450, 90)">
+    <!-- Reflex Pathway (Lower) -->
+    <g transform="translate(0, 110)">
+      <rect x="0" y="0" width="140" height="70" class="box"/>
+      <text x="70" y="25" class="text-title">Vestibulo-Ocular</text>
+      <text x="70" y="42" class="text-title">&amp; Spinal Reflexes</text>
+      <text x="70" y="58" class="text-small" fill="#2e8540">Preserved (Intact)</text>
+    </g>
+
+    <!-- Conscious Perception Pathway (Upper) - Blocked -->
+    <g transform="translate(0, 0)">
+      <rect x="0" y="0" width="140" height="70" class="box"/>
+      <text x="70" y="25" class="text-title">Cortical</text>
+      <text x="70" y="42" class="text-title">Perception</text>
+      <text x="70" y="58" class="text-small" fill="#e53e3e">Impaired</text>
+    </g>
+  </g>
+
+  <!-- Branching arrows from central processing to upper/lower outputs -->
+  <path d="M 410 185 L 410 135 L 450 135" class="arrow" marker-end="url(#arrowhead)"/>
+  <path d="M 410 185 L 410 235 L 450 235" class="arrow" marker-end="url(#arrowhead)"/>
+
+  <!-- Fracture / Filter Overlay for Vestibular Agnosia -->
+  <g transform="translate(620, 70)">
+    <rect x="0" y="0" width="170" height="210" class="box" style="fill:#fff5f5; stroke:#feb2b2; stroke-width:1.5;"/>
+    <text x="85" y="30" class="text-title" fill="#c53030">Vestibular Agnosia</text>
+    
+    <text x="85" y="65" class="text-main">Impaired</text>
+    <text x="85" y="82" class="text-main">Perception</text>
+    
+    <line x1="45" y1="105" x2="125" y2="105" stroke="#cbd5e0" stroke-width="1"/>
+
+    <text x="85" y="135" class="text-main">Preserved</text>
+    <text x="85" y="152" class="text-main">Reflex</text>
+
+    <!-- Barrier / Filter symbol -->
+    <path d="M 20 40 L 20 180" stroke="#e53e3e" stroke-width="3" stroke-dasharray="6,4"/>
+    <line x1="15" y1="95" x2="25" y2="105" class="cross"/>
+    <line x1="25" y1="95" x2="15" y2="105" class="cross"/>
+  </g>
+
+  <!-- Final connection into Agnosia box -->
+  <path d="M 590 135 L 620 135" class="arrow" marker-end="url(#arrowhead)"/>
+  <path d="M 590 235 L 605 235 L 605 190 L 620 190" class="arrow" marker-end="url(#arrowhead)"/>
+
+  <!-- Bottom Legend / Caption -->
+  <rect x="50" y="325" width="720" height="35" fill="#f8fafc" stroke="#e2e8f0" rx="4"/>
+  <text x="410" y="347" class="text-small" font-size="11px">
+    Key Mechanism: Disconnection between conscious vestibular awareness and automated brainstem/spinal motor outputs.
+  </text>
+<g opacity="0.72"><rect x="700" y="352" width="112" height="20" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/><text x="756" y="366.0" text-anchor="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" font-weight="600" fill="#64748b">scicoagent.com</text></g></svg>
