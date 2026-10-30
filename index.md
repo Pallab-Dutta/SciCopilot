@@ -1,11 +1,11 @@
 ### Sci-Cosearch
 - Find Literatures
   description: Search scientific literature and surface relevant research articles quickly.
-  link: https://search.scicoagent.com/
+  link: https://eratost.scicoagent.com/
 
 - Find Target Labs/PI
   description: Explore labs aligned with your research area and discovery goals.
-  link: https://search.scicoagent.com/
+  link: https://eratost.scicoagent.com/
 
 ### Sci-Coauthor
 - Benjamin [The Scientist Proofreader]

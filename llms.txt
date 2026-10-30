@@ -4,7 +4,7 @@
 
 ## Coagents
 
-- **SciCo-search** (https://search.scicoagent.com): find the right literature fast, and surface labs and PIs aligned with your research area and discovery goals.
+- **SciCo-search** (https://eratost.scicoagent.com): find the right literature fast, and surface labs and PIs aligned with your research area and discovery goals.
 - **SciCoauthor**: context-aware help with the manuscript itself. Includes Benjamin, an AI proofreader that goes beyond spell-check, plus an aRAG assistant that turns your published papers into thesis-ready chapters.
 - **SciCo-work** (ideation stage): an AI scientist coworker to think and build research alongside you. Currently taking shape.
 
@@ -17,7 +17,7 @@ Benjamin (https://benjamin.scicoagent.com) is the live flagship coagent. It read
 - [Home](https://scicoagent.com/): the coagent lineup.
 - [Agents](https://scicoagent.com/agents.html): open any coagent.
 - [Benjamin](https://benjamin.scicoagent.com/): the live AI proofreader (has its own llms.txt).
-- [SciCo-search](https://search.scicoagent.com): literature and PI discovery.
+- [SciCo-search](https://eratost.scicoagent.com): literature and PI discovery.
 - [Blog](https://scicoagent.com/blog/): guides on academic writing and proofreading, plus science explainers written for any-discipline researchers.
 
 ## Blog: proofreading and academic-writing guides
