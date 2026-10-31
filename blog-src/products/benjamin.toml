@@ -12,6 +12,7 @@ title = "Benjamin's Blog"
   description = "Field notes on proofreading scientific manuscripts: LaTeX, units, notation, and the SciTypos that hide in plain sight."
   blogLabel   = "Benjamin · Blog"
   homeURL     = "https://benjamin.scicoagent.com/"
+  appURL      = "https://benjamin.scicoagent.com/app.html"   # "Try Benjamin ->" opens the app (sign in), not the home page
   pricingURL  = "https://benjamin.scicoagent.com/pricing.html"
   suiteURL    = "https://scicoagent.com/"
   agentsURL   = "https://scicoagent.com/agents.html"

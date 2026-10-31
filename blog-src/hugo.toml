@@ -14,7 +14,7 @@ enableEmoji = true
   description = "Field notes on scientific writing, proofreading, and the SciTypos that hide in plain sight."
   homeURL   = "/"                                 # SciCoagent landing (site root)
   agentsURL = "/agents.html"                      # the Agents / tools hub
-  appURL    = "https://benjamin.scicoagent.com"   # Benjamin, the scientist-proofreader (post CTA)
+  appURL    = "https://benjamin.scicoagent.com/app.html"   # Benjamin app (post CTA) -> sign in and use it, not the home page
   suiteURL  = "/"                                 # SciCoagent home, from any build (footer)
   assetsBase = ""                                 # prefix for /assets/... (the suite site's folder)
 
