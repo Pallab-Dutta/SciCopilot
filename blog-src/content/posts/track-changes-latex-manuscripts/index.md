@@ -1,7 +1,7 @@
 ---
 title: How to Track Changes in LaTeX Manuscripts
 slug: track-changes-latex-manuscripts
-date: '2026-11-02T15:51:39+05:30'
+date: '2026-11-02T15:58:41+05:30'
 draft: false
 summary: Learn how to track changes in LaTeX manuscripts using latexdiff, the changes
   package, and version control without breaking your document structure.
@@ -33,7 +33,7 @@ agent: benjamin
 tools:
 - proofread
 - benjamin
-publishDate: '2026-11-02T15:51:39+05:30'
+publishDate: '2026-11-02T15:58:41+05:30'
 source_run: 2026-11-02/benjamin_educator_013117
 ---
 
