@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 380" width="820" height="380" role="img" aria-label="Comparison between latexdiff post-hoc comparison and changes package real-time manual markup">
+  <defs>
+    <!-- Arrowhead marker -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#1a1a1a"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="820" height="380" fill="#ffffff"/>
+
+  <!-- TITLE -->
+  <text x="410" y="40" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="16" font-weight="600" fill="#1a1a1a" text-anchor="middle">Workflow Comparison: Post-Hoc Diff vs. Real-Time Markup</text>
+
+  <!-- ==================== TOP ROW: LATEXDIFF ==================== -->
+  
+  <!-- Row Label -->
+  <text x="45" y="105" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="13" font-weight="600" fill="#4a5568">latexdiff</text>
+
+  <!-- Box 1: Draft v1 & v2 -->
+  <rect x="130" y="80" width="160" height="50" rx="8" fill="#f6f8fc" stroke="#cbd5e0" stroke-width="1.5"/>
+  <text x="210" y="102" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="12" font-weight="500" fill="#1a1a1a" text-anchor="middle">Draft v1 &amp; v2 Files</text>
+  <text x="210" y="118" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="11" fill="#64748b" text-anchor="middle">Separate revisions</text>
+
+  <!-- Arrow 1 -->
+  <line x1="290" y1="105" x2="352" y2="105" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Box 2: Automated Comparison -->
+  <rect x="360" y="80" width="160" height="50" rx="8" fill="#f6f8fc" stroke="#cbd5e0" stroke-width="1.5"/>
+  <text x="440" y="102" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="12" font-weight="500" fill="#1a1a1a" text-anchor="middle">Automated Script</text>
+  <text x="440" y="118" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="11" fill="#64748b" text-anchor="middle">Diff calculation</text>
+
+  <!-- Arrow 2 -->
+  <line x1="520" y1="105" x2="582" y2="105" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Box 3: Final Diff Output -->
+  <rect x="590" y="80" width="160" height="50" rx="8" fill="#f6f8fc" stroke="#cbd5e0" stroke-width="1.5"/>
+  <text x="670" y="102" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="12" font-weight="500" fill="#1a1a1a" text-anchor="middle">Post-Hoc Output</text>
+  <text x="670" y="118" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="11" fill="#64748b" text-anchor="middle">Generated view</text>
+
+
+  <!-- ==================== BOTTOM ROW: CHANGES PACKAGE ==================== -->
+
+  <!-- Row Label -->
+  <text x="45" y="245" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="13" font-weight="600" fill="#4a5568">changes</text>
+
+  <!-- Box 4: Authoring -->
+  <rect x="130" y="220" width="160" height="50" rx="8" fill="#f6f8fc" stroke="#cbd5e0" stroke-width="1.5"/>
+  <text x="210" y="242" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="12" font-weight="500" fill="#1a1a1a" text-anchor="middle">Active Document</text>
+  <text x="210" y="258" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="11" fill="#64748b" text-anchor="middle">Single source</text>
+
+  <!-- Arrow 3 -->
+  <line x1="290" y1="245" x2="352" y2="245" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Box 5: Manual Markup -->
+  <rect x="360" y="220" width="160" height="50" rx="8" fill="#f6f8fc" stroke="#cbd5e0" stroke-width="1.5"/>
+  <text x="440" y="242" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="12" font-weight="500" fill="#1a1a1a" text-anchor="middle">Manual Commands</text>
+  <text x="440" y="258" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="11" fill="#64748b" text-anchor="middle">\add{} / \del{}</text>
+
+  <!-- Arrow 4 -->
+  <line x1="520" y1="245" x2="582" y2="245" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Box 6: Real-time Render -->
+  <rect x="590" y="220" width="160" height="50" rx="8" fill="#f6f8fc" stroke="#cbd5e0" stroke-width="1.5"/>
+  <text x="670" y="242" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="12" font-weight="500" fill="#1a1a1a" text-anchor="middle">Real-Time Render</text>
+  <text x="670" y="258" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="11" fill="#64748b" text-anchor="middle">Controlled output</text>
+
+  <!-- ==================== DIVIDER & FOOTER NOTES ==================== -->
+  <line x1="50" y1="175" x2="770" y2="175" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4 4"/>
+
+  <text x="130" y="325" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="11" fill="#4a5568">
+    <tspan x="130" dy="0" font-weight="600">Key Difference:</tspan>
+    <tspan x="230" dy="0">latexdiff compares snapshots post-hoc; the changes package requires inline author intent during writing.</tspan>
+  </text>
+<g opacity="0.72"><rect x="700" y="352" width="112" height="20" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/><text x="756" y="366.0" text-anchor="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" font-weight="600" fill="#64748b">scicoagent.com</text></g></svg>
