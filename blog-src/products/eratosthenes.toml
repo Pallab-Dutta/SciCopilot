@@ -1,4 +1,4 @@
-# Eratosthenes' blog, built from this repo by eratost.scicoagent.com's own deploy workflow
+# Eratost's blog, built from this repo by eratost.scicoagent.com's own deploy workflow
 # (repo scico-search-web, .github/workflows/deploy-pages.yml) with:
 #   python3 .github/scripts/product_blog.py eratosthenes <out-src>
 #   hugo --source <out-src> --config hugo.toml,product.toml
@@ -6,17 +6,17 @@
 # blog (/blog/posts/<slug>/). Until `eratosthenes` is added to [params.productBlogs] in hugo.toml,
 # those posts also stay on scicoagent.com/blog; add it once eratost.scicoagent.com/blog is live.
 baseURL = "https://eratost.scicoagent.com/blog/"
-title = "Eratosthenes' Blog"
+title = "Eratost's Blog"
 
 [params]
   productKey  = "eratosthenes"
   description = "Notes on finding, reading and keeping up with the research literature: search strategies, literature reviews, and the gaps in a field."
-  blogLabel   = "Eratosthenes · Blog"
+  blogLabel   = "Eratost · Blog"
   homeURL     = "https://eratost.scicoagent.com/"
-  appURL      = "https://eratost.scicoagent.com/"   # "Try Eratosthenes ->"
+  appURL      = "https://eratost.scicoagent.com/"   # "Try Eratost ->"
   pricingURL  = "https://eratost.scicoagent.com/pricing.html"
   suiteURL    = "https://scicoagent.com/"
   agentsURL   = "https://scicoagent.com/agents.html"
   assetsBase  = "https://scicoagent.com"
-  # Eratosthenes' own Microsoft Clarity project (the one its home page uses).
+  # Eratost's own Microsoft Clarity project (the one its home page uses).
   clarityID   = "y4p1zoary7"
