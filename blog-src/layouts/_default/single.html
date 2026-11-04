@@ -1,4 +1,4 @@
-{{ define "main" }}
+{{ define "main" }}{{- /* The call-to-action follows the post's product (params.agents.<agent>); Benjamin's is the default. */ -}}{{- $ctaLine := "The third eye that reads your science, not just your spelling." -}}{{- $ctaText := "Try Benjamin →" -}}{{- $ctaURL := site.Params.appURL -}}{{- with .Params.agent }}{{ with index (site.Params.agents | default dict) . }}{{- with .cta }}{{ $ctaText = . }}{{ end -}}{{- with .cta_tagline }}{{ $ctaLine = . }}{{ end -}}{{- with .app }}{{ $ctaURL = . }}{{ end -}}{{- end }}{{ end }}
 <article class="post wrap">
   <header class="post-head">
     <p class="eyebrow">{{ with .Params.categories }}{{ index . 0 }}{{ else }}SciCoagent{{ end }} · {{ .Date.Format "January 2, 2006" }}</p>
@@ -62,8 +62,8 @@
   {{ end }}
 
   <aside class="post-cta">
-    <p>The third eye that reads your science, not just your spelling.</p>
-    <a class="btn btn--primary btn--lg" href="{{ site.Params.appURL }}">Try Benjamin →</a>
+    <p>{{ $ctaLine }}</p>
+    <a class="btn btn--primary btn--lg" href="{{ $ctaURL }}">{{ $ctaText }}</a>
   </aside>
 
   <a class="post-back" href="{{ site.Home.RelPermalink }}">← All posts</a>

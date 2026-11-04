@@ -33,6 +33,16 @@ enableEmoji = true
   url  = "https://benjamin.scicoagent.com"
   logo = "/assets/benjamin-name.svg"
 
+# A post's closing call-to-action and product markup follow its `agent` (Benjamin's are the
+# template defaults, so his posts are unchanged). `app` is where "Try ..." leads.
+[params.agents.eratosthenes]
+  name = "Eratosthenes"
+  url  = "https://eratost.scicoagent.com"
+  logo = "/assets/eratosthenes-mark.svg"
+  app  = "https://eratost.scicoagent.com/"
+  cta  = "Try Eratosthenes →"
+  cta_tagline = "Not keyword search. A research strategy."
+
 [taxonomies]
   tag = "tags"
   category = "categories"

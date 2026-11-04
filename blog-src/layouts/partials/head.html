@@ -45,7 +45,9 @@
 <script type="application/ld+json">{{ $article | jsonify | safeJS }}</script>
 {{- end -}}
 {{- with .Params.product -}}
-<script type="application/ld+json">{{ dict "@context" "https://schema.org" "@type" "SoftwareApplication" "name" "Benjamin" "applicationCategory" "EducationalApplication" "operatingSystem" "Web" "url" site.Params.appURL "description" $desc "publisher" $publisher | jsonify | safeJS }}</script>
+{{- $appName := "Benjamin" -}}{{- $appURL := site.Params.appURL -}}
+{{- with $.Params.agent }}{{ with index (site.Params.agents | default dict) . }}{{ $appName = .name }}{{ with .app }}{{ $appURL = . }}{{ end }}{{ end }}{{ end -}}
+<script type="application/ld+json">{{ dict "@context" "https://schema.org" "@type" "SoftwareApplication" "name" $appName "applicationCategory" "EducationalApplication" "operatingSystem" "Web" "url" $appURL "description" $desc "publisher" $publisher | jsonify | safeJS }}</script>
 {{- end -}}
 {{- with .Params.faq -}}
 {{- $items := slice -}}
