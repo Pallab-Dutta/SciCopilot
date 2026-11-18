@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 380" width="820" height="380" role="img" aria-label="Flowchart distinguishing manuscript contribution criteria from proofreading tasks">
+  <defs>
+    <style>
+      .bg { fill: #ffffff; }
+      .box { fill: #f6f8fc; stroke: #cbd5e0; stroke-width: 1.5; rx: 8; }
+      .box-highlight { fill: #edf2f7; stroke: #2b6cb0; stroke-width: 2; rx: 8; }
+      .header-text { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; font-size: 15px; font-weight: 700; fill: #1a1a1a; text-anchor: middle; }
+      .label-text { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; font-size: 12px; font-weight: 500; fill: #333333; text-anchor: middle; }
+      .sub-text { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; font-size: 11px; font-weight: 400; fill: #666666; text-anchor: middle; }
+      .arrow { fill: none; stroke: #1a1a1a; stroke-width: 1.5; stroke-linejoin: round; }
+      .arrow-dashed { fill: none; stroke: #4a5568; stroke-width: 1.5; stroke-dasharray: 4,4; }
+      .arrowhead { fill: #1a1a1a; }
+      .arrowhead-gray { fill: #4a5568; }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" class="arrowhead"/>
+    </marker>
+    <marker id="arrow-gray" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" class="arrowhead-gray"/>
+    </marker>
+  </defs>
+
+  <rect width="820" height="380" class="bg"/>
+
+  <!-- Top Level: Incoming Manuscript -->
+  <rect x="335" y="32" width="150" height="50" class="box-highlight"/>
+  <text x="410" y="53" class="header-text">Submitted Work</text>
+  <text x="410" y="69" class="sub-text">Evaluate involvement</text>
+
+  <!-- Arrow down to decision -->
+  <path d="M 410 82 L 410 120" class="arrow" marker-end="url(#arrow)"/>
+
+  <!-- Middle Level: Bifurcation (Decision / Split) -->
+  <rect x="335" y="120" width="150" height="50" class="box"/>
+  <text x="410" y="141" class="header-text">Nature of Input</text>
+  <text x="410" y="157" class="sub-text">Substantive vs Surface</text>
+
+  <!-- Split arrows left and right -->
+  <!-- Left path: Contribution -->
+  <path d="M 335 145 L 210 145 L 210 200" class="arrow" marker-end="url(#arrow)"/>
+  <!-- Right path: Proofreading -->
+  <path d="M 485 145 L 610 145 L 610 200" class="arrow" marker-end="url(#arrow)"/>
+
+  <!-- Left Branch: Contribution Criteria -->
+  <rect x="120" y="200" width="180" height="80" class="box"/>
+  <text x="210" y="226" class="header-text">Authorship Criteria</text>
+  <text x="210" y="248" class="label-text">Conceptual design,</text>
+  <text x="210" y="264" class="label-text">data analysis, drafting</text>
+
+  <!-- Right Branch: Proofreading Tasks -->
+  <rect x="520" y="200" width="180" height="80" class="box"/>
+  <text x="610" y="226" class="header-text">Proofreading Tasks</text>
+  <text x="610" y="248" class="label-text">Grammar correction,</text>
+  <text x="610" y="264" class="label-text">formatting, typo fixes</text>
+
+  <!-- Bottom Outcomes -->
+  <path d="M 210 280 L 210 312" class="arrow" marker-end="url(#arrow)"/>
+  <rect x="135" y="312" width="150" height="40" class="box"/>
+  <text x="210" y="337" class="label-text" font-weight="700">Qualifies for Authorship</text>
+
+  <path d="M 610 280 L 610 312" class="arrow-dashed" marker-end="url(#arrow-gray)"/>
+  <rect x="535" y="312" width="150" height="40" class="box"/>
+  <text x="610" y="337" class="label-text" font-weight="700" fill="#4a5568">Acknowledged Only</text>
+<g opacity="0.72"><rect x="700" y="352" width="112" height="20" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/><text x="756" y="366.0" text-anchor="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" font-weight="600" fill="#64748b">scicoagent.com</text></g></svg>
