@@ -3,6 +3,13 @@
 <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} · {{ site.Title }}{{ end }}</title>
 <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . | plainify }}{{ else }}{{ site.Params.description }}{{ end }}{{ end }}">
 {{ with .Params.tags }}<meta name="keywords" content="{{ delimit . ", " }}">{{ end }}
+{{/* Crawl budget: tag/category list and single-term pages carry no unique content, so keep them out
+     of the index while still letting link equity flow to posts (follow). Clears the GSC "crawled -
+     currently not indexed" (tags) and "duplicate, Google chose different canonical" (categories)
+     buckets, and frees crawl for the posts that matter. */}}
+{{- if in (slice "taxonomy" "term" "taxonomyTerm") .Kind }}
+<meta name="robots" content="noindex,follow">
+{{- end }}
 
 {{/* Open Graph / Twitter card for rich link previews (X, LinkedIn, iMessage, Slack…) */}}
 {{- $desc := cond (ne .Description "") .Description (cond (ne .Summary "") (.Summary | plainify) site.Params.description) -}}
