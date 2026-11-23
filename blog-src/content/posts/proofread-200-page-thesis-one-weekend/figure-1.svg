@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 380" width="820" height="380" role="img" aria-label="Pipeline diagram showing three sequential passes: Macro Structure, Mechanical Cleanup, and Citation Verification">
+  <!-- Styles -->
+  <style>
+    .bg { fill: #ffffff; }
+    .box { fill: #f6f8fc; stroke: #cbd5e0; stroke-width: 1.5; rx: 8px; }
+    .arrow { fill: none; stroke: #1a1a1a; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .arrow-head { fill: #1a1a1a; }
+    .title { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; font-size: 15px; font-weight: 600; fill: #1a1a1a; text-anchor: middle; }
+    .desc { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; font-size: 12px; fill: #4a5568; text-anchor: middle; }
+    .step-num { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; font-size: 11px; font-weight: 700; fill: #718096; text-anchor: middle; letter-spacing: 0.05em; }
+    .main-title { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; font-size: 18px; font-weight: 700; fill: #1a1a1a; }
+  </style>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" class="bg" />
+
+  <!-- Diagram Header -->
+  <text x="410" y="50" class="main-title" text-anchor="middle">Multi-Pass Document Refinement Pipeline</text>
+
+  <!-- 
+    Layout Grid:
+    Canvas width: 820, Margin: 32 left/right -> Usable width: 756
+    3 boxes of width 210 -> Total width = 630
+    Remaining space = 756 - 630 = 126 -> Gap between boxes = 63
+    Box 1: x = 52
+    Box 2: x = 52 + 210 + 63 = 325
+    Box 3: x = 325 + 210 + 63 = 598
+    Box height: 180, y: 110
+  -->
+
+  <!-- Pass 1: Macro Structure -->
+  <g transform="translate(52, 110)">
+    <rect width="210" height="180" class="box" />
+    <text x="105" y="30" class="step-num">PASS 01</text>
+    <text x="105" y="65" class="title">Macro Structure</text>
+    <text x="105" y="95" class="desc">Organize headings,</text>
+    <text x="105" y="115" class="desc">sections, and overall</text>
+    <text x="105" y="135" class="desc">logical flow.</text>
+  </g>
+
+  <!-- Arrow 1 to 2 -->
+  <g transform="translate(262, 200)">
+    <line x1="0" y1="0" x2="63" y2="0" class="arrow" />
+    <polygon points="58,-4 66,0 58,4" class="arrow-head" />
+  </g>
+
+  <!-- Pass 2: Mechanical Cleanup -->
+  <g transform="translate(325, 110)">
+    <rect width="210" height="180" class="box" />
+    <text x="105" y="30" class="step-num">PASS 02</text>
+    <text x="105" y="65" class="title">Mechanical Cleanup</text>
+    <text x="105" y="95" class="desc">Refine grammar,</text>
+    <text x="105" y="115" class="desc">syntax, and stylistic</text>
+    <text x="105" y="135" class="desc">consistency.</text>
+  </g>
+
+  <!-- Arrow 2 to 3 -->
+  <g transform="translate(535, 200)">
+    <line x1="0" y1="0" x2="63" y2="0" class="arrow" />
+    <polygon points="58,-4 66,0 58,4" class="arrow-head" />
+  </g>
+
+  <!-- Pass 3: Citation Verification -->
+  <g transform="translate(598, 110)">
+    <rect width="210" height="180" class="box" />
+    <text x="105" y="30" class="step-num">PASS 03</text>
+    <text x="105" y="65" class="title">Citation Verification</text>
+    <text x="105" y="95" class="desc">Cross-check references,</text>
+    <text x="105" y="115" class="desc">validate sources, and</text>
+    <text x="105" y="135" class="desc">ensure accuracy.</text>
+  </g>
+
+<g opacity="0.72"><rect x="700" y="352" width="112" height="20" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/><text x="756" y="366.0" text-anchor="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" font-weight="600" fill="#64748b">scicoagent.com</text></g></svg>
