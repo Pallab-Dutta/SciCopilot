@@ -1,7 +1,7 @@
 ---
 title: Strategies for managing multiple concurrent research projects
 slug: strategies-managing-multiple-concurrent-research
-date: '2026-11-27T11:37:50+05:30'
+date: '2026-11-27T16:04:04+05:30'
 draft: false
 summary: Learn practical strategies for managing multiple concurrent research projects,
   reducing context switching costs, and organizing research notes.
@@ -24,7 +24,7 @@ tags:
 categories: []
 marketer: educator
 generated_by: sci-comarket
-publishDate: '2026-11-27T11:37:50+05:30'
+publishDate: '2026-11-27T16:04:04+05:30'
 source_run: 2026-11-24/topic_educator_013421
 ---
 
