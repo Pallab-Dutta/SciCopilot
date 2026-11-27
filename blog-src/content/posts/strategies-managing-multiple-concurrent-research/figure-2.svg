@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 380" width="820" height="380" role="img" aria-label="Diagram contrasting a monolithic notes file with a categorized folder structure">
+  <defs>
+    <style>
+      .title { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; font-size: 15px; font-weight: 600; fill: #2f6fed; }
+      .label { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; font-size: 12px; fill: #333333; text-anchor: middle; dominant-baseline: central; }
+      .sublabel { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; font-size: 11px; fill: #666666; text-anchor: middle; dominant-baseline: central; }
+      .box { fill: #f6f8fc; stroke: #cbd5e0; stroke-width: 1.5; rx: 8; }
+      .accent-box { fill: #f0f4ff; stroke: #2f6fed; stroke-width: 1.5; rx: 8; }
+      .arrow { stroke: #2f6fed; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2f6fed"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#ffffff"/>
+
+  <!-- Left Section: Monolithic File -->
+  <text x="180" y="50" class="title" text-anchor="middle">Monolithic Approach</text>
+  
+  <rect x="90" y="80" width="180" height="240" class="box" />
+  <rect x="110" y="110" width="140" height="35" class="accent-box" />
+  <text x="180" y="127" class="label">All Notes.txt</text>
+
+  <rect x="115" y="160" width="130" height="20" fill="#edf2f7" rx="4"/>
+  <rect x="115" y="190" width="110" height="20" fill="#edf2f7" rx="4"/>
+  <rect x="115" y="220" width="125" height="20" fill="#edf2f7" rx="4"/>
+  <rect x="115" y="250" width="90" height="20" fill="#edf2f7" rx="4"/>
+  <text x="180" y="290" class="sublabel">Hard to search &amp; scale</text>
+
+  <!-- Transition Arrow -->
+  <line x1="320" y1="200" x2="460" y2="200" class="arrow" />
+  <text x="390" y="180" class="sublabel" text-anchor="middle">Reorganize</text>
+
+  <!-- Right Section: Categorized Folder Structure -->
+  <text x="630" y="50" class="title" text-anchor="middle">Categorized Structure</text>
+
+  <rect x="500" y="80" width="260" height="240" class="box" />
+  <text x="530" y="105" class="sublabel" text-anchor="start" font-weight="600" fill="#2f6fed">/ Notes Archive</text>
+
+  <!-- Subfolders / Files -->
+  <rect x="530" y="125" width="200" height="45" class="accent-box" />
+  <text x="630" y="140" class="label" font-weight="600">Projects</text>
+  <text x="630" y="157" class="sublabel">Active tasks &amp; roadmaps</text>
+
+  <rect x="530" y="185" width="200" height="45" class="accent-box" />
+  <text x="630" y="200" class="label" font-weight="600">Meetings</text>
+  <text x="630" y="217" class="sublabel">1-on-1s &amp; sync notes</text>
+
+  <rect x="530" y="245" width="200" height="45" class="accent-box" />
+  <text x="630" y="260" class="label" font-weight="600">Ideas</text>
+  <text x="630" y="277" class="sublabel">Brainstorms &amp; research</text>
+
+<g opacity="0.72"><rect x="700" y="352" width="112" height="20" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/><text x="756" y="366.0" text-anchor="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" font-weight="600" fill="#64748b">scicoagent.com</text></g></svg>
